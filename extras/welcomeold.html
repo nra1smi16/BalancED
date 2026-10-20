@@ -1,0 +1,183 @@
+{% load static %} <!-- Traces static paths cleanly -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>BalancED Welcome</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="robots" content="index,follow">
+    <meta name="generator" content="GrapesJS Studio">
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+    
+    <!-- Link pointing to the external static styling sheet -->
+    <link rel="stylesheet" href="{% static 'welcome.css' %}">
+    
+    <style>
+      /* 🛠️ Defensive CSS to prevent the email from ever breaking out of the card layout boundary lines */
+      .contact-text-block {
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        word-break: break-all;
+        max-width: 100%;
+      }
+      .contact-link {
+        display: inline-block;
+        white-space: normal;
+      }
+    </style>
+  </head>
+  <body class="gjs-t-body font-body cls-pbibuw">
+    <main class="welcome-page" id="iouir">
+      <section class="main-card">
+        <div class="page-grid">
+          
+          <!-- BRAND CONTENT PANEL (LEFT SIDE) -->
+          <div class="brand-panel">
+            <div class="brand-content">
+              <div class="logo-group">
+                <div class="logo-image-wrap">
+                  <!-- 🖼️ INTEGRATED YOUR LOCAL IMAGE GRAPHIC EXTENSION HERE -->
+                  <img src="{% static 'images/BalancED_logo.jpg' %}" alt="BalancED logo" class="logo-image" onerror="this.src='https://iconify.design'"/>
+                </div>
+                <div class="brand-text">
+                  <span class="font-display brand-name">BalancED</span>
+                  <span class="brand-tagline">Academic wellbeing support</span>
+                </div>
+              </div>
+              <div class="purpose-block">
+                <h1 class="gjs-t-h1 font-display main-heading" id="iz0zf">A calmer way to understand student stress.</h1>
+                <p class="purpose-description">
+                  BalancED is designed to help predict academic stress levels in university students with care, clarity, and simplicity. The goal is to support early awareness and encourage healthier academic balance.
+                </p>
+              </div>
+              <div class="support-points">
+                <div class="support-item">
+                  <img src="https://api.iconify.design/lucide-heart-handshake.svg?color=%235f7fa6" alt="Care icon" class="support-icon"/>
+                  <p class="support-text">Supportive and student-centered communication.</p>
+                </div>
+                <div class="support-item">
+                  <img src="https://api.iconify.design/lucide-book-open-check.svg?color=%237fa391" alt="Study icon" class="support-icon"/>
+                  <p class="support-text">Focused on academic wellbeing in university life.</p>
+                </div>
+                <div class="support-item">
+                  <img src="https://api.iconify.design/lucide-shield-check.svg?color=%235f7fa6" alt="Trust icon" class="support-icon"/>
+                  <p class="support-text">Simple, organized, and easy to begin using.</p>
+                </div>
+              </div>
+            </div>
+            <div class="contact-section">
+              <h2 class="gjs-t-h2 font-display contact-heading">Contact</h2>
+              <div class="contact-card">
+                <div class="contact-item">
+                  <img src="https://api.iconify.design/lucide-mail.svg?color=%235f7fa6" alt="Email icon" class="contact-icon"/>
+                  <div class="contact-text-block">
+                    <span class="contact-label">Email</span>
+                    <a href="mailto:support@balanced.edu" class="gjs-t-link contact-link">support@balanced.edu</a>
+                  </div>
+                </div>
+                <div class="contact-item">
+                  <img src="https://api.iconify.design/lucide-phone.svg?color=%237fa391" alt="Phone icon" class="contact-icon"/>
+                  <div class="contact-text-block">
+                    <span class="contact-label">Phone</span>
+                    <a href="tel:+10000000000" class="gjs-t-link contact-link">+1 (000) 000-0000</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- INTERACTIVE LOGIC PANEL (RIGHT SIDE) -->
+          <div class="interactive-panel">
+            <div class="welcome-card">
+              <div class="intro-copy">
+                <span class="section-eyebrow">Welcome page</span>
+                <h2 class="font-display welcome-heading">Let’s make this feel personal.</h2>
+                <p class="welcome-description">
+                  Enter your name below to begin with a simple greeting from BalancED.
+                </p>
+              </div>
+
+              <!-- 📝 Input section that processes instantly using JavaScript with NO reloads -->
+              <div class="input-section">
+                {% csrf_token %}
+                <label for="student-name" class="name-label">Your name</label>
+                <input type="text" id="student-name" placeholder="Enter your name" class="name-input" autocomplete="off"/>
+                <button type="button" id="greet-button" class="gjs-t-button greeting-button">
+                  Submit
+                </button>
+              </div>
+
+              <div class="greeting-display">
+                <p id="greeting-message" class="font-display greeting-message" style="color: #94a3b8;">Welcome</p>
+              </div>
+
+              <div class="calm-note">
+                <img src="https://api.iconify.design/lucide-badge-info.svg?color=%237fa391" alt="Information icon" class="note-icon"/>
+                <p class="note-text">
+                  This space is meant to feel welcoming, gentle, and easy to use for every student.
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+    </main>
+
+    <!-- Saves the name, shows the welcome message, then redirects to the dashboard -->
+    <script>
+      const input = document.getElementById('student-name');
+      const button = document.getElementById('greet-button');
+      const message = document.getElementById('greeting-message');
+      const csrfToken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+      let submitting = false;
+
+      async function submitName() {
+        const name = input.value.trim();
+        if (!name || submitting) return;
+        submitting = true;
+        button.disabled = true;
+
+        // 1. Show the welcome message right away
+        message.textContent = `Welcome, ${name}! :)`;
+        message.style.color = '#1e293b';
+
+        // 2. Save the name on the server (stored in the session)
+        try {
+          const body = new URLSearchParams({ name });
+          const res = await fetch("{% url 'save_name' %}", {
+            method: 'POST',
+            headers: { 'X-CSRFToken': csrfToken },
+            body
+          });
+          const data = await res.json();
+          if (!data.ok) throw new Error(data.error);
+
+          // 3. Let the greeting be seen for a moment, then go to the dashboard
+          setTimeout(() => { window.location.href = data.redirect; }, 1400);
+        } catch (err) {
+          message.textContent = 'Something went wrong. Please try again.';
+          message.style.color = '#c97878';
+          submitting = false;
+          button.disabled = false;
+        }
+      }
+
+      button.addEventListener('click', submitName);
+
+      input.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter') submitName();
+      });
+
+      input.addEventListener('input', function () {
+        if (submitting) return;
+        if (!input.value.trim()) {
+          message.textContent = 'Welcome';
+          message.style.color = '#94a3b8';
+        }
+      });
+    </script>
+  </body>
+</html>

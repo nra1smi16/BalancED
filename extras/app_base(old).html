@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>{% block title %}BalancED{% endblock %}</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="{% static 'dashboard.css' %}">
+  </head>
+  <body>
+    <div class="dash">
+
+      <header class="topbar">
+        <a href="{% url 'dashboard' %}" class="topbar-brand">
+          <img src="{% static 'images/BalancED_logo.jpg' %}" alt="BalancED logo" class="topbar-logo"/>
+          <span class="font-display topbar-name">BalancED</span>
+        </a>
+        <nav class="topbar-nav" aria-label="Main">
+          <a href="{% url 'dashboard' %}" class="topbar-link">Dashboard</a>
+          <a href="{% url 'assessment' %}" class="topbar-link">Questionnaire</a>
+          <a href="{% url 'profile' %}" class="topbar-link">Profile</a>
+          <form method="post" action="{% url 'logout' %}" class="logout-form">
+            {% csrf_token %}
+            <button type="submit" class="topbar-link">Log out</button>
+          </form>
+        </nav>
+      </header>
+
+      {% block content %}{% endblock %}
+    </div>
+
+    <script>
+      /* Gauge needle (used on the dashboard and the results page) */
+      const gauge = document.querySelector('.gauge');
+      if (gauge) {
+        const score = Math.max(0, Math.min(100, Number(gauge.dataset.score)));
+        const angle = -90 + (score / 100) * 180;   // -90deg = far left, +90deg = far right
+        document.getElementById('needle').style.transform = `rotate(${angle}deg)`;
+      }
+    </script>
+    {% block scripts %}{% endblock %}
+  </body>
+</html>

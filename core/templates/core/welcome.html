@@ -1,0 +1,197 @@
+{% load static %} <!-- Traces static paths cleanly -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>BalancED Welcome</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="robots" content="index,follow">
+    <meta name="generator" content="GrapesJS Studio">
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+    
+    <!-- Link pointing to the external static styling sheet -->
+    <link rel="stylesheet" href="{% static 'welcome.css' %}">
+    <!-- Tabs, form errors and layout tweaks for log in / sign up -->
+    <link rel="stylesheet" href="{% static 'auth.css' %}">
+    
+    <style>
+      /* 🛠️ Defensive CSS to prevent the email from ever breaking out of the card layout boundary lines */
+      .contact-text-block {
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        word-break: break-all;
+        max-width: 100%;
+      }
+      .contact-link {
+        display: inline-block;
+        white-space: normal;
+      }
+    </style>
+  </head>
+  <body class="gjs-t-body font-body cls-pbibuw">
+    <main class="welcome-page" id="iouir">
+      <section class="main-card">
+        <div class="page-grid">
+          
+          <!-- BRAND CONTENT PANEL (LEFT SIDE) -->
+          <div class="brand-panel">
+            <div class="brand-content">
+              <div class="logo-group">
+                <div class="logo-image-wrap">
+                  <!-- 🖼️ INTEGRATED YOUR LOCAL IMAGE GRAPHIC EXTENSION HERE -->
+                  <img src="{% static 'images/BalancED_logo.jpg' %}" alt="BalancED logo" class="logo-image" onerror="this.src='https://iconify.design'"/>
+                </div>
+                <div class="brand-text">
+                  <span class="font-display brand-name">BalancED</span>
+                  <span class="brand-tagline">Academic wellbeing support</span>
+                </div>
+              </div>
+              <div class="purpose-block">
+                <h1 class="gjs-t-h1 font-display main-heading" id="iz0zf">A calmer way to understand student stress.</h1>
+                <p class="purpose-description">
+                  BalancED is designed to help predict academic stress levels in university students with care, clarity, and simplicity. The goal is to support early awareness and encourage healthier academic balance.
+                </p>
+              </div>
+              <div class="support-points">
+                <div class="support-item">
+                  <img src="https://api.iconify.design/lucide-heart-handshake.svg?color=%235f7fa6" alt="Care icon" class="support-icon"/>
+                  <p class="support-text">Supportive and student-centered communication.</p>
+                </div>
+                <div class="support-item">
+                  <img src="https://api.iconify.design/lucide-book-open-check.svg?color=%237fa391" alt="Study icon" class="support-icon"/>
+                  <p class="support-text">Focused on academic wellbeing in university life.</p>
+                </div>
+                <div class="support-item">
+                  <img src="https://api.iconify.design/lucide-shield-check.svg?color=%235f7fa6" alt="Trust icon" class="support-icon"/>
+                  <p class="support-text">Simple, organized, and easy to begin using.</p>
+                </div>
+              </div>
+            </div>
+            <div class="contact-section">
+              <h2 class="gjs-t-h2 font-display contact-heading">Contact</h2>
+              <div class="contact-card">
+                <div class="contact-item">
+                  <img src="https://api.iconify.design/lucide-mail.svg?color=%235f7fa6" alt="Email icon" class="contact-icon"/>
+                  <div class="contact-text-block">
+                    <span class="contact-label">Email</span>
+                    <a href="mailto:support@balanced.edu" class="gjs-t-link contact-link">support@balanced.edu</a>
+                  </div>
+                </div>
+                <div class="contact-item">
+                  <img src="https://api.iconify.design/lucide-phone.svg?color=%237fa391" alt="Phone icon" class="contact-icon"/>
+                  <div class="contact-text-block">
+                    <span class="contact-label">Phone</span>
+                    <a href="tel:+10000000000" class="gjs-t-link contact-link">+1 (000) 000-0000</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- INTERACTIVE PANEL (RIGHT SIDE): Log in / Sign up -->
+          <div class="interactive-panel">
+            <div class="welcome-card">
+              <div class="intro-copy">
+                <span class="section-eyebrow">Welcome</span>
+                <h2 class="font-display welcome-heading">Let’s make this feel personal.</h2>
+                <p class="welcome-description" id="auth-description"></p>
+              </div>
+
+              <div class="auth-tabs" role="tablist" aria-label="Account options">
+                <button type="button" role="tab" id="tab-login" class="auth-tab" aria-controls="panel-login">Log in</button>
+                <button type="button" role="tab" id="tab-signup" class="auth-tab" aria-controls="panel-signup">Sign up</button>
+              </div>
+
+              <!-- LOG IN -->
+              <form method="post" action="{% url 'login' %}" id="panel-login" role="tabpanel" aria-labelledby="tab-login" class="auth-form">
+                {% csrf_token %}
+                {% if login_form.non_field_errors %}
+                  <p class="auth-error" role="alert">{{ login_form.non_field_errors.0 }}</p>
+                {% endif %}
+                <div class="input-section">
+                  <label for="{{ login_form.username.id_for_label }}" class="name-label">Username</label>
+                  {{ login_form.username }}
+                  {% for e in login_form.username.errors %}<p class="auth-error">{{ e }}</p>{% endfor %}
+                </div>
+                <div class="input-section">
+                  <label for="{{ login_form.password.id_for_label }}" class="name-label">Password</label>
+                  {{ login_form.password }}
+                  {% for e in login_form.password.errors %}<p class="auth-error">{{ e }}</p>{% endfor %}
+                </div>
+                <button type="submit" class="gjs-t-button greeting-button">Log in</button>
+              </form>
+
+              <!-- SIGN UP -->
+              <form method="post" action="{% url 'signup' %}" id="panel-signup" role="tabpanel" aria-labelledby="tab-signup" class="auth-form" hidden>
+                {% csrf_token %}
+                <div class="input-section">
+                  <label for="{{ signup_form.name.id_for_label }}" class="name-label">Your name</label>
+                  {{ signup_form.name }}
+                  {% for e in signup_form.name.errors %}<p class="auth-error">{{ e }}</p>{% endfor %}
+                </div>
+                <div class="input-section">
+                  <label for="{{ signup_form.username.id_for_label }}" class="name-label">Username</label>
+                  {{ signup_form.username }}
+                  {% for e in signup_form.username.errors %}<p class="auth-error">{{ e }}</p>{% endfor %}
+                </div>
+                <div class="input-section">
+                  <label for="{{ signup_form.password.id_for_label }}" class="name-label">Password</label>
+                  {{ signup_form.password }}
+                  <div class="auth-hint" id="signup-password-hint">
+                    <p>Your password should:</p>
+                    <ul>
+                      <li>Be at least 8 characters long</li>
+                      <li>Not be a common password</li>
+                      <li>Not be only numbers</li>
+                      <li>Not be similar to your username</li>
+                    </ul>
+                  </div>
+                  {% for e in signup_form.password.errors %}<p class="auth-error">{{ e }}</p>{% endfor %}
+                </div>
+                <button type="submit" class="gjs-t-button greeting-button">Create account</button>
+              </form>
+
+              <div class="calm-note">
+                <img src="https://api.iconify.design/lucide-badge-info.svg?color=%237fa391" alt="Information icon" class="note-icon"/>
+                <p class="note-text">
+                  This space is meant to feel welcoming, gentle, and easy to use for every student.
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+    </main>
+
+    <script>
+      const descriptions = {
+        login: 'Log in to pick up where you left off.',
+        signup: 'Create an account to get started. It only takes a moment.'
+      };
+      const tabs = {
+        login:  { tab: document.getElementById('tab-login'),  panel: document.getElementById('panel-login') },
+        signup: { tab: document.getElementById('tab-signup'), panel: document.getElementById('panel-signup') }
+      };
+
+      function showTab(which, focusFirstField) {
+        for (const key in tabs) {
+          const active = key === which;
+          tabs[key].tab.classList.toggle('active', active);
+          tabs[key].tab.setAttribute('aria-selected', active ? 'true' : 'false');
+          tabs[key].panel.hidden = !active;
+        }
+        document.getElementById('auth-description').textContent = descriptions[which];
+        if (focusFirstField) tabs[which].panel.querySelector('input:not([type=hidden])').focus();
+      }
+
+      tabs.login.tab.addEventListener('click', () => showTab('login', true));
+      tabs.signup.tab.addEventListener('click', () => showTab('signup', true));
+
+      // The server tells us which tab to open (e.g. sign up errors re-open Sign up)
+      showTab('{{ active_tab }}', false);
+    </script>
+  </body>
+</html>

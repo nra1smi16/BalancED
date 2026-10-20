@@ -1,0 +1,33 @@
+{% extends 'core/app_base.html' %}
+
+{% block title %}{% if first_time %}Set up your profile{% else %}Your profile{% endif %} | BalancED{% endblock %}
+
+{% block content %}
+<section class="greeting">
+  {% if first_time %}
+    <h1 class="font-display greeting-title">Nice to meet you, {{ profile.name }}.</h1>
+    <p class="greeting-sub">Tell us a little about yourself so BalancED can understand your academic situation.</p>
+  {% else %}
+    <h1 class="font-display greeting-title">Your profile</h1>
+    <p class="greeting-sub">Keep your details up to date.</p>
+  {% endif %}
+</section>
+
+<form method="post" class="card form-card" novalidate>
+  {% csrf_token %}
+  {% if form.non_field_errors %}<p class="alert" role="alert">{{ form.non_field_errors.0 }}</p>{% endif %}
+
+  <h2 class="font-display card-title">About you</h2>
+  <div class="form-grid">
+    {% include 'core/_field.html' with field=form.name %}
+    {% include 'core/_field.html' with field=form.date_of_birth %}
+    {% include 'core/_field.html' with field=form.major %}
+    {% include 'core/_field.html' with field=form.year_of_enrollment %}
+    {% include 'core/_field.html' with field=form.gender %}
+  </div>
+
+  <div class="form-actions">
+    <button type="submit" class="btn">{% if first_time %}Save and continue{% else %}Save changes{% endif %}</button>
+  </div>
+</form>
+{% endblock %}

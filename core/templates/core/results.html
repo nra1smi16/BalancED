@@ -1,0 +1,38 @@
+{% extends 'core/app_base.html' %}
+
+{% block title %}Your results | BalancED{% endblock %}
+
+{% block content %}
+<section class="greeting">
+  <h1 class="font-display greeting-title">Your stress prediction result</h1>
+  <p class="greeting-sub">Completed {{ assessment.created_at|date:"F j, Y" }}</p>
+</section>
+
+<main class="results-grid">
+  <section class="card">
+    <h2 class="font-display card-title">Predicted stress level</h2>
+    {% include 'core/_gauge.html' %}
+    <p class="stress-level level-{{ stress_level|slugify }}">{{ stress_level }}</p>
+    <p class="stress-score">Score: {{ stress_score|floatformat:"-1" }} / 100</p>
+  </section>
+
+  <section class="card">
+    <h2 class="font-display card-title">What this means</h2>
+    <p class="meaning">{{ meaning }}</p>
+
+    <h2 class="font-display card-title section-gap">Recommendations</h2>
+    <ul class="tips">
+      {% for tip in recommendations %}<li>{{ tip }}</li>{% endfor %}
+    </ul>
+  </section>
+</main>
+
+<p class="disclaimer left">
+  BalancED is a support tool and does not provide a medical diagnosis. If you are struggling, please talk to someone you trust or a qualified professional.
+</p>
+
+<div class="form-actions">
+  <a href="{% url 'dashboard' %}" class="btn">Go to dashboard</a>
+  <a href="{% url 'assessment' %}" class="btn btn-ghost">Retake questionnaire</a>
+</div>
+{% endblock %}
