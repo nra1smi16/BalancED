@@ -52,3 +52,4 @@ html, body { overflow: auto; height: auto; }
 /* The sign up form is taller than the log in form, which stretched the left panel and pushed
    "Contact" to the bottom, leaving a big gap. Keep the left content together instead. */
 .brand-panel { justify-content: flex-start; gap: 1.25rem; }
+
