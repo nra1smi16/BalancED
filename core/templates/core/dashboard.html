@@ -59,7 +59,7 @@
         <!-- ENCOURAGING MESSAGE -->
         <section class="card note-card" aria-labelledby="note-heading">
           <h2 class="font-display card-title" id="note-heading">A note for today</h2>
-          <p class="font-display note-message" id="encouragement"></p>
+          <p class="font-display note-message">{{ daily_note }}</p>
         </section>
 
       </main>
@@ -71,19 +71,6 @@
       const today = new Date();
       document.getElementById('today-label').textContent =
         today.toLocaleDateString(undefined, { weekday: 'long', month: 'long', day: 'numeric' });
-
-      /* ---------- Encouraging message (changes each day) ---------- */
-      const messages = [
-        "Small steps still count. Do the next thing, not everything.",
-        "Rest is part of studying, not a break from it.",
-        "You don't have to feel ready to begin.",
-        "One hard week doesn't define your semester.",
-        "Asking for help is a skill. Use it early.",
-        "Progress today can be as small as opening your notes.",
-        "Your worth isn't measured by your workload."
-      ];
-      const dayIndex = Math.floor(Date.now() / 86400000) % messages.length;
-      document.getElementById('encouragement').textContent = messages[dayIndex];
 
       /* ---------- Calendar ---------- */
       const daysEl = document.getElementById('calendar-days');

@@ -443,3 +443,24 @@ textarea.field-input { resize: vertical; }
   background: #eff6ff;
   color: #334155;
 }
+
+/* =====================================================================
+   Messages, account section
+   ===================================================================== */
+.messages { margin-top: 1rem; }
+.message {
+  margin: 0 0 0.5rem;
+  padding: 0.65rem 0.9rem;
+  border-radius: 0.75rem;
+  border: 1px solid #cfe6d8;
+  background: #ecfdf5;
+  color: #2f5d44;
+}
+.message-error { border-color: #ecc7c7; background: #fbf1f1; color: #8a3f3f; }
+
+.account-card { margin-top: 1.25rem; }
+.subhead { margin: 0 0 0.75rem; font-size: 1rem; color: var(--ink); }
+.account-grid { align-items: start; gap: 1.5rem; }
+.hint { margin: 0 0 1rem; font-size: 0.78rem; line-height: 1.2rem; color: var(--muted); }
+.hint p { margin: 0; }
+.hint ul { margin: 0.15rem 0 0; padding-left: 1.1rem; }

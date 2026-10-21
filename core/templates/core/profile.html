@@ -33,6 +33,7 @@
     {% include 'core/_field.html' with field=form.year_of_enrollment %}
     {% include 'core/_field.html' with field=form.gender %}
     {% include 'core/_field.html' with field=form.courses_taken %}
+    {% include 'core/_field.html' with field=form.avg_daily_study_hours %}
   </div>
 
   <h2 class="font-display card-title section-gap">More details</h2>
@@ -46,6 +47,38 @@
     <button type="submit" class="btn">{% if first_time %}Save and continue{% else %}Save changes{% endif %}</button>
   </div>
 </form>
+
+<section class="card form-card account-card" id="account" aria-labelledby="account-heading">
+  <h2 class="font-display card-title" id="account-heading">Account</h2>
+  <p class="section-intro">Change your login details. You are signed in as <strong>{{ user.get_username }}</strong>.</p>
+
+  <div class="form-grid account-grid">
+    <form method="post" action="{% url 'change_username' %}">
+      {% csrf_token %}
+      <h3 class="subhead">Change username</h3>
+      {% include 'core/_field.html' with field=username_form.username %}
+      <button type="submit" class="btn btn-ghost">Update username</button>
+    </form>
+
+    <form method="post" action="{% url 'change_password' %}">
+      {% csrf_token %}
+      <h3 class="subhead">Change password</h3>
+      {% include 'core/_field.html' with field=password_form.old_password %}
+      {% include 'core/_field.html' with field=password_form.new_password1 %}
+      <div class="hint">
+        <p>Your new password should:</p>
+        <ul>
+          <li>Be at least 8 characters long</li>
+          <li>Not be a common password</li>
+          <li>Not be only numbers</li>
+          <li>Not be similar to your username</li>
+        </ul>
+      </div>
+      {% include 'core/_field.html' with field=password_form.new_password2 %}
+      <button type="submit" class="btn btn-ghost">Update password</button>
+    </form>
+  </div>
+</section>
 {% endblock %}
 
 {% block scripts %}

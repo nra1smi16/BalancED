@@ -2,7 +2,7 @@ from datetime import date
 
 from django import forms
 from django.contrib.auth import get_user_model
-from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth.forms import AuthenticationForm, PasswordChangeForm
 from django.contrib.auth.password_validation import validate_password
 from django.core.exceptions import ValidationError
 
@@ -74,7 +74,7 @@ class ProfileForm(forms.ModelForm):
     class Meta:
         model = StudentProfile
         fields = ['name', 'date_of_birth', 'major', 'year_of_enrollment', 'gender',
-                  'courses_taken', 'height_cm', 'weight_kg', 'chronic_illnesses']
+                  'courses_taken', 'avg_daily_study_hours', 'height_cm', 'weight_kg', 'chronic_illnesses']
         labels = {
             'name': 'Name',
             'date_of_birth': 'Date of birth',
@@ -82,6 +82,7 @@ class ProfileForm(forms.ModelForm):
             'year_of_enrollment': 'Year of enrollment',
             'gender': 'Gender',
             'courses_taken': 'Courses taken this semester',
+            'avg_daily_study_hours': 'Average daily study hours',
             'height_cm': 'Height (cm)',
             'weight_kg': 'Weight (kg)',
             'chronic_illnesses': 'Chronic illnesses',
@@ -97,7 +98,8 @@ class ProfileForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        for name in ('name', 'date_of_birth', 'major', 'year_of_enrollment', 'gender', 'courses_taken'):   # primary = must
+        for name in ('name', 'date_of_birth', 'major', 'year_of_enrollment', 'gender',
+                     'courses_taken', 'avg_daily_study_hours'):   # primary = must
             self.fields[name].required = True
         _style(self)
 
@@ -112,6 +114,45 @@ class ProfileForm(forms.ModelForm):
         if year and not (2000 <= year <= date.today().year):
             raise ValidationError(f'Please enter a year between 2000 and {date.today().year}.')
         return year
+
+
+# ------------------------------------------------------------------ account (profile page)
+
+class UsernameChangeForm(forms.Form):
+    username = forms.CharField(
+        max_length=150, label='New username', validators=[User.username_validator],
+        widget=forms.TextInput(attrs={'class': 'field-input', 'autocomplete': 'username'}))
+
+    def __init__(self, user, *args, **kwargs):
+        self.user = user
+        super().__init__(*args, **kwargs)
+
+    def clean_username(self):
+        username = self.cleaned_data['username']
+        if username == self.user.get_username():
+            raise ValidationError('That is already your username.')
+        if User.objects.filter(username__iexact=username).exclude(pk=self.user.pk).exists():
+            raise ValidationError('That username is already taken.')
+        return username
+
+    def save(self):
+        self.user.username = self.cleaned_data['username']
+        self.user.save(update_fields=['username'])
+        return self.user
+
+
+class StyledPasswordChangeForm(PasswordChangeForm):
+    """Django's own password change form (checks the current password and the same password rules as sign up)."""
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        labels = {'old_password': 'Current password', 'new_password1': 'New password',
+                  'new_password2': 'Confirm new password'}
+        for name, label in labels.items():
+            self.fields[name].label = label
+            self.fields[name].widget.attrs['class'] = 'field-input'
+        self.fields['old_password'].widget.attrs.pop('autofocus', None)   # do not grab focus on page load
+        self.fields['new_password1'].help_text = ''                        # the rules are listed in the template
 
 
 # ------------------------------------------------------------------ survey

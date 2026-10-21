@@ -1,12 +1,17 @@
-from django.contrib.auth import login, logout
+from django.contrib import messages
+from django.contrib.auth import login, logout, update_session_auth_hash
 from django.contrib.auth.decorators import login_required
 from django.forms.models import model_to_dict
 from django.shortcuts import redirect, render
 from django.urls import reverse
 from django.views.decorators.http import require_POST
 
-from .forms import AssessmentForm, LoginForm, ProfileForm, SignUpForm
+from .forms import (
+    AssessmentForm, LoginForm, ProfileForm, SignUpForm,
+    StyledPasswordChangeForm, UsernameChangeForm,
+)
 from .models import StudentProfile
+from .notes import daily_note
 
 
 def _get_profile(user):
@@ -73,6 +78,7 @@ def profile(request):
         form = ProfileForm(request.POST, instance=student)
         if form.is_valid():
             form.save()
+            messages.success(request, 'Your profile was saved.')
             return redirect('dashboard')
     elif request.GET.get('required') and first_time:
         # The student tried to open another page. Validate what is saved so far,
@@ -82,9 +88,44 @@ def profile(request):
     else:
         form = ProfileForm(instance=student)
 
+    return _render_profile(request, student, form=form, first_time=first_time, blocked=blocked)
+
+
+def _render_profile(request, student, *, form, first_time=None, blocked=False,
+                    username_form=None, password_form=None, status=200):
     return render(request, 'core/profile.html', {
-        'form': form, 'first_time': first_time, 'blocked': blocked, 'profile': student,
-    })
+        'form': form,
+        'first_time': (not student.is_complete) if first_time is None else first_time,
+        'blocked': blocked,
+        'profile': student,
+        'username_form': username_form or UsernameChangeForm(request.user, initial={'username': request.user.get_username()}),
+        'password_form': password_form or StyledPasswordChangeForm(request.user),
+    }, status=status)
+
+
+@login_required
+@require_POST
+def change_username(request):
+    student = _get_profile(request.user)
+    form = UsernameChangeForm(request.user, request.POST)
+    if form.is_valid():
+        form.save()
+        messages.success(request, 'Your username was changed.')
+        return redirect('profile')
+    return _render_profile(request, student, form=ProfileForm(instance=student), username_form=form, status=400)
+
+
+@login_required
+@require_POST
+def change_password(request):
+    student = _get_profile(request.user)
+    form = StyledPasswordChangeForm(request.user, request.POST)
+    if form.is_valid():
+        user = form.save()
+        update_session_auth_hash(request, user)       # keeps the student logged in after the change
+        messages.success(request, 'Your password was changed.')
+        return redirect('profile')
+    return _render_profile(request, student, form=ProfileForm(instance=student), password_form=form, status=400)
 
 
 # ------------------------------------------------------------------ dashboard
@@ -99,6 +140,7 @@ def dashboard(request):
     return render(request, 'core/dashboard.html', {
         'profile': student,
         'assessment': latest,
+        'daily_note': daily_note(latest.stress_level if latest else None),
     })
 
 
