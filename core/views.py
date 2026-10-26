@@ -1,3 +1,5 @@
+import logging
+
 from django.contrib import messages
 from django.contrib.auth import login, logout, update_session_auth_hash
 from django.contrib.auth.decorators import login_required
@@ -12,6 +14,9 @@ from .forms import (
 )
 from .models import StudentProfile
 from .notes import daily_note
+from .predictor import level_for_score, predict_stress
+
+logger = logging.getLogger(__name__)
 
 
 def _get_profile(user):
@@ -140,6 +145,8 @@ def dashboard(request):
     return render(request, 'core/dashboard.html', {
         'profile': student,
         'assessment': latest,
+        'stress_score': latest.stress_score if latest else None,
+        'stress_level': latest.stress_level if latest else None,
         'daily_note': daily_note(latest.stress_level if latest else None),
     })
 
@@ -156,6 +163,13 @@ def assessment(request):
     if request.method == 'POST' and form.is_valid():
         result = form.save(commit=False)
         result.user = request.user
-        result.save()          # stress_score / stress_level stay empty until the ML model is connected
+        try:
+            result.stress_score = predict_stress(student, result)
+            result.stress_level = level_for_score(result.stress_score)
+        except Exception:
+            # The answers are still saved. The reason is written to the server log.
+            logger.exception('Could not compute the stress prediction')
+            messages.warning(request, 'Your answers were saved, but the stress prediction is not available right now.')
+        result.save()
         return redirect('dashboard')
     return render(request, 'core/assessment.html', {'form': form, 'profile': student})

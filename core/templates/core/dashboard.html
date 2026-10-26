@@ -14,11 +14,17 @@
         <section class="card stress-card" aria-labelledby="stress-heading">
           <h2 class="font-display card-title" id="stress-heading">Your stress level</h2>
 
-          {% if assessment %}
+          {% if assessment and stress_score is not None %}
+            {% include 'core/_gauge.html' %}
+            <p class="stress-level level-{{ stress_level|slugify }}">{{ stress_level }}</p>
+            <p class="stress-score">Score: {{ stress_score|floatformat:"-1" }} / 100</p>
+            <p class="last-assessed">Last assessed {{ assessment.created_at|date:"M j, Y" }}</p>
+            <a href="{% url 'assessment' %}" class="btn btn-secondary">Retake questionnaire</a>
+          {% elif assessment %}
             <div class="empty-stress">
-              <p class="empty-title">Questionnaire completed</p>
+              <p class="empty-title">No prediction yet</p>
               <p class="empty-text">
-                Your answers from {{ assessment.created_at|date:"M j, Y" }} are saved. Your stress level prediction is coming soon.
+                Your answers from {{ assessment.created_at|date:"M j, Y" }} are saved, but they don't have a stress prediction. Retake the questionnaire to get one.
               </p>
               <a href="{% url 'assessment' %}" class="btn">Retake questionnaire</a>
             </div>

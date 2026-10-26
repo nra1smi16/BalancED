@@ -1,24 +1,57 @@
 """
-Prediction + recommendations.
+Turns a saved questionnaire into a stress score using the trained scikit-learn pipeline.
 
-predict_stress() is a PLACEHOLDER. In this dataset the stress index is an exact
-function of the 20 scale answers (B1-E2, with B4 and B6 reverse-scored), so this
-function reproduces it. When the scikit-learn model is ready, replace the body
-of predict_stress() with something like:
-
-    model = joblib.load(settings.BASE_DIR / 'model.pkl')
-    return float(model.predict([[getattr(assessment, f) for f in LIKERT_FIELDS]])[0])
+The model file is NOT in GitHub (it must be trained with the scikit-learn version installed on the
+machine that uses it). Create it once per machine with:
+    python core/ml/train_model.py
 """
-from .survey import LIKERT_FIELDS, REVERSE_KEYED
+from pathlib import Path
+
+from .survey import LIKERT_FIELDS
+
+MODEL_PATH = Path(__file__).resolve().parent / 'ml' / 'student_stress_model.joblib'
+_model = None
 
 
-def predict_stress(assessment):
-    total = 0
+def _load_model():
+    global _model
+    if _model is None:
+        import joblib
+        _model = joblib.load(MODEL_PATH)
+    return _model
+
+
+def _dataset_name(field):
+    """'b1_pressure_high_grades' -> 'B1_Pressure_High_Grades' (the dataset's column name)."""
+    return '_'.join(part.capitalize() for part in field.split('_'))
+
+
+def build_row(profile, assessment):
+    """The values the model is given, named exactly like the training columns."""
+    row = {
+        'Age': profile.age,
+        'Gender': profile.gender,
+        'Field_of_Study': profile.major,
+        'Avg_Daily_Study_Hours': profile.avg_daily_study_hours,
+    }
     for field in LIKERT_FIELDS:
-        value = getattr(assessment, field)
-        total += (6 - value) if field in REVERSE_KEYED else value
-    n = len(LIKERT_FIELDS)
-    return round((total - n) / (4 * n) * 100, 1)
+        row[_dataset_name(field)] = getattr(assessment, field)
+    return row
+
+
+def predict_stress(profile, assessment):
+    """Predicted stress index, 0-100 (rounded to 1 decimal)."""
+    import pandas as pd
+
+    model = _load_model()
+    row = build_row(profile, assessment)
+    expected = list(model.feature_names_in_)
+    missing = [column for column in expected if column not in row]
+    if missing:
+        raise ValueError(f'The model needs columns the website does not collect: {missing}')
+
+    score = float(model.predict(pd.DataFrame([row])[expected])[0])
+    return round(min(100.0, max(0.0, score)), 1)
 
 
 def level_for_score(score):
@@ -29,55 +62,3 @@ def level_for_score(score):
     if score < 75:
         return 'Moderate'
     return 'High Risk'
-
-
-MEANINGS = {
-    'Normal': 'Your answers suggest a low level of academic stress right now. Keep doing what works for you.',
-    'Mild': 'Your answers suggest some stress, but it looks manageable. Small adjustments can help it stay that way.',
-    'Moderate': 'Your answers suggest a noticeable level of stress. It is a good time to adjust your routine and workload.',
-    'High Risk': 'Your answers suggest a high level of stress. It is important to take action and look after your well-being.',
-}
-
-GENERAL = {
-    'Normal': [
-        'Keep the routines that are working for you.',
-        'Check in with yourself before busy exam periods.',
-    ],
-    'Mild': [
-        'Plan your study week so deadlines do not pile up.',
-        'Take short, regular breaks while studying.',
-    ],
-    'Moderate': [
-        'Manage your time with a weekly plan and realistic daily goals.',
-        'Take regular breaks and protect your sleep.',
-        'Talk to a friend, family member, or academic advisor about your workload.',
-    ],
-    'High Risk': [
-        'Manage your time and cut back on what you can postpone.',
-        'Take regular breaks and get enough sleep.',
-        'Talk to someone you trust about how you are feeling.',
-        'Seek professional help if needed, such as a counselor.',
-    ],
-}
-
-# (condition, tip) - shown when the student's own answers point to it
-TAILORED = [
-    (lambda a: a.b4_sufficient_sleep <= 2 or a.d3_sleep_trouble >= 4,
-     'Sleep: try a fixed bedtime and keep screens out of the last hour of your evening.'),
-    (lambda a: a.b6_physical_activity <= 2,
-     'Movement: even a 15-minute walk most days can ease stress.'),
-    (lambda a: a.b5_procrastination >= 4,
-     'Procrastination: break tasks into small steps and start with 10 minutes.'),
-    (lambda a: a.b7_excessive_social_media >= 4,
-     'Screen time: set limits on social media during study sessions.'),
-    (lambda a: a.b3_balance_difficult >= 4,
-     'Balance: schedule free time in your week the same way you schedule classes.'),
-    (lambda a: a.d4_isolation >= 4 or a.c6_hopelessness_sadness >= 4,
-     'Connection: reach out to someone you trust, or to a counselor, rather than carrying this alone.'),
-]
-
-
-def recommendations_for(assessment, level):
-    tips = list(GENERAL[level])
-    tips += [text for condition, text in TAILORED if condition(assessment)]
-    return tips

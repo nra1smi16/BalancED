@@ -457,6 +457,7 @@ textarea.field-input { resize: vertical; }
   color: #2f5d44;
 }
 .message-error { border-color: #ecc7c7; background: #fbf1f1; color: #8a3f3f; }
+.message-warning { border-color: #ecdcae; background: #fdf8e8; color: #7a6320; }
 
 .account-card { margin-top: 1.25rem; }
 .subhead { margin: 0 0 0.75rem; font-size: 1rem; color: var(--ink); }
