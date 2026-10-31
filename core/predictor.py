@@ -2,8 +2,7 @@
 Turns a saved questionnaire into a stress score using the trained scikit-learn pipeline.
 
 The model file is NOT in GitHub (it must be trained with the scikit-learn version installed on the
-machine that uses it). Create it once per machine with:
-    python core/ml/train_model.py
+machine that uses it).
 """
 from pathlib import Path
 
