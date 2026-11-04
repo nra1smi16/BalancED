@@ -33,6 +33,23 @@
     </section>
   {% endfor %}
 
+  <section class="consent-box" aria-labelledby="ai-recheck-heading">
+    <h2 class="subhead" id="ai-recheck-heading">AI-written note</h2>
+    <p>
+      If you tick this box, your questionnaire answers, your stress level, and a few profile details (age, gender, major,
+      study hours, and whether you listed a chronic illness, never your name or what the illness is) are sent to an outside
+      AI service to write your Note of the Day. It is off unless you tick it. You can change it any time, and the full
+      details are in your <a href="{% url 'profile' %}#ai-note">profile</a>.
+    </p>
+    {% if not ai_available %}
+      <p class="notice">AI-written notes are not switched on for this site at the moment, so you will see a standard note. Your choice is still saved.</p>
+    {% endif %}
+    <label class="consent-check" for="{{ form.use_ai.id_for_label }}">
+      {{ form.use_ai }}
+      <span>{{ form.use_ai.label }}</span>
+    </label>
+  </section>
+
   <div class="form-actions">
     <button type="submit" class="btn">Submit</button>
   </div>

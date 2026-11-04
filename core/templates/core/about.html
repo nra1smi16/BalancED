@@ -1,0 +1,94 @@
+{% extends 'core/app_base.html' %}
+{% load static %}
+
+{% block title %}About the project | BalancED{% endblock %}
+
+{% block content %}
+<section class="about-hero">
+  <img src="{% static 'images/uaeu_cit_logo.jpg' %}" alt="United Arab Emirates University, College of Information Technology" class="about-logo"/>
+  <h1 class="font-display greeting-title" style="margin-top: 1.25rem;">About BalancED</h1>
+  <p class="greeting-sub">A machine learning-based system for predicting academic stress levels in university students.</p>
+</section>
+
+<section class="card about-card" aria-labelledby="overview-heading">
+  <h2 class="font-display card-title" id="overview-heading">Project overview</h2>
+  <p>
+    BalancED is a web application that helps university students understand their academic stress.
+    Students answer a short questionnaire about their workload and how they feel, and a machine learning model
+    estimates their stress level as Normal, Mild, Moderate, or High Risk. The dashboard then offers a short note for
+    the day with a small activity that suits that level, and shows how to reach the university's counseling service.
+  </p>
+  <p>BalancED supports early awareness. It is not a medical diagnosis and does not replace professional advice.</p>
+</section>
+
+<section class="card about-card" aria-labelledby="motivation-heading">
+  <h2 class="font-display card-title" id="motivation-heading">Motivation</h2>
+  <p>
+    University students often face pressure from heavy course loads, tight schedules, and overlapping exams, and many
+    do not have a simple way to see how their workload affects them.
+    Digital wellbeing apps such as Headspace, Calm, Woebot, and MindDoc are mostly designed for the general public
+    (Calm, n.d.; Headspace, n.d.; MindDoc, n.d.; Woebot Health, n.d.), so they rarely look at academic factors like
+    study time or course load. BalancED focuses on university students and combines academic information with
+    questionnaire answers.
+  </p>
+  <p>
+    In the UAE, official sources recognize mental health as an important part of overall wellbeing and describe
+    efforts to address it and reduce stigma (UAE Government, 2024). The team also sees this project as supporting the
+    UAE Vision 2031 focus on wellbeing and on using technology to support society.
+  </p>
+</section>
+
+<section class="card about-card" aria-labelledby="how-heading">
+  <h2 class="font-display card-title" id="how-heading">How it works</h2>
+  <ol class="about-steps">
+    <li><strong>Create an account and complete your profile.</strong> Name, date of birth, major, year of enrollment, gender, courses taken, and average daily study hours. Height, weight, and chronic illnesses are optional.</li>
+    <li><strong>Answer the questionnaire.</strong> Short statements about workload, concentration, worry, and physical symptoms, each rated from 1 to 5. Every answer starts on the middle option.</li>
+    <li><strong>Get your stress level.</strong> A Random Forest model, built with scikit-learn and trained on a student survey dataset, estimates a score from 0 to 100, which is shown as one of four levels.</li>
+    <li><strong>Use your dashboard.</strong> See your level on the gauge, read a note of the day with a routine activity for your level, and find the counseling service's contact details.</li>
+  </ol>
+</section>
+
+<section class="card about-card" aria-labelledby="privacy-heading">
+  <h2 class="font-display card-title" id="privacy-heading">Privacy and limits</h2>
+  <p>
+    Your results are an estimate from a model trained on survey data, so they may not fit every student.
+    If you are struggling, please talk to someone you trust or to the counseling service.
+  </p>
+  <p>
+    Account details are stored in the application's database, and passwords are stored in scrambled (hashed) form, never as plain text.
+    AI-written notes are optional and off by default. A student can turn them on or off in their profile, and any note written by AI is labeled as AI-generated.
+  </p>
+</section>
+
+<section class="card about-card" aria-labelledby="team-heading">
+  <h2 class="font-display card-title" id="team-heading">The team</h2>
+  <p>Senior Graduation Project (Project ID 23), College of Information Technology, United Arab Emirates University.</p>
+  <ul class="about-team">
+    <li>Meera Ataya <span>Information Security</span></li>
+    <li>Fatima Al Souden <span>Computer Science</span></li>
+    <li>Noura Semaihi <span>Computer Science</span></li>
+  </ul>
+  <p style="margin-top: 0.75rem;">Project advisor: Dr. Mamoun Awad</p>
+</section>
+
+<section class="card about-card" aria-labelledby="refs-heading">
+  <h2 class="font-display card-title" id="refs-heading">References</h2>
+  <ul class="about-refs">
+    <li>UAE Government. (2024). <em>Mental health in the UAE</em>. <a href="https://u.ae/en/information-and-services/health-and-fitness/mental-health">https://u.ae/en/information-and-services/health-and-fitness/mental-health</a></li>
+    <li>Breiman, L. (2001). Random forests. <em>Machine Learning, 45</em>(1), 5&ndash;32.</li>
+    <li>Pedregosa, F., et al. (2011). Scikit-learn: Machine learning in Python. <em>Journal of Machine Learning Research, 12</em>, 2825&ndash;2830.</li>
+    <li>Calm. (n.d.). <em>Calm</em>. <a href="https://www.calm.com">https://www.calm.com</a></li>
+    <li>Headspace. (n.d.). <em>Headspace</em>. <a href="https://www.headspace.com">https://www.headspace.com</a></li>
+    <li>MindDoc. (n.d.). <em>MindDoc</em>. <a href="https://minddoc.com/us/en">https://minddoc.com/us/en</a></li>
+    <li>Woebot Health. (n.d.). <em>Woebot Health</em>. <a href="https://woebothealth.com">https://woebothealth.com</a></li>
+  </ul>
+</section>
+
+<div class="form-actions" style="margin-top: 1.25rem;">
+  {% if user.is_authenticated %}
+    <a href="{% url 'dashboard' %}" class="btn">Back to dashboard</a>
+  {% else %}
+    <a href="{% url 'welcome' %}" class="btn">Log in or sign up</a>
+  {% endif %}
+</div>
+{% endblock %}

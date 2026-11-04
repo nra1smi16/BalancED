@@ -73,13 +73,15 @@ body {
   grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
   grid-template-areas:
     "stress calendar"
-    "note   calendar";
+    "note   calendar"
+    "support support";
   gap: 1.25rem;
   align-items: start;
 }
 .stress-card   { grid-area: stress; }
 .calendar-card { grid-area: calendar; }
 .note-card     { grid-area: note; }
+.support-card  { grid-area: support; }
 
 .card {
   background: var(--card);
@@ -242,7 +244,8 @@ body {
     grid-template-areas:
       "stress"
       "calendar"
-      "note";
+      "note"
+      "support";
   }
   .greeting-title { font-size: 1.6rem; }
 }
@@ -465,3 +468,68 @@ textarea.field-input { resize: vertical; }
 .hint { margin: 0 0 1rem; font-size: 0.78rem; line-height: 1.2rem; color: var(--muted); }
 .hint p { margin: 0; }
 .hint ul { margin: 0.15rem 0 0; padding-left: 1.1rem; }
+
+/* =====================================================================
+   AI advice (dashboard)
+   ===================================================================== */
+.ai-advice { margin-top: 1.25rem; padding-top: 1rem; border-top: 1px solid var(--line); }
+.ai-label { margin: 0 0 0.35rem; font-weight: 600; color: var(--ink); }
+.ai-tag {
+  margin-left: 0.4rem;
+  padding: 0.1rem 0.5rem;
+  border-radius: 999px;
+  background: #eff6ff;
+  color: var(--primary-dark);
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+.ai-text { margin: 0 0 0.5rem; color: var(--ink); }
+.ai-meta { margin: 0 0 0.25rem; font-size: 0.78rem; color: var(--muted); }
+
+/* =====================================================================
+   Counseling support card (dashboard)
+   ===================================================================== */
+.support-intro { margin: 0 0 1rem; color: var(--ink); }
+.support-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+.support-head { margin: 0 0 0.4rem; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); }
+.support-list { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 0.35rem; }
+.support-list a { color: var(--primary-dark); text-decoration: none; overflow-wrap: anywhere; }
+.support-list a:hover { text-decoration: underline; }
+.support-label { display: block; font-size: 0.78rem; color: var(--muted); }
+.support-note { margin: 1rem 0 0; font-size: 0.8rem; color: var(--muted); }
+.support-note a { color: var(--primary-dark); }
+.support-card--emphasis { border-color: #d8c9a0; background-image: linear-gradient(to bottom right, #ffffff, #fdf8e8); }
+@media (max-width: 860px) { .support-grid { grid-template-columns: minmax(0, 1fr); } }
+
+/* =====================================================================
+   About page
+   ===================================================================== */
+.about-hero { padding: 1.5rem 0 0.5rem; }
+.about-logo { display: block; width: 100%; max-width: 36rem; height: auto; border-radius: 0.75rem; }
+.about-card { max-width: 52rem; margin-top: 1.25rem; }
+.about-card p { margin: 0 0 0.75rem; color: var(--ink); line-height: 1.6; }
+.about-card p:last-child { margin-bottom: 0; }
+.about-steps { margin: 0; padding-left: 1.2rem; display: flex; flex-direction: column; gap: 0.5rem; color: var(--ink); }
+.about-team { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 0.4rem; color: var(--ink); }
+.about-team span { color: var(--muted); }
+.about-refs { margin: 0; padding-left: 1.2rem; font-size: 0.85rem; color: var(--muted); display: flex; flex-direction: column; gap: 0.4rem; }
+.about-refs a { color: var(--primary-dark); overflow-wrap: anywhere; }
+
+/* =====================================================================
+   AI opt-in (profile page)
+   ===================================================================== */
+.consent-box {
+  margin-top: 0.25rem;
+  padding: 1rem 1.1rem;
+  border: 1px solid #d8e6f2;
+  border-radius: 0.9rem;
+  background: #f8fafc;
+}
+.consent-box p { margin: 0 0 0.6rem; color: var(--ink); }
+.consent-box ul { margin: 0 0 0.6rem; padding-left: 1.2rem; color: var(--ink); }
+.consent-check { display: flex; align-items: center; gap: 0.6rem; margin-top: 0.9rem; font-weight: 600; color: var(--ink); cursor: pointer; }
+.consent-check input { width: 1.15rem; height: 1.15rem; accent-color: var(--primary); cursor: pointer; }

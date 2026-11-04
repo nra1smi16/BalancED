@@ -15,7 +15,7 @@ User = get_user_model()
 def _style(form):
     """Give every normal input the shared CSS class (radios are styled separately)."""
     for field in form.fields.values():
-        if not isinstance(field.widget, forms.RadioSelect):
+        if not isinstance(field.widget, (forms.RadioSelect, forms.CheckboxInput)):
             field.widget.attrs.setdefault('class', 'field-input')
 
 
@@ -74,7 +74,8 @@ class ProfileForm(forms.ModelForm):
     class Meta:
         model = StudentProfile
         fields = ['name', 'date_of_birth', 'major', 'year_of_enrollment', 'gender',
-                  'courses_taken', 'avg_daily_study_hours', 'height_cm', 'weight_kg', 'chronic_illnesses']
+                  'courses_taken', 'avg_daily_study_hours', 'height_cm', 'weight_kg', 'chronic_illnesses',
+                  'ai_opt_in']
         labels = {
             'name': 'Name',
             'date_of_birth': 'Date of birth',
@@ -86,6 +87,7 @@ class ProfileForm(forms.ModelForm):
             'height_cm': 'Height (cm)',
             'weight_kg': 'Weight (kg)',
             'chronic_illnesses': 'Chronic illnesses',
+            'ai_opt_in': 'Use AI to write my Note of the Day',
         }
         widgets = {
             'date_of_birth': forms.DateInput(attrs={'type': 'date'}, format='%Y-%m-%d'),
@@ -158,6 +160,10 @@ class StyledPasswordChangeForm(PasswordChangeForm):
 # ------------------------------------------------------------------ survey
 
 class AssessmentForm(forms.ModelForm):
+    # Not a database column of the answers: it is the same setting as the profile's AI choice,
+    # shown again right before the answers are sent (the view keeps the two in step).
+    use_ai = forms.BooleanField(required=False, label='Use AI to write my Note of the Day')
+
     class Meta:
         model = Assessment
         # the survey fields must be listed here so ModelForm.save() stores them

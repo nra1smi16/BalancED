@@ -17,10 +17,11 @@
     <div class="dash">
 
       <header class="topbar">
-        <a href="{% url 'dashboard' %}" class="topbar-brand">
+        <a href="{% if user.is_authenticated %}{% url 'dashboard' %}{% else %}{% url 'welcome' %}{% endif %}" class="topbar-brand">
           <img src="{% static 'images/BalancED_logo.jpg' %}" alt="BalancED logo" class="topbar-logo"/>
           <span class="font-display topbar-name">BalancED</span>
         </a>
+        {% if user.is_authenticated %}
         <div class="menu">
           <button type="button" id="menu-button" class="menu-button" aria-haspopup="true" aria-expanded="false" aria-controls="menu-panel">
             <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg><span>Menu</span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
@@ -35,12 +36,18 @@
             <a href="{% url 'profile' %}" class="menu-item" {% if request.resolver_match.url_name == 'profile' %}aria-current="page"{% endif %}>
               <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg><span>Profile</span>
             </a>
+            <a href="{% url 'about' %}" class="menu-item" {% if request.resolver_match.url_name == 'about' %}aria-current="page"{% endif %}>
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg><span>About the project</span>
+            </a>
             <form method="post" action="{% url 'logout' %}" class="menu-sep">
               {% csrf_token %}
               <button type="submit" class="menu-item"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" x2="9" y1="12" y2="12"/></svg><span>Log out</span></button>
             </form>
           </div>
         </div>
+        {% else %}
+        <a href="{% url 'welcome' %}" class="btn btn-ghost">Log in or sign up</a>
+        {% endif %}
       </header>
 
       {% if messages %}
@@ -63,18 +70,20 @@
     </script>
 
     <script>
-      /* Dropdown menu */
+      /* Dropdown menu (only shown to logged-in students) */
       const menuButton = document.getElementById('menu-button');
       const menuPanel = document.getElementById('menu-panel');
-      function setMenu(open) {
-        menuPanel.hidden = !open;
-        menuButton.setAttribute('aria-expanded', open ? 'true' : 'false');
+      if (menuButton && menuPanel) {
+        const setMenu = (open) => {
+          menuPanel.hidden = !open;
+          menuButton.setAttribute('aria-expanded', open ? 'true' : 'false');
+        };
+        menuButton.addEventListener('click', (e) => { e.stopPropagation(); setMenu(menuPanel.hidden); });
+        document.addEventListener('click', (e) => { if (!menuPanel.contains(e.target)) setMenu(false); });
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape' && !menuPanel.hidden) { setMenu(false); menuButton.focus(); }
+        });
       }
-      menuButton.addEventListener('click', (e) => { e.stopPropagation(); setMenu(menuPanel.hidden); });
-      document.addEventListener('click', (e) => { if (!menuPanel.contains(e.target)) setMenu(false); });
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && !menuPanel.hidden) { setMenu(false); menuButton.focus(); }
-      });
     </script>
     {% block scripts %}{% endblock %}
   </body>

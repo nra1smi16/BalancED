@@ -1,20 +1,25 @@
 import logging
+from datetime import date
 
 from django.contrib import messages
 from django.contrib.auth import login, logout, update_session_auth_hash
 from django.contrib.auth.decorators import login_required
 from django.forms.models import model_to_dict
+from django.http import JsonResponse
 from django.shortcuts import redirect, render
 from django.urls import reverse
+from django.utils import timezone
 from django.views.decorators.http import require_POST
 
 from .forms import (
     AssessmentForm, LoginForm, ProfileForm, SignUpForm,
     StyledPasswordChangeForm, UsernameChangeForm,
 )
-from .models import StudentProfile
+from .models import ExamDate, StudentProfile
+from .ai import allowed_for as ai_allowed_for, ask_ai, is_enabled as ai_is_enabled
 from .notes import daily_note
 from .predictor import level_for_score, predict_stress
+from .support import COUNSELING
 
 logger = logging.getLogger(__name__)
 
@@ -22,6 +27,19 @@ logger = logging.getLogger(__name__)
 def _get_profile(user):
     profile, _ = StudentProfile.objects.get_or_create(user=user, defaults={'name': user.get_username()})
     return profile
+
+
+def _sync_ai_choice(user, profile, was_on):
+    """
+    Keeps ai_opt_in_at and the saved AI notes in step with the AI choice.
+    The profile object must already hold the new value; the caller saves it.
+    """
+    if profile.ai_opt_in and not was_on:
+        profile.ai_opt_in_at = timezone.now()           # record when they agreed
+    elif not profile.ai_opt_in:
+        profile.ai_opt_in_at = None
+        if was_on:                                       # turning it off removes the notes the AI wrote
+            user.assessments.update(ai_advice='')
 
 
 def _profile_required():
@@ -71,6 +89,12 @@ def logout_view(request):
     return redirect('welcome')
 
 
+# ------------------------------------------------------------------ about page (open to everyone)
+
+def about(request):
+    return render(request, 'core/about.html')
+
+
 # ------------------------------------------------------------------ primary attributes
 
 @login_required
@@ -78,11 +102,14 @@ def profile(request):
     student = _get_profile(request.user)
     first_time = not student.is_complete
     blocked = False
+    was_opted_in = student.ai_opt_in          # read before the form changes the object
 
     if request.method == 'POST':
         form = ProfileForm(request.POST, instance=student)
         if form.is_valid():
-            form.save()
+            saved = form.save(commit=False)
+            _sync_ai_choice(request.user, saved, was_opted_in)
+            saved.save()
             messages.success(request, 'Your profile was saved.')
             return redirect('dashboard')
     elif request.GET.get('required') and first_time:
@@ -103,6 +130,7 @@ def _render_profile(request, student, *, form, first_time=None, blocked=False,
         'first_time': (not student.is_complete) if first_time is None else first_time,
         'blocked': blocked,
         'profile': student,
+        'ai_available': ai_is_enabled(),
         'username_form': username_form or UsernameChangeForm(request.user, initial={'username': request.user.get_username()}),
         'password_form': password_form or StyledPasswordChangeForm(request.user),
     }, status=status)
@@ -147,8 +175,30 @@ def dashboard(request):
         'assessment': latest,
         'stress_score': latest.stress_score if latest else None,
         'stress_level': latest.stress_level if latest else None,
-        'daily_note': daily_note(latest.stress_level if latest else None),
+        'daily_note': daily_note(latest.stress_level if latest else None, latest,
+                                 gentle=student.has_chronic_condition),
+        'exam_days': [day.isoformat() for day in request.user.exam_dates.values_list('date', flat=True)],
+        # the AI note is shown only to students who have it switched on
+        'ai_note': latest.ai_advice if (latest and student.ai_opt_in) else '',
+        'counseling': COUNSELING,
     })
+
+
+@login_required
+@require_POST
+def toggle_exam(request):
+    """Marks a calendar day as an exam day, or removes the mark if it was already there."""
+    try:
+        day = date.fromisoformat(request.POST.get('date', ''))
+    except ValueError:
+        return JsonResponse({'ok': False, 'error': 'Invalid date'}, status=400)
+    if not (date(2000, 1, 1) <= day <= date(2100, 12, 31)):
+        return JsonResponse({'ok': False, 'error': 'Date out of range'}, status=400)
+
+    mark, created = ExamDate.objects.get_or_create(user=request.user, date=day)
+    if not created:
+        mark.delete()
+    return JsonResponse({'ok': True, 'marked': created, 'date': day.isoformat()})
 
 
 # ------------------------------------------------------------------ questionnaire
@@ -159,8 +209,22 @@ def assessment(request):
     if not student.is_complete:
         return _profile_required()
 
-    form = AssessmentForm(request.POST or None)
+    form = AssessmentForm(request.POST or None, initial={'use_ai': student.ai_opt_in})
     if request.method == 'POST' and form.is_valid():
+        # The tick box on this page is the same setting as in the profile, shown again right before sending.
+        use_ai = form.cleaned_data['use_ai']
+        if use_ai != student.ai_opt_in:
+            was_on = student.ai_opt_in
+            student.ai_opt_in = use_ai
+            _sync_ai_choice(request.user, student, was_on)
+            student.save(update_fields=['ai_opt_in', 'ai_opt_in_at'])
+            if not use_ai:
+                messages.info(request, 'AI-written notes are now off, and the notes the AI wrote were removed.')
+            elif ai_is_enabled():
+                messages.info(request, 'AI-written notes are now on.')
+            else:
+                messages.info(request, 'AI-written notes are on, but they are not switched on for this site at the moment.')
+
         result = form.save(commit=False)
         result.user = request.user
         try:
@@ -170,6 +234,11 @@ def assessment(request):
             # The answers are still saved. The reason is written to the server log.
             logger.exception('Could not compute the stress prediction')
             messages.warning(request, 'Your answers were saved, but the stress prediction is not available right now.')
+        if ai_is_enabled() and ai_allowed_for(student) and result.stress_level:
+            try:
+                result.ai_advice = ask_ai(student, result)      # the AI writes the Note of the Day
+            except Exception:
+                logger.exception('The AI request failed')       # the hand-written note is shown instead
         result.save()
         return redirect('dashboard')
-    return render(request, 'core/assessment.html', {'form': form, 'profile': student})
+    return render(request, 'core/assessment.html', {'form': form, 'profile': student, 'ai_available': ai_is_enabled()})

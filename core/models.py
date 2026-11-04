@@ -7,6 +7,15 @@ from django.db import models
 from .survey import GENDER_CHOICES, MAJOR_CHOICES, STUDY_HOURS_CHOICES
 
 
+# What students write when they have nothing to list (so it does not count as a chronic illness)
+NO_CONDITION_WORDS = {'', 'none', 'no', 'n/a', 'na', 'nil', 'nothing', '-', '--', 'لا', 'لا يوجد', 'لايوجد'}
+
+
+def age_from(dob, today=None):
+    today = today or date.today()
+    return today.year - dob.year - ((today.month, today.day) < (dob.month, dob.day))
+
+
 class StudentProfile(models.Model):
     """Everything about the student that is NOT a survey answer. The student can edit it any time on the profile page."""
     user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='profile')
@@ -32,6 +41,10 @@ class StudentProfile(models.Model):
     weight_kg = models.FloatField(null=True, blank=True, validators=[MinValueValidator(25), MaxValueValidator(300)])
     chronic_illnesses = models.TextField(blank=True)
 
+    # Consent for the AI-written Note of the Day. Off by default; the student turns it on in the profile.
+    ai_opt_in = models.BooleanField(default=False)
+    ai_opt_in_at = models.DateTimeField(null=True, blank=True)     # when they agreed (empty when it is off)
+
     created_at = models.DateTimeField(auto_now_add=True)
 
     @property
@@ -43,9 +56,13 @@ class StudentProfile(models.Model):
     def age(self):
         if not self.date_of_birth:
             return None
-        today = date.today()
-        dob = self.date_of_birth
-        return today.year - dob.year - ((today.month, today.day) < (dob.month, dob.day))
+        return age_from(self.date_of_birth)
+
+    @property
+    def has_chronic_condition(self):
+        """True when the student listed something under chronic illnesses (only whether, never what)."""
+        text = (self.chronic_illnesses or '').strip().strip('.!').strip().lower()
+        return text not in NO_CONDITION_WORDS
 
     @property
     def years_enrolled(self):
@@ -87,8 +104,26 @@ class Assessment(models.Model):
     stress_score = models.FloatField(null=True, blank=True)   # 0-100
     stress_level = models.CharField(max_length=20, blank=True)
 
+    # The Note of the Day written by the AI (filled only when an API key is set up; see ai.py).
+    # Empty means the hand-written note from notes.py is shown instead.
+    ai_advice = models.TextField(blank=True)
+
     class Meta:
         ordering = ['-created_at']
 
     def __str__(self):
         return f'{self.user.get_username()} - {self.created_at:%Y-%m-%d %H:%M} - {self.stress_level or "n/a"}'
+
+
+class ExamDate(models.Model):
+    """A day the student marked as an exam day on the dashboard calendar."""
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='exam_dates')
+    date = models.DateField()
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ['date']
+        constraints = [models.UniqueConstraint(fields=['user', 'date'], name='one_exam_mark_per_user_and_day')]
+
+    def __str__(self):
+        return f'{self.user.get_username()} - exam on {self.date}'

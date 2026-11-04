@@ -1,16 +1,16 @@
 """
-Train the stress model on the reduced student-stress dataset and save it next to this file.
+Trains the model the WEBSITE uses and saves it as ml/student_stress_model.joblib.
 
-Based on the team's script (train_student_stress_reduced.py): same Random Forest, same preprocessing,
-same train/test split. Only the input columns changed so they match what the website collects:
+Based on the team's script (teammate_training/train_student_stress_reduced.py): same Random Forest, same
+preprocessing, same train/test split. Only the input columns changed so they match what the website collects:
   - E2_Overall_Stress is not used (leakage precaution, same as the team's script)
   - Academic_Level and Institution_Type are not used (the website does not ask for them,
     and in testing they did not improve accuracy)
 
-Run it once on every machine that runs the website (laptop, PythonAnywhere):
-    python core/ml/train_model.py
-The model has to be trained with the scikit-learn version installed on THAT machine,
-which is why the .joblib file is not shared through GitHub.
+Run it once on every machine that runs the website (laptop, PythonAnywhere), from the project folder:
+    python ml/train_model.py
+The model must be trained with the scikit-learn version installed on THAT machine, which is why the
+website's .joblib file is not shared through GitHub (it is listed in .gitignore).
 """
 from pathlib import Path
 
@@ -27,7 +27,7 @@ from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import OneHotEncoder
 
 HERE = Path(__file__).resolve().parent
-DATA_PATH = HERE / 'students_stress_dataset_reduced_15.csv'
+DATA_PATH = HERE / 'data' / 'students_stress_dataset_reduced_15.csv'
 MODEL_PATH = HERE / 'student_stress_model.joblib'
 TARGET = 'Perceived_Stress_Index_0_100'
 DROP_FROM_INPUT = ['Resp_ID', 'E2_Overall_Stress', 'Academic_Level', 'Institution_Type']

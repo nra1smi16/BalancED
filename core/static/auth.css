@@ -53,3 +53,12 @@ html, body { overflow: auto; height: auto; }
    "Contact" to the bottom, leaving a big gap. Keep the left content together instead. */
 .brand-panel { justify-content: flex-start; gap: 1.25rem; }
 
+.about-link {
+  display: block;
+  text-align: center;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #5f7fa6;
+  text-decoration: none;
+}
+.about-link:hover { color: #1d4eb8; text-decoration: underline; }

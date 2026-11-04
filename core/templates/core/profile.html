@@ -43,6 +43,40 @@
   </div>
   {% include 'core/_field.html' with field=form.chronic_illnesses %}
 
+  <h2 class="font-display card-title section-gap" id="ai-note">AI-written notes <span class="optional">(optional)</span></h2>
+  <div class="consent-box">
+    <p>
+      Your Note of the Day can be written by an AI service instead of the standard hand-written notes.
+      This is <strong>off by default</strong>, and only happens if you turn it on here.
+    </p>
+    <p><strong>What is sent</strong> each time you submit the questionnaire:</p>
+    <ul>
+      <li>your age, gender, major, and average daily study hours</li>
+      <li>your answers to 8 of the questionnaire statements</li>
+      <li>the stress level estimated by the app's model</li>
+      <li>whether you listed a chronic illness (yes or no), so the note stays gentle, but never what it is</li>
+    </ul>
+    <p><strong>What is never sent:</strong> your name, username, password, height, weight, and the details of any chronic illness.</p>
+    <p>
+      <strong>Where it goes:</strong> to Anthropic, an outside company that runs the AI, not only to this app's server.
+      Its servers may be in other countries, including the United States. According to Anthropic's published terms,
+      data sent through its API is not used to train its models by default and is normally deleted within about 30 days.
+      <a href="https://privacy.anthropic.com/" target="_blank" rel="noopener">Read Anthropic's privacy information</a>.
+    </p>
+    <p>The note comes back as a few sentences. AI can be wrong, and the note is not a medical diagnosis.</p>
+    <p>
+      You can turn this off at any time, here or on the questionnaire page. When it is off nothing is sent, and any AI notes
+      already saved for you are deleted. Data that was already sent cannot be taken back by this app.
+    </p>
+    {% if not ai_available %}
+      <p class="notice">AI-written notes are not switched on for this site at the moment, so you will see the standard notes. Your choice is still saved.</p>
+    {% endif %}
+    <label class="consent-check" for="{{ form.ai_opt_in.id_for_label }}">
+      {{ form.ai_opt_in }}
+      <span>Yes, use AI to write my Note of the Day.</span>
+    </label>
+  </div>
+
   <div class="form-actions">
     <button type="submit" class="btn">{% if first_time %}Save and continue{% else %}Save changes{% endif %}</button>
   </div>

@@ -1,14 +1,16 @@
 """
 Turns a saved questionnaire into a stress score using the trained scikit-learn pipeline.
 
-The model file is NOT in GitHub (it must be trained with the scikit-learn version installed on the
-machine that uses it).
+The website's model file is NOT in GitHub (it must be trained with the scikit-learn version installed on the
+machine that uses it). Create it once per machine, from the project folder, with:
+    python ml/train_model.py
+The team's data, notebooks, scripts and original model are in the ml/ folder (see ml/README.md).
 """
 from pathlib import Path
 
 from .survey import LIKERT_FIELDS
 
-MODEL_PATH = Path(__file__).resolve().parent / 'ml' / 'student_stress_model.joblib'
+MODEL_PATH = Path(__file__).resolve().parent.parent / 'ml' / 'student_stress_model.joblib'
 _model = None
 
 

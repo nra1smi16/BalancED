@@ -58,14 +58,63 @@
           <div id="calendar-days" class="days"></div>
 
           <p class="calendar-hint">
-            <span class="dot-legend"></span> Select a day to mark or unmark an exam. Marked days are saved in this browser.
+            <span class="dot-legend"></span> Select a day to mark or unmark an exam. Marked days are saved to your account.
           </p>
+          <p class="field-error" id="calendar-error" role="alert" hidden></p>
+          {{ exam_days|json_script:"exam-days" }}
         </section>
 
         <!-- ENCOURAGING MESSAGE -->
         <section class="card note-card" aria-labelledby="note-heading">
           <h2 class="font-display card-title" id="note-heading">A note for today</h2>
-          <p class="font-display note-message">{{ daily_note }}</p>
+          {% if ai_note %}
+            <p class="font-display note-message">{{ ai_note }}</p>
+            <p class="ai-meta"><span class="ai-tag">AI-generated</span> Written from your answers on {{ assessment.created_at|date:"M j, Y" }}. AI can be wrong, and this is not a medical diagnosis.</p>
+          {% else %}
+            <p class="font-display note-message">{{ daily_note }}</p>
+          {% endif %}
+        </section>
+
+        <!-- COUNSELING SUPPORT -->
+        <section class="card support-card{% if stress_level == 'Moderate' or stress_level == 'High Risk' %} support-card--emphasis{% endif %}" aria-labelledby="support-heading">
+          <h2 class="font-display card-title" id="support-heading">Talk to someone</h2>
+          <p class="support-intro">
+            {% if stress_level == 'High Risk' %}Your answers suggest a high level of stress. Talking to someone can help, and the {{ counseling.name }} is there for students.
+            {% elif stress_level == 'Moderate' %}Your answers suggest a noticeable level of stress. Support is available if you would like to talk.
+            {% else %}If you would like to talk to someone, the {{ counseling.name }} is there for students.{% endif %}
+          </p>
+
+          <div class="support-grid">
+            <div>
+              <h3 class="support-head">Phone</h3>
+              <ul class="support-list">
+                {% for label, shown, tel in counseling.phones %}
+                  <li><span class="support-label">{{ label }}</span> <a href="tel:{{ tel }}">{{ shown }}</a></li>
+                {% endfor %}
+              </ul>
+            </div>
+            <div>
+              <h3 class="support-head">Email</h3>
+              <ul class="support-list">
+                {% for address in counseling.emails %}
+                  <li><a href="mailto:{{ address }}">{{ address }}</a></li>
+                {% endfor %}
+              </ul>
+            </div>
+            <div>
+              <h3 class="support-head">Where to find them</h3>
+              <ul class="support-list">
+                {% for campus, place in counseling.locations %}
+                  <li><span class="support-label">{{ campus }}</span> {{ place }}</li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+
+          <p class="support-note">
+            This is a support service, not an emergency line. If you or someone else is in immediate danger, contact local emergency services.
+            <a href="{{ counseling.source_url }}" target="_blank" rel="noopener">Official service page</a>
+          </p>
         </section>
 
       </main>
@@ -84,16 +133,22 @@
       let viewYear = today.getFullYear();
       let viewMonth = today.getMonth();
 
-      // Exam days are kept in localStorage for now (move to the database in SGP2)
-      const STORAGE_KEY = 'balanced_exam_days';
-      function loadExamDays() {
-        try { return new Set(JSON.parse(localStorage.getItem(STORAGE_KEY)) || []); }
-        catch (e) { return new Set(); }
+      // Exam days are stored in the database (one row per student and day). The page starts with the saved
+      // list and asks the server to mark or unmark a day when a student clicks it.
+      const examDays = new Set(JSON.parse(document.getElementById('exam-days').textContent));
+      const calendarError = document.getElementById('calendar-error');
+      const csrfToken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+
+      async function toggleExamDay(dayKey) {
+        const response = await fetch("{% url 'toggle_exam' %}", {
+          method: 'POST',
+          headers: { 'X-CSRFToken': csrfToken },
+          body: new URLSearchParams({ date: dayKey })
+        });
+        if (!response.ok) throw new Error('The server did not save the day');
+        const data = await response.json();
+        data.marked ? examDays.add(dayKey) : examDays.delete(dayKey);
       }
-      function saveExamDays(set) {
-        try { localStorage.setItem(STORAGE_KEY, JSON.stringify([...set])); } catch (e) {}
-      }
-      const examDays = loadExamDays();
 
       function key(y, m, d) {
         return `${y}-${String(m + 1).padStart(2, '0')}-${String(d).padStart(2, '0')}`;
@@ -124,10 +179,15 @@
           btn.setAttribute('aria-pressed', examDays.has(k));
           btn.setAttribute('aria-label', `${d} ${monthLabel.textContent}${examDays.has(k) ? ', exam' : ''}`);
 
-          btn.addEventListener('click', () => {
-            examDays.has(k) ? examDays.delete(k) : examDays.add(k);
-            saveExamDays(examDays);
-            renderCalendar();
+          btn.addEventListener('click', async () => {
+            calendarError.hidden = true;
+            try {
+              await toggleExamDay(k);
+              renderCalendar();
+            } catch (error) {
+              calendarError.textContent = 'Could not save that day. Please try again.';
+              calendarError.hidden = false;
+            }
           });
           daysEl.appendChild(btn);
         }
