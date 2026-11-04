@@ -3,4 +3,4 @@ __pycache__/
 db.sqlite3
 .env
 .vscode/
-core/ml/student_stress_model.joblib
+ml/student_stress_model.joblib
