@@ -17,7 +17,7 @@ GENERAL = [   # no prediction yet
     "Rest is part of studying. Take a short break away from your screen.",
     "You don't have to feel ready to begin. Open your notes for five minutes.",
     "One hard week doesn't define your semester. Take a short walk today.",
-    "Asking for help is a skill. Ask a classmate about one thing you're unsure of.",
+    "Asking for help is a okay. Ask a classmate about one thing you're unsure of.",
     "Progress can be small. Write down one thing you finished today.",
     "Your worth isn't measured by your workload. Do one thing you enjoy today.",
 ]

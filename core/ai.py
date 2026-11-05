@@ -1,5 +1,5 @@
 """
-Asks Claude (through the Anthropic API) to write the student's Note of the Day.
+Asks an AI model (through the Groq API, which has a free tier) to write the student's Note of the Day.
 
 What is sent: the 12 values the stress model uses, written as one short paragraph (age, gender, field of study,
 study hours and 8 questionnaire ratings), plus the stress level the trained model gave. Never the name, username,
@@ -13,8 +13,7 @@ What comes back: the same three parts as the hand-written notes (see notes.py):
 The reply is checked before it is used. If the key is missing, the call fails, or the reply does not pass the
 checks, the dashboard simply shows the hand-written note instead.
 
-The API key is read from the ANTHROPIC_API_KEY environment variable. Never write the key in the code or push it
-to GitHub. When the variable is not set, this feature is switched off.
+The API key is read from the GROQ_API_KEY environment variable.  When the variable is not set, this feature is switched off.
 """
 import json
 import logging
@@ -31,8 +30,8 @@ from .survey import STUDY_HOURS_CHOICES
 
 logger = logging.getLogger(__name__)
 
-API_URL = 'https://api.anthropic.com/v1/messages'
-DEFAULT_MODEL = 'claude-haiku-5-5'          # small and cheap; change with the ANTHROPIC_MODEL variable
+API_URL = 'https://api.groq.com/openai/v1/chat/completions'
+DEFAULT_MODEL = 'openai/gpt-oss-20b'  #model used from groq
 TIMEOUT_SECONDS = 25
 
 # The 8 questionnaire answers the model uses, in plain words (E2 is left out, like in the trained model)
@@ -70,7 +69,7 @@ CONTACT_DETAILS = re.compile(r'https?://|www\.|@|\d{5,}', re.IGNORECASE)
 
 
 def is_enabled():
-    return bool(os.getenv('ANTHROPIC_API_KEY'))
+    return bool(os.getenv('GROQ_API_KEY'))
 
 
 def allowed_for(profile):
@@ -122,22 +121,24 @@ def ask_ai(profile, assessment):
         raise RuntimeError("The 'requests' package is not installed (pip install requests)")
 
     # 1. Set your API key and endpoint
-    api_key = os.getenv("ANTHROPIC_API_KEY")
-    url = API_URL                                  # https://api.anthropic.com/v1/messages
+    api_key = os.getenv("GROQ_API_KEY")
+    url = API_URL                                  # https://api.groq.com/openai/v1/chat/completions
 
-    # 2. Define headers required by Anthropic API
+    # 2. Define headers required by the API
     headers = {
-        "x-api-key": api_key,
-        "anthropic-version": "2023-06-01",
-        "content-type": "application/json",
+        "Authorization": f"Bearer {api_key}",
+        "Content-Type": "application/json",
     }
 
     # 3. Build the payload (the student's attributes, written as a paragraph, are the prompt)
     payload = {
-        "model": os.getenv("ANTHROPIC_MODEL", DEFAULT_MODEL),
-        "max_tokens": 2000,
-        "system": SYSTEM_PROMPT,
-        "messages": [{"role": "user", "content": build_prompt(profile, assessment)}],
+        "model": os.getenv("GROQ_MODEL", DEFAULT_MODEL),
+        "max_completion_tokens": 500,
+        "temperature": 0.7,
+        "messages": [
+            {"role": "system", "content": SYSTEM_PROMPT},
+            {"role": "user", "content": build_prompt(profile, assessment)},
+        ],
     }
 
     # 4. Send the POST request
@@ -146,7 +147,6 @@ def ask_ai(profile, assessment):
     # 5. Parse the response
     if response.status_code == 200:
         result = response.json()
-        # the reply is a list of blocks; keep the text ones (other kinds, such as thinking, are skipped)
-        text = "".join(block.get("text", "") for block in result.get("content", []) if block.get("type") == "text")
+        text = result["choices"][0]["message"].get("content") or ""
         return _parse(text, assessment.stress_level)
     raise RuntimeError(f"Error {response.status_code}: {response.text[:300]}")
