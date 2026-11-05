@@ -4,4 +4,4 @@ db.sqlite3
 .env
 .vscode/
 ml/student_stress_model.joblib
-Project Files
+Project Files/
