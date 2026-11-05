@@ -10,6 +10,10 @@ from django.shortcuts import redirect, render
 from django.urls import reverse
 from django.utils import timezone
 from django.views.decorators.http import require_POST
+from .charts import build_chart
+from django.shortcuts import get_object_or_404, redirect, render
+from .models import Assessment, ExamDate, StudentProfile
+
 
 from .forms import (
     AssessmentForm, LoginForm, ProfileForm, SignUpForm,
@@ -199,6 +203,32 @@ def toggle_exam(request):
     if not created:
         mark.delete()
     return JsonResponse({'ok': True, 'marked': created, 'date': day.isoformat()})
+
+
+# ------------------------------------------------------------------ history / charts
+
+@login_required
+def history_view(request):
+    student = _get_profile(request.user)
+    if not student.is_complete:
+        return _profile_required()
+
+    checkins = request.user.assessments.order_by('created_at')
+    chart = build_chart(checkins)
+    return render(request, 'core/history.html', {
+        'profile': student,
+        'checkins': checkins,
+        'chart': chart,
+    })
+
+#Deleting specific check ins
+@login_required
+@require_POST
+def delete_assessment(request, pk):
+    assessment = get_object_or_404(Assessment, pk=pk, user=request.user)
+    assessment.delete()
+    messages.success(request, 'Check-in deleted.')
+    return redirect('history')
 
 
 # ------------------------------------------------------------------ questionnaire

@@ -26,9 +26,13 @@ def _label(moment):
 
 def build_chart(checkins):
     """checkins: assessments that have a score, OLDEST first."""
+    # Filter out any check-ins that don't have a numeric stress score yet
+    checkins = [c for c in checkins if c.stress_score is not None]
+    
     plot_width = WIDTH - LEFT - RIGHT
     plot_height = HEIGHT - TOP - BOTTOM
     y_of = lambda score: TOP + (100 - score) / 100 * plot_height
+    # ... rest of your code remains the same ...
 
     bands = [{'level': level, 'class': _css(level),
               'y': round(y_of(high), 1), 'height': round(y_of(low) - y_of(high), 1)}

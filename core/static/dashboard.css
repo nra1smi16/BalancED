@@ -1,4 +1,4 @@
-/* BalancED dashboard — same palette and fonts as welcome.css */
+
 
 * { box-sizing: border-box; }
 
@@ -533,3 +533,71 @@ textarea.field-input { resize: vertical; }
 .consent-box ul { margin: 0 0 0.6rem; padding-left: 1.2rem; color: var(--ink); }
 .consent-check { display: flex; align-items: center; gap: 0.6rem; margin-top: 0.9rem; font-weight: 600; color: var(--ink); cursor: pointer; }
 .consent-check input { width: 1.15rem; height: 1.15rem; accent-color: var(--primary); cursor: pointer; }
+
+
+/* =====================================================================
+   SVG Stress History Chart Styles
+   ===================================================================== */
+.chart {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.band {
+  shape-rendering: crispEdges;
+}
+
+.band-normal {
+  fill: var(--normal);
+  opacity: 0.2;
+}
+
+.band-mild {
+  fill: var(--mild);
+  opacity: 0.2;
+}
+
+.band-moderate {
+  fill: var(--moderate);
+  opacity: 0.2;
+}
+
+.band-high-risk {
+  fill: var(--high);
+  opacity: 0.2;
+}
+
+.band-label, .tick {
+  fill: var(--muted);
+  font-size: 11px;
+  font-family: inherit;
+}
+
+.chart .line {
+  fill: none;
+  stroke: var(--primary);
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.dot {
+  stroke-width: 2;
+  transition: r 150ms ease;
+}
+
+.dot:hover {
+  r: 7;
+  cursor: pointer;
+}
+
+.dot-normal { fill: #fff; stroke: var(--normal); }
+.dot-mild { fill: #fff; stroke: var(--mild); }
+.dot-moderate { fill: #fff; stroke: var(--moderate); }
+.dot-high-risk { fill: #fff; stroke: var(--high); }
+
+.chart-scroll {
+  width: 100%;
+  overflow-x: auto;
+}

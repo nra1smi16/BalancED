@@ -1,7 +1,5 @@
-/* Log in / Sign up additions for the welcome page (loads after welcome.css) */
 
-/* The welcome page was fixed to one screen with hidden scrolling. The sign up form is a bit
-   taller, so let the page scroll when it needs to. */
+
 html, body { overflow: auto; height: auto; }
 .cls-pbibuw { height: auto; min-height: 100vh; }
 .welcome-page { height: auto; min-height: 100vh; }
@@ -49,8 +47,7 @@ html, body { overflow: auto; height: auto; }
 .auth-hint p { margin: 0; }
 .auth-hint ul { margin: 0.15rem 0 0; padding-left: 1.1rem; }
 
-/* The sign up form is taller than the log in form, which stretched the left panel and pushed
-   "Contact" to the bottom, leaving a big gap. Keep the left content together instead. */
+
 .brand-panel { justify-content: flex-start; gap: 1.25rem; }
 
 .about-link {

@@ -13,4 +13,6 @@ urlpatterns = [
     path('dashboard/', views.dashboard, name='dashboard'),
     path('exams/toggle/', views.toggle_exam, name='toggle_exam'),
     path('questionnaire/', views.assessment, name='assessment'),
+    path('history/', views.history_view, name='history'),
+    path('assessment/<int:pk>/delete/', views.delete_assessment, name='delete_assessment'),
 ]
