@@ -1,6 +1,5 @@
 """
-Single source of truth for the survey.
-Field names match the dataset columns (lower-cased) so the saved rows can be fed
+Field names match the dataset columns so the saved rows can be put
 straight into the scikit-learn pipeline later.
 """
 

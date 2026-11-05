@@ -1,23 +1,12 @@
 """
-Quick test that your Groq API key works, written the same way as the professor's example.
-Run it from the project folder:   python ai_test.py
-
-Needs:  pip install requests
-Key:    PowerShell:  $env:GROQ_API_KEY = "your-key"     (never paste the key into this file)
-Get a free key at https://console.groq.com
-
-The steps are the same as in the professor's example. What changes for Groq:
-  - url:     https://api.groq.com/openai/v1/chat/completions
-  - headers: the key goes in "Authorization: Bearer <key>"
-  - payload: the same "messages" list, plus the model name
-  - reply:   the text is in result["choices"][0]["message"]["content"]
+Quick test that the Groq API key works.
 """
 import json
 import os
 import requests
 
-# 1. Set your API key and endpoint
-api_key = os.getenv("GROQ_API_KEY")  # Or paste your key directly
+# 1. Set API key and endpoint
+api_key = os.getenv("GROQ_API_KEY") 
 url = "https://api.groq.com/openai/v1/chat/completions"
 
 # 2. Define headers required by the API

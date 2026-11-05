@@ -1,11 +1,11 @@
 """
-Asks an AI model (through the Groq API, which has a free tier) to write the student's Note of the Day.
+Asks an AI model (through the Groq API) to write the student's Note of the Day.
 
 What is sent: the 12 values the stress model uses, written as one short paragraph (age, gender, field of study,
-study hours and 8 questionnaire ratings), plus the stress level the trained model gave. Never the name, username,
+study hours and 8 questionnaire ratings), and the stress level the trained model gave. Never the name, username,
 height, weight or chronic illnesses.
 
-What comes back: the same three parts as the hand-written notes (see notes.py):
+What comes back: the same three parts as the hand-written notes (as in notes.py):
     opening   - a short sentence that fits the stress level
     activity  - one routine activity that suits the level and the student's highest-rated concerns
     support   - High Risk only: a reminder that talking to someone can help
@@ -13,7 +13,7 @@ What comes back: the same three parts as the hand-written notes (see notes.py):
 The reply is checked before it is used. If the key is missing, the call fails, or the reply does not pass the
 checks, the dashboard simply shows the hand-written note instead.
 
-The API key is read from the GROQ_API_KEY environment variable.  When the variable is not set, this feature is switched off.
+When the variable is not set, this feature is switched off.
 """
 import json
 import logging
@@ -120,7 +120,7 @@ def ask_ai(profile, assessment):
     if requests is None:
         raise RuntimeError("The 'requests' package is not installed (pip install requests)")
 
-    # 1. Set your API key and endpoint
+    # 1. Set API key 
     api_key = os.getenv("GROQ_API_KEY")
     url = API_URL                                  # https://api.groq.com/openai/v1/chat/completions
 

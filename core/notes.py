@@ -1,5 +1,5 @@
 """
-"Note of the Day" on the dashboard. All messages are written by hand (no outside service).
+"Note of the Day" on the dashboard. All messages are written by hand unless opted for AI
 
 How a note is built:
   1. Before there is a prediction, one of the general messages is shown (each has a small activity).
@@ -29,7 +29,7 @@ OPENINGS = {
     'High Risk': ["Be gentle with yourself today.", "You don't have to handle everything alone."],
 }
 
-# Routine activities suited to each stress level
+# Activities suited to each stress level
 ROUTINES = {
     'Normal': [
         "Keep your usual sleep schedule tonight.",
@@ -53,7 +53,7 @@ ROUTINES = {
     ],
 }
 
-# Activity matching the student's highest-rated concern (field names from the Assessment model)
+# Activity matching the student's highest-rated concern
 CONCERN_ACTIVITIES = {
     'b1_pressure_high_grades': "Set a 'good enough' goal for one task today.",
     'b2_workload_overwhelming': "List your tasks, then start with just one.",
@@ -67,7 +67,7 @@ CONCERN_ACTIVITIES = {
 
 SUPPORT_LINE = "Talking to someone you trust, or to the counseling service below, can help too."
 
-# When the student has listed a chronic illness (only the fact that they did, never what it is),
+# When the student has listed a chronic illness (not specifically what it is),
 # physical suggestions are swapped for quiet ones and a short reminder is added.
 HEALTH_LINE = "Go at your own pace and do what feels right for your body."
 GENTLE_SWAPS = {

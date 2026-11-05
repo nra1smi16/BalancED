@@ -1,7 +1,6 @@
 """
 UAEU Counseling and Wellbeing Service contact details, shown on the dashboard.
-Copied from the service's own page (check it again before the final presentation, details can change):
-https://uaeu.ac.ae/en/student-services/scss/contact-us.shtml
+Copied from the service's own page
 """
 
 SOURCE_URL = 'https://uaeu.ac.ae/en/student-services/scss/contact-us.shtml'

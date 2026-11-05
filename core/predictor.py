@@ -1,9 +1,5 @@
 """
 Turns a saved questionnaire into a stress score using the trained scikit-learn pipeline.
-
-The website's model file is NOT in GitHub (it must be trained with the scikit-learn version installed on the
-machine that uses it). Create it once per machine, from the project folder, with:
-    python ml/train_model.py
 The team's data, notebooks, scripts and original model are in the ml/ folder (see ml/README.md).
 """
 from pathlib import Path
@@ -54,7 +50,7 @@ def predict_stress(profile, assessment):
     score = float(model.predict(pd.DataFrame([row])[expected])[0])
     return round(min(100.0, max(0.0, score)), 1)
 
-
+#To return notes
 def level_for_score(score):
     if score < 25:
         return 'Normal'

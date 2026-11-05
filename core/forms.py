@@ -161,12 +161,12 @@ class StyledPasswordChangeForm(PasswordChangeForm):
 
 class AssessmentForm(forms.ModelForm):
     # Not a database column of the answers: it is the same setting as the profile's AI choice,
-    # shown again right before the answers are sent (the view keeps the two in step).
+    # shown again right before the answers are sent
     use_ai = forms.BooleanField(required=False, label='Use AI to write my Note of the Day')
 
     class Meta:
         model = Assessment
-        # the survey fields must be listed here so ModelForm.save() stores them
+        # the survey fields listed
         fields = SURVEY_FIELDS
 
     def __init__(self, *args, **kwargs):

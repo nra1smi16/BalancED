@@ -10,7 +10,7 @@ from .survey import GENDER_CHOICES, MAJOR_CHOICES, STUDY_HOURS_CHOICES
 # What students write when they have nothing to list (so it does not count as a chronic illness)
 NO_CONDITION_WORDS = {'', 'none', 'no', 'n/a', 'na', 'nil', 'nothing', '-', '--', 'لا', 'لا يوجد', 'لايوجد'}
 
-
+#date
 def age_from(dob, today=None):
     today = today or date.today()
     return today.year - dob.year - ((today.month, today.day) < (dob.month, dob.day))
@@ -20,7 +20,7 @@ class StudentProfile(models.Model):
     """Everything about the student that is NOT a survey answer. The student can edit it any time on the profile page."""
     user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='profile')
 
-    # Primary (required before the student can use the app)
+    # Primary key (required before the student can use the app)
     name = models.CharField(max_length=100)
     date_of_birth = models.DateField(null=True, blank=True)
     major = models.CharField(max_length=50, choices=MAJOR_CHOICES, blank=True)
@@ -104,7 +104,7 @@ class Assessment(models.Model):
     stress_score = models.FloatField(null=True, blank=True)   # 0-100
     stress_level = models.CharField(max_length=20, blank=True)
 
-    # The Note of the Day written by the AI (filled only when an API key is set up; see ai.py).
+    # The Note of the Day written by the AI
     # Empty means the hand-written note from notes.py is shown instead.
     ai_advice = models.TextField(blank=True)
 

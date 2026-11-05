@@ -1,0 +1,80 @@
+{% extends 'core/app_base.html' %}
+
+{% block title %}History | BalancED{% endblock %}
+
+{% block content %}
+<section class="greeting">
+  <h1 class="font-display greeting-title">Your check-in history</h1>
+  <p class="greeting-sub">Each check-in is an estimate, not a diagnosis. Only you can see this page.</p>
+</section>
+
+{% if not checkins %}
+  <section class="card about-card">
+    <div class="empty-stress">
+      <p class="empty-title">No check-ins yet</p>
+      <p class="empty-text">After your first questionnaire, your results will appear here.</p>
+      <a href="{% url 'assessment' %}" class="btn">Start questionnaire</a>
+    </div>
+  </section>
+{% else %}
+
+  <section class="card chart-card" aria-labelledby="chart-heading">
+    <h2 class="font-display card-title" id="chart-heading">Stress score over time</h2>
+    {% if chart.count == 0 %}
+      <p class="section-intro">None of your check-ins has a score yet, so there is nothing to draw.</p>
+    {% else %}
+      {% if chart.count == 1 %}<p class="section-intro">You have one scored check-in so far. A trend appears after your second.</p>{% endif %}
+      <div class="chart-scroll">
+        <svg viewBox="0 0 {{ chart.width }} {{ chart.height }}" class="chart" role="img"
+             aria-label="Line chart of your stress score over time. The list below has the same values.">
+          {% for band in chart.bands %}
+            <rect x="{{ chart.left }}" y="{{ band.y }}" width="{{ chart.plot_width }}" height="{{ band.height }}" class="band band-{{ band.class }}"/>
+            <text x="{{ chart.band_label_x }}" y="{{ band.y }}" dy="14" class="band-label">{{ band.level }}</text>
+          {% endfor %}
+          {% for tick in chart.ticks %}
+            <text x="{{ chart.tick_x }}" y="{{ tick.y }}" dy="4" text-anchor="end" class="tick">{{ tick.value }}</text>
+          {% endfor %}
+          <polyline points="{{ chart.path }}" class="line"/>
+          {% for point in chart.points %}
+            <circle cx="{{ point.x }}" cy="{{ point.y }}" r="5.5" class="dot dot-{{ point.class }}"><title>{{ point.label }}: {{ point.score }} ({{ point.level }})</title></circle>
+          {% endfor %}
+          {% for label in chart.x_labels %}
+            <text x="{{ label.x }}" y="{{ chart.label_y }}" text-anchor="{{ label.anchor }}" class="tick">{{ label.text }}</text>
+          {% endfor %}
+        </svg>
+      </div>
+    {% endif %}
+  </section>
+
+  <section class="card about-card" aria-labelledby="list-heading">
+    <h2 class="font-display card-title" id="list-heading">All check-ins</h2>
+    <ul class="history-list">
+      {% for checkin in checkins %}
+        <li class="history-row">
+          <div class="history-info">
+            <span class="history-date">{{ checkin.created_at|date:"M j, Y" }}</span>
+            {% if checkin.stress_score is not None %}
+              <span class="level-badge level-{{ checkin.stress_level|slugify }}">{{ checkin.stress_level }}</span>
+              <span class="history-score">{{ checkin.stress_score|floatformat:"-1" }} / 100</span>
+            {% else %}
+              <span class="history-score">No prediction</span>
+            {% endif %}
+          </div>
+          <form method="post" action="{% url 'delete_assessment' checkin.pk %}"
+                onsubmit="return confirm('Delete this check-in? This cannot be undone.');">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-ghost btn-small">Delete</button>
+          </form>
+        </li>
+      {% endfor %}
+    </ul>
+    <p class="hint" style="margin-top: 1rem;">Deleting a check-in removes its answers, its score, and any AI note written for it.</p>
+  </section>
+
+{% endif %}
+
+<div class="form-actions" style="margin-top: 1.25rem;">
+  <a href="{% url 'dashboard' %}" class="btn btn-ghost">Back to dashboard</a>
+  <a href="{% url 'assessment' %}" class="btn">New check-in</a>
+</div>
+{% endblock %}
