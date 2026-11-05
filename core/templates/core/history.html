@@ -18,18 +18,25 @@
   </section>
 {% else %}
 
-  <section class="card chart-card" aria-labelledby="chart-heading">
+ <section class="card chart-card" aria-labelledby="chart-heading">
     <h2 class="font-display card-title" id="chart-heading">Stress score over time</h2>
     {% if chart.count == 0 %}
       <p class="section-intro">None of your check-ins has a score yet, so there is nothing to draw.</p>
     {% else %}
       {% if chart.count == 1 %}<p class="section-intro">You have one scored check-in so far. A trend appears after your second.</p>{% endif %}
+      
+      <div class="chart-legend">
+        <span><span class="legend-dot band-high-risk"></span> High Risk</span>
+        <span><span class="legend-dot band-moderate"></span> Moderate</span>
+        <span><span class="legend-dot band-mild"></span> Mild</span>
+        <span><span class="legend-dot band-normal"></span> Normal</span>
+      </div>
+
       <div class="chart-scroll">
         <svg viewBox="0 0 {{ chart.width }} {{ chart.height }}" class="chart" role="img"
              aria-label="Line chart of your stress score over time. The list below has the same values.">
           {% for band in chart.bands %}
             <rect x="{{ chart.left }}" y="{{ band.y }}" width="{{ chart.plot_width }}" height="{{ band.height }}" class="band band-{{ band.class }}"/>
-            <text x="{{ chart.band_label_x }}" y="{{ band.y }}" dy="14" class="band-label">{{ band.level }}</text>
           {% endfor %}
           {% for tick in chart.ticks %}
             <text x="{{ chart.tick_x }}" y="{{ tick.y }}" dy="4" text-anchor="end" class="tick">{{ tick.value }}</text>

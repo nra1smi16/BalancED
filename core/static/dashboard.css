@@ -584,6 +584,7 @@ textarea.field-input { resize: vertical; }
 
 .dot {
   stroke-width: 2;
+  stroke: #ffffff;
   transition: r 150ms ease;
 }
 
@@ -592,12 +593,45 @@ textarea.field-input { resize: vertical; }
   cursor: pointer;
 }
 
-.dot-normal { fill: #fff; stroke: var(--normal); }
-.dot-mild { fill: #fff; stroke: var(--mild); }
-.dot-moderate { fill: #fff; stroke: var(--moderate); }
-.dot-high-risk { fill: #fff; stroke: var(--high); }
+.dot-normal { fill: var(--normal); }
+.dot-mild { fill: var(--mild); }
+.dot-moderate { fill: var(--moderate); }
+.dot-high-risk { fill: var(--high); }
 
 .chart-scroll {
   width: 100%;
   overflow-x: auto;
 }
+
+
+/*------------------------------------------------------
+adjust chart*/
+
+.chart-legend {
+  display: flex;
+  gap: 1.25rem;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.chart-legend span {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-weight: 500;
+}
+
+.legend-dot {
+  width: 0.65rem;
+  height: 0.65rem;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.legend-dot.band-high-risk { background-color: var(--high); opacity: 1; }
+.legend-dot.band-moderate { background-color: var(--moderate); opacity: 1; }
+.legend-dot.band-mild { background-color: var(--mild); opacity: 1; }
+.legend-dot.band-normal { background-color: var(--normal); opacity: 1; }

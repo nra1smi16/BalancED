@@ -3,8 +3,15 @@ Builds the numbers for the stress history chart (a plain SVG line chart).
 Everything is calculated here so the template only has to place the shapes.
 """
 
-WIDTH, HEIGHT = 640, 280
-LEFT, RIGHT, TOP, BOTTOM = 48, 20, 16, 40
+#WIDTH, HEIGHT = 640, 280
+#LEFT, RIGHT, TOP, BOTTOM = 48, 20, 16, 40
+# Adjusting layout and removing text from inside plot
+WIDTH = 640
+HEIGHT = 240
+TOP = 20
+BOTTOM = 30
+LEFT = 40
+RIGHT = 40
 
 # (level, from score, to score); the same as predictor.level_for_score
 LEVEL_BANDS = [('Normal', 0, 25), ('Mild', 25, 50), ('Moderate', 50, 75), ('High Risk', 75, 100)]
