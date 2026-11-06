@@ -1,0 +1,1001 @@
+Resp_ID,Age,Gender,Academic_Level,Field_of_Study,Institution_Type,Avg_Daily_Study_Hours,B1_Pressure_High_Grades,B2_Workload_Overwhelming,B3_Balance_Difficult,B4_Sufficient_Sleep,B5_Procrastination,B6_Physical_Activity,B7_Excessive_Social_Media,C1_Anxious_Academics,C2_Concentration_Hard,C3_Mood_Swings,C4_Mentally_Exhausted,C5_Worry_Future,C6_Hopelessness_Sadness,D1_Headaches_Pain,D2_Appetite_Change,D3_Sleep_Trouble,D4_Isolation,D5_Unhealthy_Coping,E1_Stress_Frequency,E2_Overall_Stress,E3_Sought_Professional_Help,E4_Affects_Academic_Performance,Perceived_Stress_Index_0_100
+1,19,Female,Graduate,Business,Public University,2–4,2,2,3,4,1,4,2,2,2,3,2,1,4,1,3,2,1,2,2,1,No,No,25.0
+2,24,Male,Undergraduate,Computer Science,Public University,4–6,4,4,5,2,4,2,4,5,2,5,3,3,5,4,2,4,4,4,5,4,No,No,73.8
+3,30,Male,Graduate,Social Science,Public University,<2,3,2,4,4,3,3,3,2,2,3,2,4,5,2,2,2,3,3,3,2,Yes,Yes,43.8
+4,18,Female,Undergraduate,Computer Science,Public University,2–4,1,2,2,3,2,4,2,3,3,1,1,1,2,2,2,2,3,1,2,2,No,No,23.8
+5,26,Female,Undergraduate,Science,Public University,>6,1,2,3,4,2,4,2,2,3,3,2,2,3,2,4,2,3,1,2,2,No,Yes,31.2
+6,25,Female,Undergraduate,Arts & Humanities,Private University,2–4,4,4,4,3,4,2,3,3,3,3,3,2,4,5,4,3,5,3,4,5,No,Yes,66.2
+7,17,Male,Undergraduate,Business,Private University,2–4,3,5,3,2,3,2,3,3,3,2,4,3,4,3,4,5,2,3,2,3,No,No,57.5
+8,30,Female,Undergraduate,Engineering,Public University,2–4,1,1,1,5,1,5,1,1,1,1,2,1,1,1,1,1,1,1,1,1,No,No,1.3
+9,25,Male,Undergraduate,Medicine/Health,Private University,2–4,4,4,4,2,4,1,5,4,5,4,5,5,4,3,3,5,3,4,4,4,Yes,Yes,78.8
+10,19,Male,Graduate,Arts & Humanities,Private University,2–4,1,1,1,5,1,5,1,1,1,1,1,1,2,1,1,1,1,1,1,2,No,No,2.5
+11,20,Male,Postgraduate,Science,Private University,<2,1,2,3,4,2,4,4,1,2,1,4,1,2,3,2,2,1,3,4,1,Yes,No,28.7
+12,21,Male,Undergraduate,Engineering,Public University,4–6,5,5,5,1,5,1,5,5,3,5,5,5,5,5,5,5,5,4,5,4,Yes,Yes,95.0
+13,25,Female,Undergraduate,Science,Private University,<2,3,3,4,3,4,3,4,2,2,3,1,2,4,3,4,3,1,3,2,2,No,Yes,45.0
+14,20,Female,Undergraduate,Medicine/Health,Private University,4–6,4,4,5,2,4,2,5,5,5,4,5,5,5,5,5,5,5,5,5,5,Yes,Yes,92.5
+15,29,Female,Undergraduate,Science,Public University,4–6,5,5,5,1,5,1,5,5,5,5,5,5,5,5,5,5,5,5,5,5,Yes,Yes,100.0
+16,28,Male,Graduate,Arts & Humanities,Public University,<2,1,2,1,4,2,4,1,1,1,2,2,2,2,2,1,1,1,1,1,1,No,No,11.2
+17,27,Male,Graduate,Business,College,<2,4,4,3,3,4,2,4,3,3,4,3,4,4,2,3,4,4,3,4,4,Yes,Yes,63.7
+18,27,Female,Undergraduate,Medicine/Health,Private University,2–4,4,5,5,1,5,2,4,4,5,4,5,5,5,4,4,5,5,4,5,4,No,Yes,88.8
+19,24,Male,Undergraduate,Science,Private University,2–4,4,5,5,1,5,1,5,5,4,3,5,5,5,5,4,5,5,5,4,5,Yes,Yes,92.5
+20,27,Female,Undergraduate,Arts & Humanities,Public University,2–4,4,2,2,4,4,3,3,2,4,4,1,4,2,2,3,2,3,1,3,4,Yes,No,43.8
+21,27,Male,Postgraduate,Science,Private University,<2,3,2,3,4,1,5,2,1,2,1,1,3,2,2,1,2,3,1,1,1,No,No,18.8
+22,25,Male,Undergraduate,Arts & Humanities,Private University,2–4,1,1,1,5,1,5,1,1,1,1,1,1,1,1,1,1,1,1,1,1,No,Yes,0.0
+23,19,Female,Undergraduate,Science,Private University,4–6,5,4,4,2,3,1,3,5,5,3,4,5,4,5,4,4,4,5,4,4,No,Yes,80.0
+24,24,Male,Undergraduate,Medicine/Health,Public University,4–6,5,5,5,1,5,1,4,4,4,4,5,5,4,5,5,4,4,5,5,5,Yes,Yes,91.3
+25,18,Male,Graduate,Social Science,Public University,4–6,4,5,4,2,5,1,5,3,4,5,4,5,4,5,4,5,3,4,4,4,No,No,82.5
+26,30,Male,Undergraduate,Engineering,Private University,4–6,5,5,4,2,4,2,4,5,5,5,4,4,5,5,5,5,5,5,4,5,No,Yes,90.0
+27,24,Female,Undergraduate,Computer Science,Private University,2–4,2,1,2,5,1,4,1,1,2,3,2,2,2,2,2,2,2,1,2,2,No,Yes,18.8
+28,18,Male,Graduate,Computer Science,Public University,4–6,5,5,5,2,4,1,4,4,5,5,5,5,4,4,5,5,5,4,5,5,Yes,Yes,91.3
+29,26,Male,Undergraduate,Science,Public University,2–4,1,1,1,5,1,5,1,1,1,1,1,1,1,1,1,1,1,1,1,1,No,Yes,0.0
+30,19,Female,Undergraduate,Computer Science,Public University,2–4,5,5,4,2,5,3,4,5,4,3,2,4,4,5,4,4,5,3,4,4,No,Yes,76.2
+31,30,Female,Undergraduate,Science,Private University,2–4,2,1,2,5,2,3,1,1,1,1,2,1,1,1,2,1,1,1,1,1,No,No,8.8
+32,17,Female,Graduate,Business,College,2–4,1,1,1,5,1,5,1,1,1,2,1,1,1,2,1,1,1,2,1,1,No,No,3.7
+33,17,Female,Undergraduate,Social Science,Public University,<2,2,1,1,5,1,5,1,1,1,2,1,1,1,1,1,1,1,1,1,1,No,No,2.5
+34,20,Male,Undergraduate,Medicine/Health,Private University,4–6,2,2,1,5,1,5,1,1,1,1,2,1,1,1,1,1,1,1,2,1,No,No,5.0
+35,27,Male,Graduate,Engineering,Public University,2–4,4,5,4,2,5,2,4,5,4,5,4,5,4,5,5,4,4,4,4,4,No,Yes,83.7
+36,21,Male,Undergraduate,Computer Science,Private University,2–4,1,1,2,5,2,5,1,1,1,1,1,2,1,1,1,1,3,1,1,2,No,Yes,7.5
+37,22,Female,Undergraduate,Science,Private University,2–4,4,4,3,2,2,2,2,3,3,4,4,3,5,3,4,4,2,3,2,4,No,No,58.8
+38,23,Female,Undergraduate,Social Science,Public University,2–4,3,5,5,1,5,1,4,4,5,5,5,5,5,5,5,5,5,4,4,5,No,Yes,92.5
+39,19,Female,Undergraduate,Arts & Humanities,Private University,2–4,1,2,1,5,1,5,2,3,1,1,1,1,1,1,1,1,1,1,1,1,No,No,5.0
+40,29,Male,Undergraduate,Social Science,Public University,4–6,4,4,4,2,5,2,3,4,4,4,5,5,4,4,5,2,3,2,4,4,Yes,Yes,72.5
+41,20,Female,Graduate,Science,Public University,>6,2,1,1,5,2,3,1,2,1,2,1,2,1,3,1,3,3,3,2,1,No,Yes,20.0
+42,17,Female,Undergraduate,Computer Science,Public University,2–4,3,2,3,4,2,5,2,3,2,2,1,3,2,2,2,2,2,1,2,1,Yes,Yes,25.0
+43,21,Male,Graduate,Business,Private University,<2,2,2,3,5,1,4,1,1,1,1,1,1,2,1,2,2,2,2,1,1,No,No,12.5
+44,23,Female,Undergraduate,Engineering,Private University,<2,1,4,1,3,1,3,2,1,1,2,3,2,1,2,2,2,1,1,3,2,No,Yes,22.5
+45,29,Female,Undergraduate,Arts & Humanities,Public University,2–4,3,3,3,3,3,2,4,2,4,4,3,3,2,4,4,4,4,4,3,3,No,No,58.8
+46,30,Male,Undergraduate,Medicine/Health,Public University,4–6,5,4,4,3,3,3,3,4,4,4,4,4,4,3,4,4,5,4,5,4,Yes,Yes,72.5
+47,27,Male,Graduate,Social Science,Public University,>6,2,2,2,5,1,5,1,3,1,1,1,2,1,1,1,2,1,2,1,1,No,No,10.0
+48,26,Female,Undergraduate,Engineering,Public University,<2,1,1,1,5,2,5,2,1,1,2,1,1,1,1,1,3,2,2,2,1,No,No,10.0
+49,24,Female,Undergraduate,Arts & Humanities,Private University,>6,5,5,5,1,5,1,5,5,5,5,5,5,5,5,5,4,5,4,5,5,Yes,No,97.5
+50,27,Female,Graduate,Social Science,College,2–4,1,1,1,5,1,5,1,1,1,1,1,1,1,1,1,1,1,1,2,1,No,No,1.3
+51,18,Female,Undergraduate,Engineering,Public University,<2,4,5,5,1,5,1,5,5,5,5,5,5,4,5,5,5,5,5,5,5,Yes,Yes,97.5
+52,19,Female,Graduate,Medicine/Health,Private University,<2,2,2,4,4,3,3,2,3,2,2,4,4,2,3,2,1,2,3,2,2,No,No,37.5
+53,26,Female,Undergraduate,Social Science,Private University,4–6,4,5,3,2,2,4,5,3,4,3,3,3,3,3,2,3,4,3,3,4,No,No,57.5
+54,26,Female,Undergraduate,Computer Science,Public University,2–4,2,4,2,4,2,4,4,2,4,4,2,3,3,3,3,3,4,3,3,2,No,Yes,46.2
+55,22,Male,Graduate,Social Science,Private University,2–4,3,2,3,4,3,2,1,2,2,1,2,2,2,2,2,3,2,2,2,2,Yes,Yes,30.0
+56,24,Male,Undergraduate,Social Science,Public University,4–6,4,4,4,3,4,2,5,3,4,4,5,5,3,4,3,5,3,3,3,4,Yes,Yes,71.2
+57,24,Male,Undergraduate,Arts & Humanities,Private University,2–4,2,1,3,3,3,3,2,2,2,2,1,2,3,2,2,2,4,2,2,2,Yes,No,31.2
+58,26,Male,Undergraduate,Arts & Humanities,Public University,2–4,1,1,1,5,1,3,2,3,2,1,1,1,1,1,1,1,1,1,1,1,No,No,7.5
+59,25,Male,Undergraduate,Engineering,Public University,4–6,2,3,2,3,1,5,3,3,1,3,2,3,3,1,2,1,2,2,2,2,No,No,27.5
+60,24,Female,Undergraduate,Social Science,Public University,>6,3,3,2,2,3,4,4,2,3,2,5,1,3,4,3,2,4,3,4,3,No,Yes,50.0
+61,20,Female,Undergraduate,Law,Private University,4–6,5,5,4,2,5,1,5,5,5,5,5,5,5,5,5,5,5,5,5,5,Yes,Yes,97.5
+62,23,Male,Graduate,Engineering,Private University,4–6,2,3,4,3,3,3,4,4,2,3,3,4,4,5,4,3,3,4,4,3,Yes,No,60.0
+63,28,Male,Undergraduate,Science,Private University,2–4,1,3,2,4,2,4,2,3,2,1,2,1,4,2,1,1,1,2,2,1,Yes,No,21.3
+64,18,Female,Undergraduate,Arts & Humanities,Public University,>6,1,1,1,5,3,4,1,2,1,2,1,1,2,2,1,2,2,1,1,3,No,Yes,13.8
+65,25,Female,Undergraduate,Engineering,Public University,2–4,1,4,2,2,3,1,3,5,3,3,3,3,2,4,2,3,3,3,2,3,Yes,No,51.2
+66,23,Male,Undergraduate,Science,College,2–4,2,1,2,3,1,4,2,1,1,3,2,1,3,3,2,1,1,1,3,2,No,No,21.3
+67,22,Male,Graduate,Social Science,Public University,2–4,1,1,1,5,1,5,1,1,1,1,1,1,1,1,1,1,1,1,1,1,No,Yes,0.0
+68,29,Male,Undergraduate,Arts & Humanities,Public University,<2,2,3,5,1,4,3,1,2,3,2,5,3,4,3,4,3,4,3,3,4,Yes,No,57.5
+69,19,Other,Undergraduate,Arts & Humanities,Private University,4–6,4,5,3,3,5,1,4,5,4,3,5,5,4,5,4,4,4,5,4,5,Yes,No,82.5
+70,30,Male,Undergraduate,Business,Public University,4–6,4,3,4,3,4,2,5,3,3,3,4,5,3,4,3,4,5,4,4,4,No,Yes,70.0
+71,18,Female,Undergraduate,Engineering,Public University,2–4,5,5,5,1,5,2,5,5,5,5,5,5,5,5,5,5,5,5,5,5,No,Yes,98.8
+72,29,Female,Undergraduate,Social Science,Private University,2–4,4,4,4,2,3,3,3,3,3,4,3,5,3,4,3,4,2,3,2,4,No,Yes,60.0
+73,24,Female,Undergraduate,Computer Science,Public University,4–6,3,4,3,2,3,2,3,3,4,4,3,3,2,2,3,3,3,4,3,4,Yes,Yes,56.2
+74,19,Male,Undergraduate,Business,Public University,2–4,2,4,3,3,3,3,4,2,3,3,3,3,3,4,4,3,4,3,4,3,Yes,Yes,55.0
+75,17,Female,Postgraduate,Engineering,Public University,4–6,4,5,5,1,5,1,4,4,5,5,5,5,5,4,4,5,5,5,4,5,No,Yes,92.5
+76,24,Male,Undergraduate,Arts & Humanities,Public University,4–6,2,3,2,3,3,4,2,3,3,4,4,2,4,4,2,2,3,4,2,3,No,Yes,46.2
+77,21,Female,Undergraduate,Social Science,Public University,2–4,3,3,3,1,2,4,3,2,2,3,3,2,2,3,4,4,2,3,2,3,No,Yes,45.0
+78,29,Female,Undergraduate,Arts & Humanities,Private University,<2,1,2,4,2,3,3,4,3,3,3,4,3,3,3,2,2,3,4,2,2,No,No,47.5
+79,26,Female,Undergraduate,Medicine/Health,Public University,2–4,4,5,5,1,5,2,5,5,5,5,5,5,4,5,5,5,5,5,5,5,No,Yes,96.2
+80,18,Male,Undergraduate,Engineering,Public University,4–6,4,5,5,1,5,1,5,4,5,5,4,5,5,5,5,5,5,4,5,5,No,Yes,95.0
+81,25,Male,Undergraduate,Business,Private University,2–4,2,3,3,5,3,3,4,3,2,2,2,3,3,3,2,2,2,4,3,2,No,No,40.0
+82,17,Female,Graduate,Arts & Humanities,Public University,>6,3,2,1,3,2,3,2,1,2,3,3,1,3,1,2,1,4,3,1,3,No,No,30.0
+83,25,Male,Undergraduate,Business,Private University,2–4,2,3,2,3,4,3,1,2,3,2,1,1,3,3,3,2,4,2,3,2,No,Yes,36.3
+84,23,Female,Undergraduate,Science,Public University,>6,1,1,1,4,1,5,2,1,1,1,1,2,1,1,1,1,2,1,1,1,No,Yes,5.0
+85,29,Female,Undergraduate,Computer Science,Private University,4–6,5,5,5,1,5,1,5,3,4,4,5,4,4,5,5,5,5,5,5,5,Yes,Yes,92.5
+86,19,Male,Undergraduate,Computer Science,Private University,4–6,5,5,5,1,5,1,5,5,4,5,5,4,4,5,5,4,5,5,5,5,Yes,Yes,95.0
+87,27,Male,Undergraduate,Social Science,Public University,4–6,1,1,1,3,1,4,1,2,1,1,2,1,1,2,1,1,1,2,1,1,No,No,8.8
+88,19,Female,Undergraduate,Arts & Humanities,Private University,2–4,3,3,3,1,4,2,4,3,4,5,2,3,4,5,4,3,4,3,4,4,Yes,No,67.5
+89,27,Male,Undergraduate,Law,Public University,2–4,3,2,2,5,3,4,4,4,2,2,1,2,2,2,1,2,2,2,3,3,No,Yes,31.2
+90,27,Female,Undergraduate,Arts & Humanities,Public University,4–6,5,5,5,1,5,1,5,5,5,5,5,5,5,5,5,5,5,5,5,5,Yes,Yes,100.0
+91,30,Female,Undergraduate,Medicine/Health,Private University,2–4,5,5,5,1,5,1,5,5,5,5,5,5,5,5,5,5,5,5,5,5,Yes,Yes,100.0
+92,18,Male,Undergraduate,Computer Science,Public University,>6,4,5,4,2,3,2,5,2,3,4,4,3,3,3,4,4,3,3,3,3,No,Yes,63.7
+93,22,Female,Undergraduate,Business,Private University,2–4,1,1,1,4,1,5,1,1,1,1,1,1,1,1,2,2,1,1,1,1,No,No,3.7
+94,24,Female,Undergraduate,Science,Public University,2–4,4,4,4,2,3,3,3,5,5,5,5,3,5,5,5,5,5,5,5,5,No,Yes,85.0
+95,28,Male,Undergraduate,Social Science,Public University,2–4,5,5,5,1,5,1,5,5,5,5,5,5,5,4,4,5,5,5,5,5,No,Yes,97.5
+96,24,Female,Undergraduate,Science,Public University,4–6,4,4,5,4,4,3,4,4,5,4,5,4,5,5,5,3,5,5,4,5,Yes,No,81.2
+97,19,Female,Undergraduate,Medicine/Health,Private University,4–6,3,3,3,2,3,1,5,2,4,5,3,3,4,4,5,4,3,2,3,4,Yes,Yes,65.0
+98,18,Female,Undergraduate,Computer Science,College,2–4,5,4,5,1,4,2,5,5,5,5,4,5,4,3,5,5,5,4,5,4,No,Yes,88.8
+99,22,Female,Undergraduate,Social Science,Private University,4–6,1,1,1,4,2,4,2,2,2,1,3,2,3,1,2,2,1,1,2,1,No,Yes,17.5
+100,28,Female,Postgraduate,Science,Public University,>6,4,4,5,1,5,1,5,4,4,5,5,5,5,5,5,5,5,4,5,4,No,Yes,92.5
+101,23,Male,Undergraduate,Arts & Humanities,Private University,<2,2,2,2,3,1,4,2,1,3,1,1,1,1,3,3,1,1,2,2,2,Yes,No,20.0
+102,17,Female,Undergraduate,Computer Science,Private University,<2,2,2,2,3,4,3,3,3,2,1,4,3,2,2,3,1,2,4,3,2,No,No,38.7
+103,23,Male,Undergraduate,Engineering,College,2–4,5,4,5,2,5,1,4,5,5,4,5,5,5,5,4,5,5,5,5,4,Yes,Yes,92.5
+104,28,Female,Undergraduate,Computer Science,College,<2,5,5,4,2,5,2,5,4,4,5,5,5,5,5,5,4,4,4,5,5,Yes,Yes,90.0
+105,26,Male,Graduate,Law,Public University,4–6,3,4,3,3,2,4,2,2,4,3,2,3,4,2,4,3,2,3,2,4,Yes,Yes,46.2
+106,22,Female,Undergraduate,Engineering,Public University,4–6,2,1,1,3,1,5,4,2,2,2,3,2,3,1,3,2,3,2,2,3,No,Yes,28.7
+107,26,Male,Graduate,Arts & Humanities,Private University,<2,2,3,3,4,3,2,3,2,3,2,3,4,2,3,3,2,3,4,4,4,No,Yes,48.8
+108,17,Female,Undergraduate,Business,Public University,2–4,2,1,2,5,1,5,1,2,2,1,1,1,1,2,1,2,1,2,1,1,No,No,8.8
+109,23,Female,Graduate,Computer Science,Public University,>6,5,5,5,1,5,1,4,5,4,5,5,5,5,5,5,5,5,5,5,5,No,Yes,97.5
+110,18,Male,Undergraduate,Science,Private University,<2,2,1,1,5,2,4,1,2,2,1,2,2,2,2,2,2,3,1,2,1,No,Yes,17.5
+111,20,Female,Undergraduate,Computer Science,Private University,4–6,2,3,1,4,2,2,1,2,2,2,2,2,3,2,2,2,2,3,2,3,No,Yes,30.0
+112,24,Female,Undergraduate,Medicine/Health,Public University,4–6,4,4,4,2,5,2,5,5,5,5,5,5,5,4,5,4,4,5,5,5,Yes,No,90.0
+113,26,Female,Undergraduate,Computer Science,Private University,>6,4,5,5,2,3,2,4,5,5,5,5,4,5,5,4,5,4,4,4,4,Yes,Yes,85.0
+114,23,Female,Undergraduate,Computer Science,Private University,2–4,3,3,2,4,2,4,2,2,2,2,4,2,2,2,2,2,1,2,2,2,No,No,28.7
+115,24,Male,Undergraduate,Engineering,Public University,2–4,2,2,1,4,2,5,2,2,1,2,2,2,2,3,2,2,3,2,2,2,No,Yes,23.8
+116,22,Male,Undergraduate,Computer Science,Private University,2–4,3,2,3,4,2,3,3,3,3,2,2,4,4,1,2,2,2,3,3,3,Yes,Yes,40.0
+117,18,Male,Undergraduate,Medicine/Health,Public University,2–4,1,2,1,4,1,5,2,1,1,1,3,3,2,1,2,2,2,1,1,2,No,Yes,15.0
+118,30,Male,Undergraduate,Business,Public University,2–4,3,3,3,4,3,3,4,2,4,3,4,3,4,4,4,3,3,1,4,2,Yes,No,52.5
+119,26,Female,Postgraduate,Arts & Humanities,Public University,2–4,2,1,3,4,4,5,2,2,2,3,3,1,2,2,3,1,2,2,1,2,No,No,26.2
+120,17,Female,Undergraduate,Medicine/Health,Private University,4–6,1,2,3,5,2,5,1,1,2,1,3,1,2,1,3,1,1,1,1,1,No,No,12.5
+121,29,Male,Undergraduate,Business,Public University,2–4,3,2,1,3,2,4,1,1,1,3,2,4,1,2,1,2,3,2,3,2,No,No,26.2
+122,26,Female,Undergraduate,Engineering,College,<2,5,5,4,1,5,1,5,5,4,5,5,5,5,5,5,5,5,5,5,5,Yes,Yes,97.5
+123,28,Female,Undergraduate,Social Science,Public University,2–4,1,1,1,3,1,5,1,3,1,2,2,2,1,1,1,1,1,1,2,1,No,No,10.0
+124,17,Male,Undergraduate,Medicine/Health,College,4–6,3,3,4,4,3,3,3,1,2,2,4,3,3,2,3,4,2,3,2,4,Yes,Yes,45.0
+125,25,Female,Undergraduate,Social Science,Public University,2–4,2,2,3,4,3,4,1,2,2,2,1,2,2,3,2,1,1,2,2,2,No,No,23.8
+126,29,Female,Undergraduate,Science,College,4–6,4,3,4,4,4,4,3,2,3,3,3,3,1,2,3,3,2,2,3,3,No,No,43.8
+127,23,Male,Undergraduate,Business,Private University,4–6,1,1,1,5,1,5,2,2,1,1,2,1,2,3,1,1,1,2,1,2,No,Yes,10.0
+128,23,Male,Graduate,Law,Public University,2–4,2,3,3,3,1,5,1,2,2,1,1,2,2,1,1,1,2,2,1,1,No,No,16.2
+129,23,Male,Undergraduate,Computer Science,Public University,2–4,2,1,2,4,2,4,2,3,1,2,1,1,3,2,2,2,2,1,3,3,No,No,23.8
+130,20,Female,Undergraduate,Computer Science,Public University,2–4,4,5,2,2,3,2,3,4,4,3,4,3,4,4,4,3,4,4,4,5,Yes,No,68.8
+131,19,Male,Undergraduate,Business,Public University,2–4,4,4,2,2,3,3,2,4,4,4,4,3,4,4,4,5,4,4,3,3,No,Yes,65.0
+132,19,Male,Undergraduate,Computer Science,Private University,2–4,4,3,4,2,4,2,3,4,4,3,4,4,3,3,4,4,5,2,4,3,No,Yes,66.2
+133,20,Male,Graduate,Engineering,Private University,<2,4,3,2,3,4,2,4,3,2,4,5,4,3,4,4,5,3,3,5,5,No,Yes,67.5
+134,22,Female,Undergraduate,Computer Science,Public University,2–4,1,1,2,4,3,5,1,2,2,2,1,1,2,1,2,3,1,1,2,1,No,No,15.0
+135,26,Male,Graduate,Social Science,Public University,4–6,1,1,1,5,1,5,2,1,2,1,1,1,1,1,1,1,1,1,1,1,No,No,2.5
+136,27,Female,Undergraduate,Business,Private University,2–4,1,1,2,5,1,5,1,1,1,1,1,2,1,1,1,2,1,1,1,1,No,No,3.7
+137,25,Male,Graduate,Computer Science,Public University,4–6,4,3,3,1,3,2,4,3,4,4,4,3,3,3,4,3,5,4,4,4,No,Yes,67.5
+138,26,Female,Undergraduate,Medicine/Health,Private University,4–6,5,5,4,1,5,2,4,4,5,5,5,4,4,5,4,3,5,5,5,5,No,Yes,88.8
+139,25,Female,Graduate,Social Science,Private University,2–4,2,1,1,5,2,5,1,1,1,1,1,1,2,1,1,2,1,1,1,1,No,No,5.0
+140,26,Female,Undergraduate,Social Science,Public University,4–6,5,5,5,2,5,1,4,5,5,5,5,5,5,5,5,5,5,5,5,5,Yes,Yes,97.5
+141,20,Male,Undergraduate,Science,Private University,2–4,5,5,5,1,5,1,5,5,5,3,5,5,5,4,5,4,4,5,5,5,Yes,Yes,93.8
+142,30,Male,Undergraduate,Medicine/Health,Private University,4–6,3,1,2,3,2,5,3,4,4,2,3,4,1,3,4,3,2,2,3,2,No,Yes,40.0
+143,25,Male,Undergraduate,Social Science,Public University,2–4,3,3,4,3,2,3,3,2,2,3,3,4,2,2,3,3,2,4,3,3,No,Yes,46.2
+144,27,Male,Undergraduate,Medicine/Health,Private University,4–6,5,5,5,1,5,1,5,5,5,4,5,5,5,5,5,5,4,5,5,5,Yes,Yes,97.5
+145,23,Female,Undergraduate,Computer Science,Public University,4–6,5,5,5,1,5,1,5,5,5,5,5,5,5,5,5,4,5,5,5,5,No,Yes,98.8
+146,25,Female,Undergraduate,Business,Public University,2–4,2,2,3,3,3,2,3,2,4,4,3,2,3,3,2,2,3,3,2,2,No,Yes,43.8
+147,23,Female,Undergraduate,Engineering,Public University,4–6,3,2,2,3,3,4,3,2,2,3,2,3,3,2,2,3,2,3,2,3,No,No,37.5
+148,25,Female,Undergraduate,Business,Public University,4–6,4,3,4,2,4,1,4,2,3,4,3,5,3,4,3,4,4,5,4,4,No,Yes,70.0
+149,21,Male,Undergraduate,Medicine/Health,Public University,<2,4,5,5,3,4,2,4,5,4,3,3,4,5,4,5,3,2,3,4,4,Yes,Yes,72.5
+150,27,Male,Undergraduate,Engineering,Public University,2–4,5,5,5,1,5,1,5,5,5,5,5,5,5,5,5,5,5,5,5,5,Yes,Yes,100.0
+151,26,Female,Undergraduate,Computer Science,Private University,<2,3,4,4,2,3,2,5,4,3,4,5,5,4,3,4,5,3,5,5,4,Yes,Yes,76.2
+152,22,Male,Undergraduate,Engineering,College,2–4,4,4,4,2,3,3,5,4,3,5,3,3,4,4,5,4,3,3,5,4,No,Yes,71.2
+153,18,Female,Graduate,Social Science,College,2–4,2,4,4,5,3,4,4,3,2,4,3,2,3,2,3,3,2,3,3,3,No,Yes,45.0
+154,17,Female,Undergraduate,Medicine/Health,Public University,>6,5,4,5,1,5,1,4,5,5,4,5,5,4,5,5,4,5,5,5,5,No,Yes,93.8
+155,19,Female,Undergraduate,Science,Private University,4–6,1,1,1,5,1,5,1,1,1,1,1,1,1,1,1,1,1,1,1,1,No,No,0.0
+156,27,Female,Undergraduate,Social Science,Private University,2–4,2,3,4,2,2,3,3,4,4,3,3,2,3,4,3,4,4,3,3,2,No,No,53.8
+157,28,Male,Graduate,Social Science,Public University,2–4,3,3,4,1,5,2,3,3,3,3,5,4,4,3,5,4,4,4,5,3,Yes,Yes,71.2
+158,25,Female,Undergraduate,Science,Public University,<2,1,1,1,5,1,5,1,1,1,1,1,1,1,1,1,1,1,1,1,1,No,Yes,0.0
+159,25,Female,Undergraduate,Science,Public University,2–4,1,1,1,5,1,4,1,1,1,1,1,1,1,1,1,1,1,2,2,1,No,Yes,3.7
+160,25,Male,Undergraduate,Computer Science,Private University,4–6,1,1,1,5,1,5,1,1,1,1,1,1,2,1,1,1,1,2,1,1,No,Yes,2.5
+161,22,Male,Undergraduate,Social Science,Public University,<2,4,4,2,2,3,3,5,4,2,4,5,4,4,2,4,3,4,2,3,3,No,Yes,61.3
+162,29,Male,Undergraduate,Computer Science,Public University,<2,5,4,4,2,5,3,5,4,5,3,4,4,5,4,4,4,4,4,4,4,Yes,Yes,78.8
+163,28,Male,Undergraduate,Social Science,Private University,2–4,2,1,2,5,1,5,1,1,1,1,1,1,1,2,1,1,1,1,1,1,No,Yes,3.7
+164,23,Female,Undergraduate,Science,Private University,4–6,2,2,2,4,3,3,2,2,2,2,4,4,3,2,4,3,3,4,3,2,No,Yes,42.5
+165,25,Male,Undergraduate,Science,Private University,4–6,1,2,2,5,2,5,3,1,1,1,1,3,1,2,2,2,1,2,2,1,No,No,15.0
+166,19,Male,Undergraduate,Medicine/Health,Public University,<2,4,5,3,2,4,2,3,5,5,3,4,4,3,4,4,5,4,4,4,5,No,Yes,76.2
+167,25,Male,Undergraduate,Engineering,College,2–4,1,2,2,4,1,5,1,1,1,1,1,1,2,2,1,3,1,2,1,1,No,No,10.0
+168,19,Female,Graduate,Science,Public University,2–4,1,1,2,5,1,5,1,1,1,1,2,1,1,2,1,2,1,1,1,1,No,No,5.0
+169,22,Male,Undergraduate,Engineering,Public University,<2,5,4,4,2,4,2,3,3,5,4,2,3,4,3,5,4,3,3,2,3,No,Yes,65.0
+170,30,Female,Postgraduate,Engineering,Private University,2–4,5,5,5,1,5,1,5,5,5,5,5,5,5,5,5,5,5,5,5,5,Yes,Yes,100.0
+171,19,Male,Undergraduate,Social Science,Public University,>6,2,1,3,4,3,3,2,1,3,2,1,2,3,4,1,1,3,3,2,2,No,No,30.0
+172,21,Male,Undergraduate,Arts & Humanities,Public University,2–4,2,1,3,5,1,3,1,1,1,1,2,2,2,1,1,1,1,1,1,2,No,No,11.2
+173,20,Male,Graduate,Social Science,Public University,2–4,3,3,2,4,1,4,3,2,1,2,2,3,3,2,4,2,3,2,2,2,No,No,32.5
+174,22,Male,Undergraduate,Social Science,College,2–4,3,5,4,3,3,3,5,5,3,2,4,4,2,4,3,3,3,4,4,4,Yes,Yes,63.7
+175,22,Male,Undergraduate,Computer Science,Public University,<2,4,1,4,3,2,3,3,3,3,3,2,4,4,3,4,3,3,3,3,3,No,Yes,51.2
+176,25,Other,Graduate,Social Science,Public University,2–4,1,1,2,4,1,5,3,1,2,2,2,1,3,2,1,1,2,2,1,2,No,Yes,16.2
+177,22,Female,Undergraduate,Arts & Humanities,Public University,2–4,1,1,2,3,2,4,2,2,3,1,2,3,2,2,3,2,2,2,1,1,No,Yes,23.8
+178,20,Male,Undergraduate,Computer Science,Public University,<2,2,2,2,4,1,4,2,1,1,1,2,5,1,3,1,3,1,1,2,2,No,Yes,21.3
+179,30,Female,Undergraduate,Computer Science,Public University,4–6,1,2,3,5,1,5,2,2,2,2,1,2,2,1,1,1,1,1,2,2,No,Yes,13.8
+180,22,Male,Undergraduate,Social Science,Public University,<2,4,3,5,1,4,1,5,3,4,5,4,5,4,4,4,5,4,4,4,4,No,Yes,81.2
+181,29,Female,Undergraduate,Arts & Humanities,Private University,2–4,2,2,2,4,2,5,1,1,2,2,3,3,2,2,3,1,3,3,2,2,No,No,26.2
+182,25,Female,Graduate,Social Science,Private University,4–6,5,4,4,1,4,2,5,4,4,5,4,5,3,4,4,4,3,4,4,5,Yes,Yes,80.0
+183,25,Male,Undergraduate,Engineering,Public University,2–4,2,3,2,2,2,4,2,2,1,3,2,1,2,3,1,1,1,1,1,1,No,No,21.3
+184,21,Male,Graduate,Medicine/Health,Private University,<2,2,2,3,2,4,2,4,4,2,4,3,4,4,4,3,3,4,3,4,3,Yes,Yes,60.0
+185,26,Male,Undergraduate,Computer Science,Private University,2–4,5,5,3,1,5,1,5,4,4,5,5,4,4,5,5,5,4,5,5,5,Yes,No,91.3
+186,17,Female,Postgraduate,Social Science,Private University,2–4,5,4,5,1,5,1,5,5,5,4,5,5,5,5,5,5,4,5,5,5,No,Yes,96.2
+187,18,Female,Undergraduate,Social Science,Public University,2–4,3,5,4,1,4,2,5,3,5,3,3,3,4,4,4,5,4,4,5,5,No,Yes,77.5
+188,19,Male,Undergraduate,Engineering,Private University,2–4,2,2,2,4,2,4,2,1,2,1,2,2,3,1,1,2,1,2,2,2,No,Yes,20.0
+189,28,Female,Undergraduate,Engineering,Private University,>6,1,2,2,4,2,4,3,1,2,2,2,2,2,2,1,1,1,3,2,2,No,No,21.3
+190,30,Male,Undergraduate,Engineering,Private University,<2,2,3,2,2,4,2,3,2,4,4,3,3,2,4,3,3,4,5,3,3,No,Yes,56.2
+191,29,Male,Undergraduate,Engineering,Public University,2–4,3,3,4,2,4,2,3,4,3,3,4,5,3,3,3,4,3,3,3,5,No,Yes,63.7
+192,28,Male,Undergraduate,Medicine/Health,Private University,2–4,5,5,5,1,5,1,5,5,5,5,5,5,5,5,5,5,5,5,5,5,Yes,Yes,100.0
+193,22,Female,Undergraduate,Engineering,Private University,>6,5,4,4,1,4,2,3,4,4,3,4,3,4,4,3,3,3,5,3,4,No,Yes,70.0
+194,21,Female,Postgraduate,Arts & Humanities,Public University,<2,4,3,5,3,4,3,4,4,2,3,5,2,4,2,4,3,4,4,3,4,No,Yes,62.5
+195,27,Male,Graduate,Social Science,Private University,2–4,3,3,3,3,2,3,3,1,3,2,3,3,4,2,3,1,4,4,4,4,No,Yes,47.5
+196,17,Male,Undergraduate,Law,Public University,<2,1,1,1,5,1,5,1,1,1,1,1,1,1,1,1,1,1,1,1,1,No,No,0.0
+197,21,Female,Undergraduate,Medicine/Health,Public University,4–6,4,5,5,1,5,1,5,5,5,5,3,5,4,4,5,5,5,4,4,4,Yes,Yes,90.0
+198,28,Male,Graduate,Science,Public University,2–4,2,3,1,3,4,4,1,3,4,2,4,2,2,2,3,2,2,3,1,3,Yes,Yes,36.3
+199,21,Male,Undergraduate,Arts & Humanities,Private University,4–6,5,5,5,1,5,2,3,5,5,3,5,4,5,5,5,4,4,5,5,5,Yes,Yes,90.0
+200,21,Male,Graduate,Medicine/Health,Public University,<2,1,1,1,5,1,5,1,1,2,1,1,1,1,1,1,1,1,1,1,1,No,No,1.3
+201,23,Female,Undergraduate,Business,Public University,<2,3,4,4,2,5,3,5,4,3,4,4,3,4,3,3,4,3,4,3,5,Yes,Yes,68.8
+202,20,Female,Undergraduate,Engineering,College,4–6,3,3,3,3,4,4,4,3,4,2,4,4,1,3,2,2,3,3,2,4,No,Yes,48.8
+203,27,Male,Graduate,Arts & Humanities,Public University,2–4,2,1,1,4,2,4,2,3,2,1,1,3,1,2,1,1,2,2,2,1,No,No,17.5
+204,23,Male,Undergraduate,Social Science,Private University,<2,4,5,5,1,5,1,5,5,5,5,4,4,5,5,5,5,5,5,5,5,Yes,Yes,96.2
+205,28,Male,Undergraduate,Business,Public University,4–6,3,4,4,3,4,1,5,4,4,5,3,5,3,5,5,4,5,5,4,4,No,Yes,80.0
+206,21,Male,Graduate,Law,Public University,>6,3,5,5,2,5,1,5,5,5,4,4,5,5,4,5,5,5,4,4,4,Yes,Yes,88.8
+207,21,Female,Postgraduate,Computer Science,Private University,2–4,2,2,2,3,2,1,2,3,2,2,3,4,3,3,4,4,3,3,3,3,No,No,47.5
+208,19,Female,Undergraduate,Business,Private University,2–4,1,1,1,5,2,5,2,3,1,1,1,1,2,1,1,1,1,1,1,1,No,No,6.2
+209,21,Male,Undergraduate,Law,Private University,2–4,1,1,1,5,1,5,1,1,1,3,1,1,2,1,1,1,1,1,1,1,No,Yes,3.7
+210,22,Male,Graduate,Law,Public University,4–6,3,3,5,4,1,4,3,1,1,3,1,3,2,2,3,3,2,3,3,2,No,Yes,35.0
+211,23,Male,Undergraduate,Arts & Humanities,Private University,2–4,1,1,1,5,1,5,1,1,1,1,1,1,1,1,1,1,1,1,1,1,No,No,0.0
+212,30,Female,Undergraduate,Arts & Humanities,Public University,<2,1,1,2,5,2,4,1,2,2,2,1,2,1,1,1,2,1,1,2,1,No,No,11.2
+213,21,Female,Undergraduate,Medicine/Health,Public University,4–6,4,4,2,4,5,3,4,4,3,4,4,3,4,3,4,4,4,3,4,3,No,Yes,63.7
+214,18,Male,Undergraduate,Business,College,4–6,2,3,2,4,2,5,3,4,2,2,3,4,2,2,3,3,2,3,3,3,Yes,Yes,38.7
+215,29,Female,Undergraduate,Social Science,Public University,>6,5,3,3,2,2,2,3,4,4,4,4,2,3,4,4,4,4,5,4,3,No,Yes,66.2
+216,25,Female,Undergraduate,Computer Science,Public University,2–4,1,1,1,5,1,5,1,1,1,1,1,1,1,1,1,1,1,1,1,1,No,No,0.0
+217,24,Female,Undergraduate,Arts & Humanities,Public University,<2,3,4,3,2,4,2,3,4,5,2,4,3,4,5,3,4,3,4,4,3,No,Yes,66.2
+218,22,Female,Undergraduate,Engineering,Public University,2–4,3,2,3,3,3,4,3,3,2,3,2,2,2,3,3,3,3,2,3,4,No,Yes,42.5
+219,20,Male,Graduate,Computer Science,Public University,2–4,4,4,3,2,3,1,4,4,4,2,3,3,3,4,4,3,3,4,5,3,No,Yes,65.0
+220,22,Male,Undergraduate,Engineering,Public University,4–6,1,3,4,3,3,3,3,2,2,3,3,2,4,5,2,2,2,2,3,2,Yes,Yes,42.5
+221,18,Female,Undergraduate,Computer Science,Public University,4–6,3,4,3,3,3,3,4,2,4,2,4,4,3,4,3,3,3,4,4,2,No,No,56.2
+222,20,Male,Undergraduate,Engineering,Private University,4–6,3,2,1,5,1,4,3,3,2,1,3,1,2,1,1,2,1,1,3,1,No,Yes,18.8
+223,21,Female,Undergraduate,Science,Public University,2–4,4,3,3,4,2,3,2,3,2,3,4,4,3,3,5,2,4,4,4,3,Yes,Yes,53.8
+224,21,Female,Undergraduate,Computer Science,Public University,4–6,2,2,4,5,4,5,2,2,1,2,3,3,3,2,3,1,2,2,2,2,No,Yes,30.0
+225,24,Male,Undergraduate,Arts & Humanities,Public University,2–4,4,3,3,2,3,4,4,2,2,2,3,3,1,3,3,2,2,4,3,2,No,Yes,43.8
+226,18,Female,Graduate,Arts & Humanities,Private University,2–4,4,4,4,4,4,3,5,4,4,3,5,2,5,4,5,2,5,4,4,4,No,Yes,71.2
+227,30,Female,Undergraduate,Engineering,Private University,<2,3,2,3,1,3,3,4,3,4,4,3,4,4,5,4,4,4,5,4,3,Yes,Yes,67.5
+228,18,Male,Graduate,Social Science,College,2–4,5,5,5,1,5,1,5,5,5,5,5,5,5,5,5,5,5,5,5,5,No,Yes,100.0
+229,27,Male,Undergraduate,Computer Science,College,2–4,4,4,4,2,4,2,4,5,4,4,3,3,3,4,3,3,4,1,4,4,Yes,Yes,66.2
+230,29,Female,Graduate,Computer Science,Public University,2–4,3,3,3,3,3,5,4,4,3,2,4,4,3,3,2,3,3,2,4,3,No,Yes,50.0
+231,18,Male,Undergraduate,Law,Private University,2–4,3,4,4,4,3,4,5,2,3,5,4,4,4,4,4,2,3,3,4,3,Yes,No,60.0
+232,23,Male,Undergraduate,Business,Public University,<2,2,3,4,4,4,3,3,2,2,3,4,3,4,3,2,3,3,3,3,3,No,No,48.8
+233,21,Female,Undergraduate,Computer Science,Private University,4–6,4,5,5,1,4,1,5,3,5,4,5,4,5,3,5,3,5,4,5,5,Yes,Yes,86.2
+234,22,Male,Undergraduate,Law,College,2–4,2,1,1,5,1,4,1,2,1,2,2,2,2,1,2,1,1,3,2,1,No,No,13.8
+235,27,Female,Undergraduate,Computer Science,Private University,4–6,5,5,4,2,4,3,4,5,5,4,3,5,3,5,3,5,5,5,4,4,No,Yes,81.2
+236,17,Female,Undergraduate,Computer Science,Private University,2–4,1,2,2,5,1,5,2,2,3,1,3,1,1,3,1,2,2,2,2,1,No,Yes,17.5
+237,24,Female,Undergraduate,Law,Private University,2–4,2,2,3,3,2,4,2,4,4,2,3,5,4,1,3,3,4,3,2,2,No,No,45.0
+238,21,Male,Undergraduate,Engineering,Private University,>6,5,5,5,1,5,1,5,5,5,5,4,4,5,5,5,5,4,5,4,5,Yes,Yes,95.0
+239,23,Female,Graduate,Social Science,College,4–6,4,3,5,1,4,1,4,5,5,4,4,5,4,4,4,5,4,5,5,4,Yes,Yes,85.0
+240,28,Female,Undergraduate,Computer Science,Public University,2–4,3,1,2,4,2,4,3,2,2,2,3,4,1,3,2,3,2,1,3,1,No,No,30.0
+241,27,Male,Undergraduate,Arts & Humanities,Public University,2–4,3,4,3,2,4,2,2,5,5,4,4,4,5,5,5,4,4,4,4,5,No,Yes,77.5
+242,22,Female,Undergraduate,Social Science,Public University,2–4,2,4,3,3,2,5,1,1,3,3,3,2,2,2,2,2,3,2,3,2,No,No,32.5
+243,29,Male,Undergraduate,Engineering,Private University,>6,3,2,2,4,1,3,3,2,2,2,3,2,1,3,2,3,2,1,4,3,No,Yes,32.5
+244,29,Male,Graduate,Engineering,Public University,>6,5,5,3,2,3,2,4,4,4,3,5,4,5,5,4,3,4,5,4,5,No,Yes,78.8
+245,23,Female,Undergraduate,Law,Private University,>6,4,5,5,1,4,1,5,5,5,4,5,5,5,4,5,4,5,5,5,5,No,Yes,93.8
+246,30,Male,Undergraduate,Business,Private University,<2,2,1,4,5,3,4,2,2,2,2,2,1,2,2,3,3,2,2,1,1,No,No,25.0
+247,23,Male,Undergraduate,Engineering,Public University,4–6,1,2,1,4,1,5,1,1,1,1,2,2,1,1,1,1,2,1,1,1,No,Yes,6.2
+248,17,Male,Graduate,Law,Private University,4–6,4,2,3,3,3,3,5,4,4,3,2,3,3,3,3,4,3,3,3,3,No,No,55.0
+249,18,Male,Undergraduate,Social Science,College,2–4,3,3,2,4,2,3,3,3,1,2,3,2,1,4,4,2,3,2,3,1,No,No,36.3
+250,22,Male,Postgraduate,Business,Private University,2–4,2,1,2,5,2,5,2,2,2,2,2,1,3,2,2,1,1,2,1,1,No,No,16.2
+251,26,Female,Undergraduate,Social Science,Private University,4–6,5,4,4,2,5,1,4,5,4,5,5,5,5,5,5,5,5,5,5,5,Yes,Yes,93.8
+252,24,Male,Undergraduate,Social Science,College,4–6,3,5,4,2,4,2,5,4,5,5,3,5,4,4,4,4,4,3,4,5,No,Yes,78.8
+253,20,Male,Graduate,Science,Public University,4–6,5,5,5,1,2,2,5,5,5,5,4,4,5,5,4,4,5,5,5,4,No,Yes,88.8
+254,17,Female,Undergraduate,Engineering,Private University,4–6,1,1,1,4,2,4,1,2,3,1,1,2,1,2,2,2,2,1,2,2,No,No,16.2
+255,28,Male,Undergraduate,Business,Public University,4–6,2,3,4,4,3,4,3,3,3,2,3,3,4,3,1,1,1,2,2,3,No,No,37.5
+256,30,Other,Undergraduate,Computer Science,Private University,2–4,2,3,1,5,2,4,2,2,1,3,1,3,2,2,3,2,3,2,2,3,No,No,27.5
+257,23,Male,Graduate,Law,Public University,4–6,2,3,3,4,3,4,2,2,3,3,2,2,2,3,2,2,3,3,3,2,No,Yes,36.3
+258,26,Female,Undergraduate,Medicine/Health,Public University,2–4,5,5,5,2,4,1,5,5,5,5,4,5,4,5,4,5,5,5,5,4,No,Yes,92.5
+259,27,Female,Undergraduate,Computer Science,Public University,>6,3,1,4,3,2,1,2,2,3,4,4,4,4,3,3,4,4,3,3,4,Yes,Yes,56.2
+260,29,Male,Undergraduate,Computer Science,Private University,2–4,2,4,2,3,3,4,3,2,2,3,1,3,3,3,3,1,5,2,2,1,No,No,37.5
+261,28,Male,Undergraduate,Medicine/Health,Private University,4–6,5,5,5,1,5,1,4,5,5,5,5,5,5,5,5,5,5,5,5,5,Yes,Yes,98.8
+262,21,Male,Undergraduate,Computer Science,Private University,4–6,5,5,5,1,5,1,5,5,5,5,5,5,5,5,5,5,5,5,5,5,No,Yes,100.0
+263,21,Male,Undergraduate,Social Science,Public University,4–6,5,5,4,1,4,2,4,5,5,5,5,5,4,4,5,5,5,5,5,5,Yes,Yes,92.5
+264,30,Female,Undergraduate,Engineering,Public University,4–6,2,2,2,5,1,4,3,3,1,2,3,1,2,1,2,2,1,1,2,2,No,No,20.0
+265,24,Female,Undergraduate,Social Science,Public University,2–4,1,1,1,5,1,5,1,1,1,1,1,1,1,1,1,1,1,1,1,1,No,No,0.0
+266,28,Male,Undergraduate,Computer Science,Private University,2–4,2,2,2,4,3,5,1,1,3,2,1,3,2,1,2,2,2,2,2,2,No,No,22.5
+267,23,Male,Undergraduate,Medicine/Health,Private University,2–4,4,2,4,3,3,3,3,3,2,2,3,4,2,3,2,4,2,2,3,3,Yes,Yes,46.2
+268,22,Female,Undergraduate,Law,Private University,<2,1,3,4,3,4,3,4,4,2,4,3,3,3,4,3,3,5,4,5,3,No,No,60.0
+269,24,Female,Undergraduate,Engineering,Public University,4–6,4,3,2,3,3,5,2,3,2,3,3,2,1,3,2,3,4,1,2,3,No,Yes,37.5
+270,26,Female,Undergraduate,Business,College,2–4,4,5,5,2,4,1,4,5,4,4,5,4,3,4,4,5,4,5,4,3,Yes,Yes,81.2
+271,19,Male,Undergraduate,Medicine/Health,Private University,2–4,4,5,3,1,5,1,4,4,3,3,4,5,4,4,5,3,4,5,4,4,Yes,Yes,78.8
+272,18,Female,Undergraduate,Social Science,Private University,4–6,3,2,3,2,4,2,4,4,4,3,4,4,2,3,4,2,3,3,4,3,No,Yes,58.8
+273,25,Male,Undergraduate,Business,Public University,<2,1,1,1,5,1,5,1,1,1,1,1,1,1,1,1,1,1,1,1,1,No,No,0.0
+274,20,Male,Undergraduate,Business,Private University,2–4,5,3,4,2,5,2,5,5,5,5,5,5,5,5,5,4,5,3,5,5,No,No,90.0
+275,18,Female,Undergraduate,Social Science,Private University,<2,3,2,3,4,4,2,2,3,2,2,1,3,4,3,3,3,3,2,2,2,No,No,41.2
+276,20,Female,Undergraduate,Law,Public University,<2,1,1,1,5,1,5,1,1,1,1,1,1,1,1,1,1,1,1,1,1,No,No,0.0
+277,25,Female,Graduate,Computer Science,Private University,2–4,5,5,5,1,5,1,5,5,5,5,5,4,5,5,5,5,5,4,5,5,Yes,No,97.5
+278,18,Female,Undergraduate,Computer Science,Private University,2–4,5,5,5,1,5,1,5,5,5,5,5,5,5,5,5,5,5,5,5,5,No,Yes,100.0
+279,19,Male,Undergraduate,Computer Science,Private University,<2,4,2,2,2,2,2,3,4,3,2,2,3,3,3,2,2,3,4,2,2,Yes,Yes,45.0
+280,25,Male,Undergraduate,Business,Public University,2–4,1,1,1,5,1,5,1,3,1,1,1,2,1,1,1,1,2,1,1,1,No,Yes,5.0
+281,18,Male,Graduate,Science,Public University,2–4,4,4,4,1,4,2,4,4,4,4,4,4,3,4,4,4,4,4,5,3,Yes,Yes,75.0
+282,19,Female,Undergraduate,Social Science,Private University,2–4,5,5,5,1,5,1,5,4,5,5,4,4,5,4,5,5,5,4,5,5,No,Yes,93.8
+283,18,Female,Graduate,Computer Science,Public University,4–6,3,4,4,2,4,1,5,5,5,4,4,4,5,5,4,4,4,4,4,4,Yes,Yes,81.2
+284,20,Female,Undergraduate,Business,Public University,2–4,1,1,1,5,1,5,1,1,1,1,1,1,1,1,1,1,1,1,1,1,No,No,0.0
+285,29,Male,Graduate,Business,Public University,<2,1,1,2,4,3,4,1,2,3,2,2,1,1,3,1,2,3,3,2,2,No,Yes,23.8
+286,30,Female,Undergraduate,Computer Science,Private University,2–4,2,3,2,4,2,5,1,1,1,3,2,1,2,2,2,1,2,1,3,2,No,No,20.0
+287,18,Male,Undergraduate,Medicine/Health,Public University,<2,4,5,4,3,4,1,4,4,4,2,4,4,3,3,5,5,2,5,3,4,Yes,Yes,71.2
+288,25,Male,Undergraduate,Social Science,Public University,4–6,5,5,5,1,5,1,5,5,5,4,5,5,4,5,5,5,5,5,5,5,Yes,Yes,97.5
+289,18,Other,Undergraduate,Social Science,College,4–6,3,3,5,3,2,2,2,4,3,2,2,3,3,2,2,3,4,2,3,3,No,Yes,47.5
+290,22,Female,Undergraduate,Engineering,Public University,<2,3,3,3,3,3,2,3,2,3,3,2,2,4,4,2,3,2,2,3,2,No,Yes,45.0
+291,19,Female,Graduate,Social Science,Public University,2–4,1,1,1,5,2,5,2,3,1,1,1,1,1,1,1,1,1,1,1,1,No,Yes,5.0
+292,30,Female,Undergraduate,Social Science,Public University,2–4,1,1,1,5,1,5,1,1,1,1,1,2,1,1,1,1,1,1,1,1,No,No,1.3
+293,24,Male,Undergraduate,Science,College,4–6,4,3,3,2,2,3,3,2,2,4,3,3,3,3,3,4,2,3,2,2,No,Yes,47.5
+294,28,Female,Undergraduate,Business,Public University,4–6,5,4,5,2,5,1,5,5,5,5,5,5,5,5,5,5,5,5,5,5,No,No,97.5
+295,17,Male,Undergraduate,Engineering,Private University,4–6,2,3,3,4,2,4,2,2,1,4,4,3,2,3,2,3,4,4,3,3,Yes,No,42.5
+296,23,Male,Undergraduate,Science,Public University,4–6,1,2,1,3,2,5,2,1,2,2,2,1,2,2,1,2,2,2,1,1,No,No,16.2
+297,26,Female,Graduate,Social Science,Private University,2–4,1,1,1,5,1,4,2,2,1,2,1,1,1,1,1,1,2,1,1,1,No,No,6.2
+298,28,Female,Undergraduate,Engineering,Public University,2–4,1,1,1,5,1,4,1,1,1,1,1,2,2,1,1,1,2,1,1,1,No,No,5.0
+299,30,Male,Undergraduate,Computer Science,Public University,2–4,5,5,5,1,5,1,4,4,5,3,5,5,4,4,4,4,4,4,4,5,Yes,Yes,86.2
+300,23,Male,Undergraduate,Computer Science,Private University,2–4,3,4,1,4,2,4,4,2,4,2,3,2,3,4,4,4,3,3,3,3,No,Yes,47.5
+301,23,Male,Undergraduate,Law,Private University,2–4,4,3,2,2,3,3,5,3,3,4,4,4,5,4,5,4,5,4,4,4,No,Yes,71.2
+302,30,Female,Undergraduate,Business,Public University,2–4,1,1,1,5,1,5,1,1,1,1,1,1,1,1,1,1,1,1,1,1,Yes,Yes,0.0
+303,20,Female,Undergraduate,Science,Public University,4–6,2,3,1,4,2,4,3,3,2,3,3,2,2,1,1,2,4,4,3,3,No,No,35.0
+304,23,Female,Undergraduate,Social Science,Public University,2–4,5,5,5,1,4,1,2,5,4,5,5,5,5,4,4,5,4,5,5,5,No,Yes,90.0
+305,21,Male,Undergraduate,Engineering,Private University,4–6,3,2,1,3,2,4,1,2,2,2,2,2,3,3,3,4,2,2,1,2,No,No,30.0
+306,25,Female,Undergraduate,Medicine/Health,Public University,2–4,1,3,1,2,2,3,2,2,2,2,2,1,1,3,2,2,2,1,1,2,No,Yes,23.8
+307,20,Female,Undergraduate,Social Science,Private University,2–4,3,2,3,4,3,3,2,2,5,2,3,3,2,3,3,3,3,4,2,3,No,No,45.0
+308,23,Male,Undergraduate,Science,College,4–6,3,3,2,2,4,3,1,3,2,3,3,2,2,4,3,3,3,4,3,4,No,Yes,48.8
+309,29,Male,Graduate,Science,College,4–6,4,3,2,2,4,2,4,2,3,4,4,3,2,4,3,5,4,4,3,4,No,Yes,62.5
+310,26,Male,Graduate,Science,Private University,2–4,3,3,2,3,4,3,3,3,2,2,2,3,3,3,4,2,4,2,2,1,No,No,42.5
+311,24,Male,Undergraduate,Social Science,Public University,4–6,3,3,4,3,4,2,3,3,5,2,3,5,2,3,2,3,4,2,3,3,Yes,Yes,55.0
+312,23,Male,Undergraduate,Social Science,Public University,2–4,2,3,1,3,3,4,2,3,3,2,3,2,2,3,3,3,1,3,2,2,No,No,35.0
+313,19,Male,Graduate,Social Science,Public University,<2,1,2,1,5,2,5,1,1,1,1,1,1,1,1,1,1,1,1,2,1,No,No,3.7
+314,29,Male,Undergraduate,Engineering,College,<2,4,3,1,3,1,4,3,3,2,1,2,1,3,3,3,2,2,3,2,2,No,Yes,32.5
+315,25,Female,Graduate,Business,Public University,4–6,1,1,1,5,1,5,1,1,2,1,1,1,1,2,2,1,1,1,1,2,No,No,5.0
+316,29,Male,Undergraduate,Business,Public University,<2,5,3,2,3,3,4,3,4,2,2,2,2,3,2,3,4,4,4,2,2,No,No,46.2
+317,28,Female,Graduate,Arts & Humanities,Public University,4–6,1,1,1,4,1,5,1,1,1,1,1,1,1,1,3,1,2,2,1,1,No,Yes,6.2
+318,20,Female,Undergraduate,Business,Private University,2–4,3,4,3,3,3,2,3,4,3,4,3,3,4,3,5,4,4,4,4,5,No,Yes,66.2
+319,30,Male,Undergraduate,Law,Public University,2–4,3,4,4,2,3,3,4,3,1,3,3,4,3,4,3,3,2,4,4,2,Yes,No,55.0
+320,23,Male,Undergraduate,Computer Science,Public University,2–4,1,1,1,5,1,5,1,1,1,1,1,1,1,1,1,1,1,1,1,1,No,No,0.0
+321,20,Female,Undergraduate,Business,Public University,2–4,5,4,5,2,4,2,4,5,4,5,5,4,3,4,4,4,3,4,4,4,Yes,Yes,78.8
+322,18,Female,Undergraduate,Science,Private University,>6,4,5,4,2,5,1,4,5,4,5,5,5,4,5,5,4,5,4,5,5,No,Yes,90.0
+323,21,Male,Undergraduate,Computer Science,Private University,2–4,3,3,4,4,4,2,2,4,4,4,3,3,2,3,2,2,5,3,3,3,Yes,Yes,53.8
+324,18,Female,Undergraduate,Law,Public University,2–4,1,1,2,5,1,5,1,1,1,1,1,1,1,1,1,1,1,1,1,1,No,No,1.3
+325,23,Female,Graduate,Law,Public University,2–4,1,2,1,4,1,5,1,1,1,1,1,1,1,1,1,1,1,1,1,1,Yes,Yes,2.5
+326,28,Male,Undergraduate,Computer Science,Private University,<2,4,5,4,1,4,2,5,5,4,5,3,4,5,5,5,5,5,5,4,5,No,Yes,88.8
+327,17,Male,Graduate,Computer Science,Public University,<2,2,3,2,3,1,5,1,3,2,1,3,1,2,2,2,4,3,2,3,2,No,Yes,28.7
+328,21,Female,Undergraduate,Engineering,Public University,2–4,4,3,2,2,3,1,4,3,5,2,4,3,2,3,3,4,3,3,3,4,No,Yes,58.8
+329,26,Female,Undergraduate,Computer Science,Public University,2–4,1,1,1,5,1,5,1,1,1,1,1,1,1,1,1,1,1,1,1,1,No,Yes,0.0
+330,27,Female,Undergraduate,Business,Public University,2–4,4,2,4,2,3,3,4,3,2,3,3,3,3,4,3,2,3,4,4,3,No,Yes,55.0
+331,28,Male,Undergraduate,Engineering,College,2–4,1,1,1,4,2,4,1,2,2,2,2,2,1,1,2,2,3,3,3,2,No,No,21.3
+332,26,Female,Undergraduate,Social Science,Private University,4–6,3,2,2,4,1,5,1,1,2,2,1,2,3,2,2,3,2,2,3,2,No,Yes,23.8
+333,29,Male,Graduate,Engineering,College,>6,5,5,4,1,5,1,5,5,5,5,5,5,5,5,5,4,5,5,5,5,No,Yes,97.5
+334,21,Male,Undergraduate,Computer Science,Private University,2–4,2,3,1,4,2,3,2,2,4,4,3,4,3,5,3,3,2,2,3,3,No,No,45.0
+335,28,Female,Undergraduate,Social Science,Public University,4–6,4,4,4,3,5,1,4,4,4,4,5,2,2,3,4,4,4,4,3,4,No,Yes,70.0
+336,27,Male,Undergraduate,Law,Public University,<2,1,1,2,5,1,4,2,1,1,2,1,2,2,2,2,1,2,1,1,2,No,Yes,12.5
+337,22,Male,Undergraduate,Science,Private University,4–6,5,5,5,1,5,1,5,5,5,5,5,5,5,5,5,5,5,5,5,5,No,Yes,100.0
+338,23,Female,Undergraduate,Science,Public University,2–4,1,2,1,5,2,5,3,1,1,1,1,2,1,1,1,2,1,2,1,1,No,No,8.8
+339,25,Male,Graduate,Medicine/Health,Public University,4–6,5,4,5,2,4,1,5,5,5,5,5,5,4,3,4,5,4,5,5,4,Yes,Yes,88.8
+340,18,Male,Undergraduate,Science,Public University,<2,1,3,2,5,1,4,3,2,2,1,1,2,2,1,2,2,2,1,2,2,No,No,18.8
+341,20,Female,Postgraduate,Computer Science,Public University,2–4,3,4,5,3,2,2,5,2,4,3,3,2,2,4,4,2,4,3,4,2,No,No,56.2
+342,29,Male,Undergraduate,Medicine/Health,Public University,4–6,3,4,3,3,4,3,2,3,3,4,2,3,2,3,3,3,2,3,2,4,No,Yes,48.8
+343,24,Female,Undergraduate,Medicine/Health,Private University,<2,3,2,4,3,2,3,4,4,3,3,3,1,4,3,3,3,2,3,3,4,No,Yes,50.0
+344,30,Female,Undergraduate,Engineering,Private University,4–6,4,2,4,3,4,1,2,3,3,1,3,4,4,4,4,3,3,3,3,3,No,No,56.2
+345,17,Female,Undergraduate,Engineering,Private University,4–6,2,2,1,4,3,4,2,2,2,2,2,2,2,2,1,3,2,1,1,2,No,No,22.5
+346,17,Female,Undergraduate,Business,Private University,4–6,2,3,3,2,4,1,3,5,5,4,5,4,4,4,4,5,4,3,4,3,Yes,No,72.5
+347,21,Male,Undergraduate,Science,Public University,2–4,5,4,3,4,3,3,3,5,4,3,2,1,4,3,3,3,5,4,3,3,No,Yes,57.5
+348,17,Female,Undergraduate,Science,Private University,2–4,2,4,3,3,2,3,2,4,3,3,4,3,3,2,4,4,3,2,3,4,No,Yes,51.2
+349,19,Male,Graduate,Social Science,Private University,<2,5,4,4,1,5,2,5,5,5,5,5,4,5,5,5,5,5,5,5,4,No,Yes,93.8
+350,26,Female,Undergraduate,Engineering,Private University,4–6,4,5,4,2,4,2,5,4,4,5,5,5,5,5,5,4,5,4,5,5,No,Yes,88.8
+351,26,Female,Undergraduate,Science,Public University,>6,2,3,2,4,3,2,2,3,3,2,2,2,4,3,2,2,2,1,2,3,No,Yes,36.3
+352,30,Male,Undergraduate,Engineering,Private University,4–6,2,4,3,3,3,1,3,3,2,4,4,4,4,4,4,4,3,5,4,4,Yes,No,65.0
+353,19,Female,Undergraduate,Medicine/Health,Private University,<2,5,5,5,1,4,2,5,5,4,5,5,5,5,5,4,5,5,5,5,5,No,Yes,95.0
+354,30,Female,Undergraduate,Social Science,College,4–6,3,4,3,4,3,5,2,3,3,2,2,4,3,3,1,2,4,3,3,3,No,No,42.5
+355,19,Female,Undergraduate,Social Science,Private University,2–4,3,2,4,3,2,3,4,3,2,4,3,4,3,2,3,3,3,2,3,3,Yes,No,48.8
+356,21,Female,Undergraduate,Science,Public University,<2,3,2,2,5,1,4,1,1,1,1,1,2,2,2,2,2,2,3,1,2,No,Yes,17.5
+357,19,Male,Graduate,Computer Science,Private University,4–6,2,4,2,3,3,3,3,3,5,2,4,4,3,4,4,4,2,3,4,2,No,No,55.0
+358,26,Male,Postgraduate,Computer Science,Public University,<2,3,5,4,2,5,1,4,4,4,4,4,4,5,5,5,5,5,5,4,4,Yes,Yes,85.0
+359,17,Female,Undergraduate,Medicine/Health,Public University,<2,4,4,5,2,4,3,4,5,3,4,4,3,3,3,2,3,3,3,3,4,No,Yes,63.7
+360,19,Male,Undergraduate,Business,Public University,4–6,2,4,5,2,4,2,4,4,4,4,4,4,4,5,4,4,5,3,4,3,Yes,Yes,73.8
+361,21,Female,Undergraduate,Medicine/Health,Private University,4–6,4,5,4,1,4,1,4,5,5,4,3,4,5,5,4,4,4,5,4,3,No,Yes,82.5
+362,23,Male,Graduate,Computer Science,Public University,2–4,1,2,1,4,1,4,3,2,2,3,2,2,2,2,3,3,3,4,2,1,No,No,28.7
+363,21,Female,Undergraduate,Science,Private University,<2,1,2,1,5,3,5,1,2,1,2,2,1,1,1,2,2,2,1,1,2,Yes,Yes,12.5
+364,23,Male,Undergraduate,Computer Science,Private University,2–4,3,2,2,4,3,4,3,2,2,2,1,4,2,3,3,2,3,3,2,4,No,No,37.5
+365,19,Female,Graduate,Social Science,Private University,2–4,4,5,4,3,3,3,3,5,4,3,4,5,4,4,3,3,4,4,3,4,No,Yes,68.8
+366,30,Female,Undergraduate,Computer Science,Private University,2–4,3,4,5,2,5,1,2,5,4,4,3,5,4,3,5,3,3,4,4,4,No,Yes,73.8
+367,26,Female,Undergraduate,Science,Public University,4–6,1,1,1,5,1,5,2,1,2,1,2,1,1,1,1,1,1,1,1,1,No,No,3.7
+368,29,Other,Graduate,Science,Private University,4–6,5,5,5,1,5,1,5,5,5,5,5,5,5,5,5,5,5,5,5,5,No,Yes,100.0
+369,23,Female,Graduate,Computer Science,Private University,>6,3,2,4,2,3,4,4,3,4,4,4,3,2,5,2,4,3,3,3,2,No,Yes,55.0
+370,27,Female,Undergraduate,Engineering,Private University,2–4,2,3,3,3,3,3,3,3,3,3,2,4,4,1,4,2,5,3,3,3,No,Yes,50.0
+371,17,Female,Postgraduate,Computer Science,Private University,2–4,3,3,3,2,4,2,3,2,4,4,3,4,4,4,3,3,2,4,4,3,Yes,Yes,60.0
+372,30,Female,Graduate,Medicine/Health,Public University,2–4,5,5,5,1,5,1,5,4,4,5,5,5,4,5,5,5,5,5,5,5,Yes,Yes,96.2
+373,24,Male,Undergraduate,Computer Science,Private University,2–4,4,3,3,4,1,5,3,2,2,2,1,2,3,2,2,2,4,2,1,2,Yes,Yes,30.0
+374,22,Male,Undergraduate,Social Science,Private University,4–6,2,1,1,4,2,5,2,3,3,2,2,1,2,1,2,2,1,2,2,2,Yes,Yes,20.0
+375,19,Male,Undergraduate,Computer Science,Private University,2–4,1,2,1,4,1,5,1,1,1,3,1,2,2,2,2,1,2,1,2,2,No,No,13.8
+376,29,Male,Undergraduate,Computer Science,Public University,4–6,4,3,4,2,4,2,5,4,3,4,5,4,3,4,3,4,3,5,5,4,No,Yes,73.8
+377,20,Male,Undergraduate,Science,Private University,2–4,5,3,5,2,3,1,5,4,4,5,3,3,5,3,3,3,4,4,4,4,No,No,73.8
+378,30,Male,Undergraduate,Computer Science,Private University,2–4,3,2,4,2,3,2,2,5,5,5,3,2,3,3,3,4,3,4,3,3,No,Yes,60.0
+379,30,Female,Undergraduate,Social Science,Public University,4–6,5,5,5,1,5,1,5,5,5,5,5,4,5,5,5,5,5,5,5,5,Yes,Yes,98.8
+380,19,Male,Undergraduate,Medicine/Health,Private University,4–6,3,2,2,1,4,3,1,1,3,4,3,1,2,3,4,4,2,3,2,2,No,Yes,42.5
+381,17,Male,Undergraduate,Business,Private University,>6,5,4,3,1,5,1,4,3,4,4,4,3,2,5,4,3,4,5,4,4,Yes,Yes,75.0
+382,19,Male,Undergraduate,Engineering,Private University,2–4,1,1,1,5,1,4,1,1,1,1,1,1,1,2,1,1,2,2,1,1,No,No,5.0
+383,18,Female,Undergraduate,Computer Science,Public University,<2,1,1,1,5,1,5,1,1,1,1,1,1,1,1,1,1,1,1,1,1,No,No,0.0
+384,19,Male,Undergraduate,Computer Science,Public University,2–4,3,3,3,3,3,2,3,2,4,4,4,4,3,4,4,4,5,4,4,4,Yes,Yes,65.0
+385,29,Male,Undergraduate,Computer Science,Public University,4–6,4,5,5,1,5,3,3,5,3,2,5,3,4,4,2,5,4,4,4,4,No,Yes,73.8
+386,22,Female,Undergraduate,Arts & Humanities,Private University,2–4,2,2,1,5,1,5,1,2,1,2,1,2,1,1,2,1,1,1,1,1,No,No,7.5
+387,27,Male,Undergraduate,Medicine/Health,College,4–6,5,4,3,4,4,3,5,4,2,4,4,4,2,4,4,3,4,4,4,4,Yes,Yes,66.2
+388,23,Female,Undergraduate,Science,Public University,4–6,4,4,4,2,5,2,4,4,2,3,4,3,4,4,4,4,4,4,2,4,Yes,Yes,68.8
+389,27,Male,Undergraduate,Computer Science,Public University,4–6,3,2,3,2,2,3,3,3,2,4,5,2,3,2,3,3,4,3,2,4,Yes,Yes,50.0
+390,20,Female,Undergraduate,Business,Public University,<2,2,1,1,5,1,4,1,1,1,2,2,4,1,2,1,1,1,1,1,2,No,No,11.2
+391,24,Male,Graduate,Engineering,Private University,4–6,4,4,3,3,3,3,4,5,3,4,4,3,3,4,3,4,3,5,3,3,No,Yes,63.7
+392,24,Male,Graduate,Arts & Humanities,Private University,2–4,5,5,5,1,5,3,5,5,5,5,5,5,5,5,5,5,5,5,5,5,Yes,Yes,97.5
+393,28,Female,Undergraduate,Medicine/Health,Private University,2–4,3,5,5,1,5,1,3,4,4,5,5,3,5,4,5,4,4,5,4,5,No,Yes,85.0
+394,27,Female,Undergraduate,Computer Science,Private University,<2,3,2,2,3,4,3,3,3,2,2,1,1,3,2,3,4,2,2,3,2,Yes,No,37.5
+395,17,Male,Graduate,Engineering,Public University,2–4,4,3,4,2,4,1,5,5,4,4,4,5,5,5,4,5,5,5,4,4,Yes,Yes,85.0
+396,27,Female,Undergraduate,Social Science,Public University,2–4,4,2,3,3,2,2,2,3,3,2,2,3,3,4,3,3,3,3,4,4,No,No,50.0
+397,21,Female,Undergraduate,Computer Science,Public University,4–6,5,4,4,2,4,3,3,2,3,4,3,4,3,4,2,3,3,4,4,3,Yes,Yes,61.3
+398,28,Female,Undergraduate,Social Science,Public University,4–6,4,4,2,1,3,2,2,3,3,5,3,4,3,4,4,3,4,4,3,3,No,Yes,62.5
+399,30,Other,Undergraduate,Engineering,College,>6,3,4,4,1,4,2,4,5,5,5,5,5,5,5,4,4,4,3,5,5,No,Yes,85.0
+400,22,Male,Undergraduate,Medicine/Health,Private University,2–4,1,1,1,5,1,4,1,1,1,1,2,2,1,2,2,1,1,2,2,1,Yes,No,8.8
+401,25,Male,Undergraduate,Engineering,Private University,2–4,4,4,3,3,4,3,4,4,4,4,2,4,3,3,3,3,4,2,3,5,Yes,No,61.3
+402,30,Female,Undergraduate,Social Science,College,2–4,3,2,1,4,2,4,2,2,1,2,2,1,2,1,2,2,2,3,2,2,No,Yes,22.5
+403,20,Female,Undergraduate,Law,College,2–4,4,4,1,2,1,3,2,3,2,2,3,3,2,2,3,3,4,3,2,2,No,No,41.2
+404,18,Male,Undergraduate,Arts & Humanities,Private University,<2,2,1,3,5,1,5,2,1,2,1,1,1,1,1,2,1,1,1,1,1,No,No,7.5
+405,21,Female,Undergraduate,Arts & Humanities,Public University,>6,3,4,4,2,4,2,3,4,3,5,3,4,3,4,4,3,5,5,5,4,No,Yes,72.5
+406,18,Male,Undergraduate,Science,Public University,4–6,5,4,4,1,3,4,2,5,4,4,3,2,4,4,2,4,2,2,3,4,No,Yes,60.0
+407,17,Male,Undergraduate,Arts & Humanities,Private University,4–6,3,3,3,4,4,4,4,4,4,3,3,4,3,4,1,3,4,3,3,3,No,Yes,53.8
+408,26,Male,Undergraduate,Arts & Humanities,Private University,4–6,4,4,1,1,4,1,4,4,3,3,4,3,4,2,3,5,5,3,4,4,No,Yes,67.5
+409,29,Female,Postgraduate,Business,Public University,<2,3,3,3,4,2,4,4,4,5,4,3,2,2,3,3,3,3,2,2,3,Yes,No,47.5
+410,29,Female,Undergraduate,Science,College,4–6,5,5,5,3,4,2,5,5,4,5,4,5,4,5,4,5,4,5,5,4,Yes,Yes,87.5
+411,30,Female,Undergraduate,Medicine/Health,Private University,4–6,3,2,2,5,1,4,3,2,2,2,2,2,1,3,1,1,1,1,3,1,No,Yes,20.0
+412,22,Male,Undergraduate,Engineering,Private University,2–4,5,5,5,1,5,1,5,5,5,5,5,5,5,5,5,5,5,5,5,5,Yes,No,100.0
+413,26,Male,Graduate,Arts & Humanities,Private University,2–4,3,3,2,2,3,4,3,1,3,3,4,3,3,2,3,4,2,3,3,2,No,Yes,45.0
+414,23,Female,Postgraduate,Arts & Humanities,Private University,2–4,2,2,2,3,1,4,2,3,3,3,2,2,2,1,2,2,2,4,1,2,Yes,Yes,28.7
+415,24,Male,Undergraduate,Computer Science,Private University,>6,5,5,5,1,4,1,5,5,5,5,4,5,5,5,5,5,4,5,4,5,No,Yes,95.0
+416,17,Male,Undergraduate,Social Science,Public University,2–4,2,2,2,4,2,4,3,2,1,2,4,2,2,3,4,3,2,2,4,3,Yes,Yes,36.3
+417,23,Male,Undergraduate,Engineering,Public University,>6,5,5,5,1,5,1,5,5,5,5,5,5,5,5,5,5,5,5,5,5,No,Yes,100.0
+418,28,Female,Undergraduate,Engineering,Public University,2–4,4,5,4,2,4,4,4,3,5,5,4,4,3,3,4,4,3,2,3,3,No,No,66.2
+419,20,Female,Undergraduate,Computer Science,Public University,4–6,5,5,5,1,5,1,5,5,4,4,5,5,5,4,4,5,5,5,5,4,Yes,Yes,93.8
+420,17,Male,Undergraduate,Business,Public University,4–6,3,2,2,2,2,3,4,3,4,4,3,3,2,4,2,3,4,2,3,4,No,Yes,51.2
+421,18,Male,Undergraduate,Arts & Humanities,College,>6,3,3,5,4,3,3,4,3,3,3,1,3,3,4,3,1,3,2,3,2,No,No,46.2
+422,26,Female,Undergraduate,Arts & Humanities,Public University,2–4,5,3,3,4,4,3,4,3,3,5,4,4,5,3,4,3,3,3,3,4,Yes,No,63.7
+423,27,Male,Undergraduate,Engineering,Public University,2–4,5,5,5,1,5,1,5,5,5,5,5,5,5,5,5,5,4,5,5,5,No,Yes,98.8
+424,19,Male,Undergraduate,Computer Science,Public University,>6,5,4,5,1,5,1,5,5,5,5,5,5,4,5,5,5,5,5,5,5,No,Yes,97.5
+425,20,Female,Graduate,Computer Science,Private University,<2,4,4,5,2,4,1,4,4,4,5,5,3,3,5,4,5,4,4,4,4,No,No,80.0
+426,20,Female,Undergraduate,Engineering,Public University,<2,4,4,5,2,4,2,5,5,5,4,5,3,4,4,3,5,5,4,4,4,Yes,Yes,81.2
+427,28,Male,Undergraduate,Engineering,Private University,<2,5,5,5,1,5,1,5,5,5,3,5,4,5,3,4,5,4,5,4,5,Yes,Yes,90.0
+428,25,Female,Undergraduate,Medicine/Health,Public University,4–6,5,5,3,1,5,1,5,5,4,5,5,5,5,4,5,5,4,5,5,4,No,No,92.5
+429,26,Female,Undergraduate,Social Science,Private University,>6,4,5,3,1,3,1,5,4,5,5,5,5,5,4,5,5,5,5,5,5,No,Yes,91.3
+430,28,Male,Undergraduate,Business,Public University,4–6,1,1,1,5,1,5,1,1,1,1,1,1,1,1,1,1,1,1,1,1,No,No,0.0
+431,19,Female,Undergraduate,Engineering,Private University,>6,4,3,3,3,2,4,3,3,3,3,3,4,3,4,2,2,2,3,3,3,No,Yes,47.5
+432,25,Female,Undergraduate,Social Science,Private University,>6,5,5,5,1,5,1,5,5,5,5,5,4,5,5,5,4,5,5,5,5,No,Yes,97.5
+433,22,Male,Undergraduate,Science,Private University,4–6,4,4,3,3,5,1,4,5,4,3,4,3,5,4,4,4,4,3,4,4,No,Yes,73.8
+434,30,Male,Undergraduate,Engineering,Public University,2–4,1,1,1,5,1,5,1,1,1,1,1,1,1,1,1,1,1,1,1,1,No,No,0.0
+435,24,Male,Graduate,Law,Private University,2–4,4,2,2,4,3,3,4,2,3,3,2,3,1,2,2,2,3,2,3,2,No,No,37.5
+436,24,Female,Undergraduate,Engineering,Private University,2–4,2,2,2,5,1,4,1,1,1,1,1,1,1,1,1,1,1,1,1,1,No,Yes,5.0
+437,27,Male,Undergraduate,Science,Private University,2–4,1,1,2,5,2,5,1,1,1,1,2,1,1,1,1,1,1,1,1,2,Yes,No,5.0
+438,18,Female,Undergraduate,Computer Science,Public University,>6,4,4,3,2,4,2,4,4,3,4,4,3,4,5,3,4,3,5,4,4,No,Yes,71.2
+439,26,Male,Postgraduate,Law,Private University,<2,2,1,1,4,2,4,3,1,1,3,3,2,1,3,3,3,1,1,3,2,Yes,No,25.0
+440,27,Female,Undergraduate,Medicine/Health,Public University,4–6,3,3,3,4,2,3,2,3,2,4,3,4,3,2,3,4,3,2,3,3,No,Yes,46.2
+441,24,Female,Undergraduate,Computer Science,Private University,<2,3,3,3,3,3,3,1,3,2,2,2,2,1,1,3,2,3,2,2,2,No,No,32.5
+442,20,Female,Undergraduate,Computer Science,Public University,4–6,4,5,4,2,3,1,5,4,3,3,4,4,4,4,4,3,4,3,4,4,Yes,Yes,72.5
+443,30,Female,Undergraduate,Social Science,Public University,2–4,3,4,5,2,3,1,2,2,3,4,3,3,4,4,2,4,4,4,5,4,No,Yes,65.0
+444,27,Female,Graduate,Science,Private University,<2,1,2,2,5,1,5,1,1,3,1,2,2,1,2,1,1,1,1,1,1,No,No,8.8
+445,26,Female,Undergraduate,Arts & Humanities,Private University,<2,2,3,3,2,2,4,2,2,3,3,2,3,2,3,3,3,3,3,3,2,Yes,Yes,41.2
+446,27,Male,Postgraduate,Computer Science,Public University,2–4,4,3,4,3,3,3,4,3,4,3,3,3,3,4,5,3,4,4,3,3,No,Yes,61.3
+447,18,Female,Graduate,Law,Private University,2–4,1,3,2,3,2,3,1,1,3,2,1,2,2,2,2,2,3,2,2,3,No,Yes,27.5
+448,27,Male,Graduate,Business,Public University,<2,4,3,3,3,4,2,3,3,4,2,4,4,4,4,3,3,2,4,3,5,Yes,Yes,61.3
+449,25,Female,Postgraduate,Engineering,Public University,2–4,4,3,5,2,2,4,2,2,4,3,3,2,4,3,4,5,4,3,3,3,No,No,56.2
+450,29,Female,Undergraduate,Social Science,Private University,<2,4,5,5,2,4,1,5,5,5,5,5,4,5,4,3,5,4,3,5,4,No,Yes,86.2
+451,22,Male,Undergraduate,Engineering,Private University,4–6,3,2,1,4,2,3,1,3,3,2,2,1,1,3,2,1,2,3,2,1,No,Yes,25.0
+452,18,Female,Undergraduate,Computer Science,Public University,4–6,5,5,5,1,5,1,5,5,5,5,5,5,5,5,5,5,5,5,5,5,Yes,Yes,100.0
+453,18,Male,Undergraduate,Arts & Humanities,Public University,2–4,2,1,2,3,1,5,2,2,1,2,2,2,3,1,2,1,1,1,1,1,No,No,15.0
+454,20,Female,Undergraduate,Computer Science,Public University,2–4,4,5,4,1,5,2,5,5,4,5,4,5,5,5,5,4,5,5,5,4,Yes,Yes,91.3
+455,21,Female,Undergraduate,Engineering,Public University,4–6,5,5,4,1,4,1,5,4,5,5,5,5,5,5,5,5,5,5,5,5,Yes,Yes,96.2
+456,28,Male,Graduate,Engineering,College,<2,5,5,5,1,5,1,4,5,5,5,5,5,5,4,5,5,5,5,5,5,Yes,Yes,97.5
+457,26,Female,Graduate,Science,Private University,>6,5,4,5,1,5,1,4,5,4,5,4,4,5,5,4,5,5,4,5,5,Yes,Yes,91.3
+458,25,Female,Undergraduate,Arts & Humanities,Private University,<2,2,2,2,5,2,4,1,1,1,1,2,2,1,2,1,1,2,3,1,1,No,No,13.8
+459,28,Male,Graduate,Social Science,Public University,4–6,1,1,1,5,1,5,1,1,1,1,1,1,1,1,1,1,1,1,1,1,No,No,0.0
+460,24,Male,Undergraduate,Engineering,Private University,4–6,2,3,2,4,2,4,3,2,3,4,2,2,3,2,3,3,2,1,3,2,No,Yes,35.0
+461,21,Male,Undergraduate,Law,College,2–4,4,4,5,3,5,1,4,3,5,5,4,4,5,4,3,4,5,5,5,5,No,Yes,83.7
+462,25,Female,Undergraduate,Computer Science,Private University,<2,2,4,4,4,4,4,4,4,4,1,3,4,3,4,3,3,5,4,4,3,Yes,Yes,58.8
+463,17,Male,Undergraduate,Engineering,Private University,4–6,2,4,2,2,2,5,1,4,3,2,2,2,2,2,1,3,1,4,3,1,Yes,No,32.5
+464,20,Male,Undergraduate,Law,Public University,4–6,1,3,1,5,2,5,1,1,2,1,1,1,1,2,1,1,1,1,1,1,No,No,6.2
+465,24,Male,Graduate,Social Science,Private University,4–6,1,2,1,4,2,4,1,1,2,2,1,3,1,1,1,2,2,2,1,1,No,No,13.8
+466,21,Male,Graduate,Business,Public University,<2,2,2,1,5,3,4,2,1,2,3,3,1,2,2,1,1,3,1,1,2,No,Yes,20.0
+467,24,Male,Undergraduate,Computer Science,Private University,<2,4,2,3,4,2,3,4,3,4,2,4,2,3,3,3,2,3,1,3,2,Yes,Yes,43.8
+468,22,Female,Undergraduate,Science,Private University,2–4,4,5,5,1,5,1,5,5,5,5,5,5,4,5,5,4,5,4,5,5,Yes,Yes,95.0
+469,28,Male,Postgraduate,Engineering,Public University,<2,4,4,3,2,3,3,3,4,5,4,4,3,5,3,3,4,2,4,3,3,Yes,No,63.7
+470,23,Male,Postgraduate,Arts & Humanities,College,4–6,2,3,2,5,2,4,2,1,1,1,1,2,2,1,2,2,3,2,1,2,No,Yes,18.8
+471,26,Female,Undergraduate,Social Science,Private University,2–4,4,4,3,3,3,3,3,3,4,2,4,2,2,3,4,3,3,4,3,2,No,No,52.5
+472,25,Male,Graduate,Business,Private University,<2,2,1,2,5,1,3,2,1,1,1,2,2,1,3,2,1,2,1,1,1,No,Yes,13.8
+473,24,Male,Undergraduate,Social Science,Public University,2–4,5,5,5,1,4,1,4,4,4,4,5,4,5,4,4,5,5,5,5,5,No,Yes,90.0
+474,17,Male,Undergraduate,Social Science,Public University,2–4,1,1,1,5,1,5,1,1,1,1,1,1,1,2,1,1,1,1,1,1,No,Yes,1.3
+475,22,Female,Undergraduate,Engineering,Public University,2–4,4,4,4,3,3,2,3,3,4,3,4,3,4,5,5,4,4,3,4,4,No,No,68.8
+476,27,Female,Undergraduate,Social Science,Public University,4–6,1,1,1,5,2,5,1,1,1,1,1,1,2,1,1,2,1,1,1,1,No,No,3.7
+477,29,Male,Undergraduate,Engineering,Public University,4–6,2,2,3,4,3,4,2,3,1,1,2,2,3,3,3,2,2,4,4,2,No,Yes,35.0
+478,29,Male,Undergraduate,Social Science,Private University,4–6,5,3,4,3,4,1,4,4,4,5,4,4,5,3,2,5,5,4,4,5,Yes,Yes,77.5
+479,17,Male,Undergraduate,Engineering,Private University,2–4,3,2,4,3,5,3,3,5,4,3,5,3,4,2,5,4,3,5,3,4,No,Yes,66.2
+480,18,Female,Graduate,Arts & Humanities,Public University,2–4,1,2,2,2,1,5,1,3,3,2,1,1,2,2,1,2,3,3,3,2,No,No,25.0
+481,19,Male,Undergraduate,Science,Public University,2–4,2,3,3,4,3,4,2,2,3,3,3,3,2,3,2,3,2,3,2,2,No,No,37.5
+482,29,Male,Undergraduate,Engineering,Public University,<2,1,1,1,5,2,5,2,1,1,1,1,1,1,1,2,1,2,3,1,1,No,Yes,7.5
+483,17,Male,Postgraduate,Science,Private University,>6,2,2,1,5,2,4,3,1,2,2,1,1,2,1,2,2,3,2,1,1,No,No,17.5
+484,25,Female,Undergraduate,Arts & Humanities,College,2–4,4,2,3,3,5,2,4,2,3,3,3,3,4,4,4,4,4,4,3,3,Yes,Yes,61.3
+485,28,Male,Undergraduate,Computer Science,Public University,2–4,5,5,4,1,5,1,5,5,5,5,5,5,5,5,5,5,5,5,5,5,No,Yes,98.8
+486,26,Male,Undergraduate,Business,Public University,>6,5,5,4,1,4,2,5,5,5,4,5,5,4,4,5,4,4,5,5,4,No,Yes,88.8
+487,26,Male,Undergraduate,Law,Public University,<2,2,2,3,2,3,3,4,2,3,2,4,5,2,2,4,3,2,4,3,2,No,Yes,48.8
+488,24,Female,Graduate,Law,Private University,>6,5,5,5,1,5,2,5,4,5,5,5,5,5,5,5,5,5,5,5,5,Yes,Yes,97.5
+489,27,Male,Undergraduate,Social Science,Private University,<2,3,3,2,2,2,2,4,4,3,4,3,2,3,3,2,2,3,2,3,4,No,No,50.0
+490,20,Male,Undergraduate,Computer Science,College,2–4,4,4,5,1,5,1,5,5,5,5,4,5,5,4,4,5,5,4,4,4,Yes,Yes,90.0
+491,18,Female,Graduate,Computer Science,College,<2,3,3,4,4,3,2,3,4,4,3,4,4,4,4,3,5,3,3,4,4,Yes,No,63.7
+492,29,Female,Undergraduate,Engineering,Public University,<2,4,3,5,3,3,4,4,2,2,2,3,4,3,4,3,4,3,3,3,2,No,Yes,52.5
+493,20,Female,Undergraduate,Computer Science,Public University,2–4,1,1,1,5,1,5,1,1,1,1,1,1,1,1,1,1,1,1,1,1,No,Yes,0.0
+494,21,Male,Undergraduate,Medicine/Health,Public University,2–4,4,3,2,2,5,2,5,4,4,3,4,4,4,4,3,4,4,3,3,4,Yes,No,68.8
+495,19,Male,Undergraduate,Business,Private University,2–4,3,4,3,4,4,2,5,3,3,2,4,4,5,3,3,4,2,4,4,4,No,Yes,62.5
+496,28,Female,Undergraduate,Social Science,Public University,2–4,4,5,5,3,3,2,4,4,4,5,5,5,3,4,4,3,4,4,4,4,No,Yes,76.2
+497,26,Female,Undergraduate,Business,Private University,4–6,4,3,1,2,2,4,2,2,3,3,3,4,2,3,3,3,3,2,4,3,Yes,No,45.0
+498,29,Female,Undergraduate,Social Science,Public University,4–6,3,4,4,3,5,2,3,4,4,3,4,5,4,3,3,3,2,4,4,4,No,Yes,66.2
+499,22,Male,Undergraduate,Social Science,Public University,2–4,3,3,3,4,1,4,3,2,1,1,1,2,3,2,3,2,2,2,2,2,No,No,27.5
+500,29,Female,Graduate,Arts & Humanities,Private University,2–4,5,5,5,1,5,1,4,4,5,4,4,5,5,4,5,4,5,4,5,5,Yes,Yes,91.3
+501,23,Male,Undergraduate,Business,Public University,2–4,3,1,2,4,2,5,2,2,2,1,3,4,2,3,1,2,1,1,1,1,Yes,No,21.3
+502,22,Female,Undergraduate,Law,Private University,2–4,3,2,3,4,3,5,3,3,2,2,2,2,1,1,2,3,1,3,1,3,No,No,28.7
+503,28,Other,Undergraduate,Science,Public University,2–4,3,1,3,4,3,2,3,3,3,1,3,3,3,2,2,4,3,3,4,3,No,Yes,45.0
+504,27,Male,Undergraduate,Engineering,Public University,2–4,1,1,1,5,1,5,1,1,1,1,1,1,1,1,1,1,1,1,1,1,No,Yes,0.0
+505,25,Female,Undergraduate,Computer Science,Public University,2–4,2,3,2,5,2,4,1,1,2,2,2,2,1,1,2,3,2,1,1,1,No,No,17.5
+506,25,Female,Undergraduate,Computer Science,College,2–4,1,1,1,5,1,5,1,1,1,1,1,1,1,1,1,1,1,1,1,1,No,No,0.0
+507,19,Male,Undergraduate,Engineering,Public University,2–4,5,5,5,2,4,1,5,4,5,5,5,5,5,5,4,5,5,5,5,5,No,Yes,95.0
+508,20,Female,Undergraduate,Law,Public University,4–6,4,4,4,3,3,2,2,4,3,4,4,4,2,5,5,3,5,4,4,3,No,No,67.5
+509,17,Male,Undergraduate,Science,Public University,4–6,1,2,2,5,2,4,2,4,1,3,3,2,3,2,2,2,2,2,3,2,No,Yes,28.7
+510,28,Male,Undergraduate,Law,Private University,<2,2,1,2,4,1,5,1,1,1,1,1,1,1,1,1,2,2,1,2,1,No,Yes,7.5
+511,22,Male,Undergraduate,Law,Private University,4–6,5,5,5,1,5,1,5,5,5,5,5,5,5,5,5,5,5,5,5,5,No,Yes,100.0
+512,21,Male,Graduate,Computer Science,Private University,2–4,1,1,1,5,1,4,1,1,1,2,1,1,1,1,1,1,1,2,1,1,Yes,No,3.7
+513,26,Male,Undergraduate,Business,Private University,4–6,3,2,5,2,5,3,3,4,3,2,4,4,2,2,3,3,3,4,4,4,No,Yes,58.8
+514,27,Female,Undergraduate,Medicine/Health,Public University,2–4,5,5,5,2,5,1,4,5,5,4,5,5,5,5,4,5,5,5,5,5,Yes,Yes,95.0
+515,19,Male,Undergraduate,Engineering,Public University,2–4,2,1,2,2,3,4,3,3,1,1,2,1,2,1,2,1,1,2,2,2,No,Yes,22.5
+516,17,Male,Undergraduate,Social Science,Public University,4–6,1,2,2,4,1,4,1,1,1,3,1,1,1,1,2,2,2,1,1,1,Yes,No,11.2
+517,22,Male,Undergraduate,Social Science,Private University,4–6,2,2,1,5,2,5,1,2,1,1,2,2,3,1,1,1,3,2,1,2,Yes,No,15.0
+518,23,Female,Undergraduate,Science,Public University,>6,4,4,4,1,4,1,4,5,5,5,4,5,4,5,5,5,5,4,5,5,No,Yes,90.0
+519,22,Female,Graduate,Science,Public University,4–6,3,2,1,5,2,3,1,2,1,1,1,1,2,2,3,3,2,1,1,2,Yes,No,18.8
+520,22,Male,Undergraduate,Science,Private University,4–6,2,2,2,4,1,5,1,2,1,2,1,1,1,2,1,1,1,2,1,2,No,No,11.2
+521,17,Male,Graduate,Engineering,Public University,4–6,1,1,1,5,1,5,1,1,2,1,2,1,1,1,1,1,1,1,1,1,No,No,2.5
+522,20,Female,Undergraduate,Law,Public University,2–4,2,2,2,5,1,4,1,1,2,2,2,1,1,1,1,1,1,2,1,2,No,Yes,11.2
+523,20,Female,Undergraduate,Computer Science,Public University,2–4,5,3,5,3,3,2,3,5,5,5,4,4,4,4,4,4,5,5,5,4,Yes,Yes,80.0
+524,21,Male,Undergraduate,Law,College,2–4,5,3,4,3,5,2,3,3,3,3,3,3,3,4,4,4,3,3,3,4,No,Yes,62.5
+525,20,Female,Undergraduate,Social Science,Public University,4–6,3,4,3,3,4,2,4,2,3,3,4,4,3,3,3,3,4,4,3,2,No,Yes,57.5
+526,22,Female,Undergraduate,Science,Private University,2–4,3,3,2,3,3,3,3,2,3,2,2,3,2,1,2,1,1,2,2,2,No,Yes,31.2
+527,26,Female,Undergraduate,Medicine/Health,Public University,>6,4,2,2,3,4,2,2,3,4,4,2,3,4,4,2,1,2,2,3,3,No,Yes,47.5
+528,19,Female,Undergraduate,Engineering,Public University,<2,1,1,1,5,1,5,2,1,1,1,1,2,1,1,1,1,1,1,1,1,No,No,2.5
+529,23,Male,Undergraduate,Social Science,Public University,4–6,4,4,4,4,5,3,4,4,4,4,4,2,3,3,4,3,3,3,4,3,No,Yes,62.5
+530,23,Male,Undergraduate,Computer Science,Public University,<2,4,3,2,3,3,3,3,2,1,4,2,3,2,3,3,3,2,4,3,2,No,No,43.8
+531,23,Other,Undergraduate,Computer Science,Public University,4–6,3,2,4,4,2,2,5,3,3,4,4,4,2,3,5,3,2,3,4,4,Yes,Yes,57.5
+532,18,Male,Undergraduate,Social Science,Public University,2–4,4,5,2,3,1,3,3,4,2,2,2,3,4,4,3,3,3,4,4,3,No,Yes,52.5
+533,23,Female,Undergraduate,Arts & Humanities,Private University,4–6,5,5,4,2,5,1,2,3,5,5,3,4,5,4,3,3,4,5,5,5,Yes,Yes,80.0
+534,29,Female,Undergraduate,Business,Public University,2–4,5,4,2,2,3,3,3,3,5,3,4,3,3,3,3,3,3,3,3,4,No,Yes,58.8
+535,24,Female,Graduate,Social Science,Public University,2–4,1,1,1,5,1,4,1,1,1,1,1,1,1,1,1,1,1,1,1,1,Yes,Yes,1.3
+536,26,Female,Postgraduate,Law,Public University,2–4,3,2,3,4,1,4,2,4,1,2,3,2,2,2,4,3,1,2,2,2,No,No,31.2
+537,25,Female,Graduate,Science,Public University,4–6,5,4,3,2,5,3,3,3,2,3,4,3,3,4,3,4,5,4,3,4,No,Yes,65.0
+538,17,Female,Graduate,Business,College,4–6,3,2,3,3,3,2,2,4,3,3,3,2,2,4,2,3,4,4,3,2,No,No,48.8
+539,21,Male,Undergraduate,Medicine/Health,Private University,4–6,3,2,3,4,3,3,4,4,2,3,2,3,3,4,3,4,3,3,3,3,No,Yes,50.0
+540,30,Female,Undergraduate,Social Science,Public University,4–6,3,3,4,5,3,4,2,4,4,3,2,4,4,1,2,3,3,3,3,3,Yes,No,46.2
+541,19,Male,Undergraduate,Engineering,College,2–4,5,5,5,1,5,1,5,4,4,5,5,5,5,5,5,5,5,5,5,5,Yes,Yes,97.5
+542,18,Female,Undergraduate,Science,Private University,<2,5,5,4,1,5,1,5,5,5,5,5,5,5,4,5,5,5,5,5,5,Yes,Yes,97.5
+543,20,Male,Undergraduate,Computer Science,Public University,2–4,4,3,3,3,3,3,3,3,5,4,3,3,3,4,5,4,3,4,3,2,No,Yes,60.0
+544,24,Female,Undergraduate,Social Science,Public University,4–6,3,2,3,4,2,3,2,4,2,1,2,2,1,2,3,2,3,2,1,2,No,No,30.0
+545,21,Female,Undergraduate,Computer Science,Private University,2–4,4,2,5,2,4,2,3,3,3,5,5,4,5,5,3,5,4,4,4,4,Yes,No,75.0
+546,25,Female,Undergraduate,Science,Public University,2–4,5,4,4,3,4,2,4,5,4,4,5,3,3,4,4,5,5,4,4,4,No,Yes,77.5
+547,17,Male,Graduate,Arts & Humanities,Public University,<2,4,2,3,4,3,3,3,2,4,3,2,3,3,2,2,3,5,3,4,3,No,Yes,48.8
+548,18,Female,Undergraduate,Computer Science,Public University,<2,1,2,1,5,1,4,1,1,1,1,2,2,3,2,1,1,1,2,1,1,No,Yes,10.0
+549,28,Male,Undergraduate,Science,Public University,<2,4,4,3,4,2,4,3,3,3,2,3,4,4,1,2,3,2,2,3,4,Yes,Yes,45.0
+550,28,Female,Undergraduate,Law,Public University,<2,3,3,3,3,3,3,3,3,2,2,3,2,4,2,2,4,3,2,3,3,No,Yes,45.0
+551,28,Male,Undergraduate,Computer Science,Public University,2–4,1,1,1,5,2,4,2,1,1,4,2,1,1,1,2,1,1,2,1,1,No,Yes,11.2
+552,30,Female,Undergraduate,Science,Public University,2–4,3,3,2,3,2,4,3,3,2,3,2,2,4,3,4,3,3,2,2,3,Yes,No,42.5
+553,21,Male,Graduate,Medicine/Health,Public University,4–6,5,4,5,1,4,2,4,5,5,3,5,4,5,4,5,5,5,5,5,5,No,Yes,90.0
+554,17,Male,Undergraduate,Medicine/Health,Public University,2–4,4,5,3,1,5,2,4,4,3,3,4,4,4,3,4,4,2,2,4,5,No,Yes,70.0
+555,24,Female,Undergraduate,Engineering,Public University,2–4,5,5,4,1,5,1,4,5,5,5,5,5,5,5,5,5,5,5,4,5,Yes,Yes,96.2
+556,29,Female,Undergraduate,Science,Private University,2–4,1,2,2,5,1,5,1,1,1,1,1,1,1,1,1,1,1,1,1,1,No,No,2.5
+557,28,Male,Graduate,Computer Science,Private University,4–6,3,3,3,1,4,2,3,4,4,4,3,4,3,4,5,4,5,3,4,4,No,Yes,70.0
+558,28,Female,Undergraduate,Medicine/Health,Private University,2–4,3,3,2,4,2,4,3,3,3,1,3,2,1,2,3,3,3,3,2,3,No,Yes,36.3
+559,24,Male,Postgraduate,Science,Private University,4–6,4,4,5,3,4,2,3,5,4,5,4,4,4,3,5,5,3,4,5,5,No,Yes,78.8
+560,22,Female,Undergraduate,Arts & Humanities,Private University,2–4,5,5,3,2,4,2,3,4,4,5,4,4,4,2,4,4,4,4,4,4,No,No,73.8
+561,21,Female,Undergraduate,Engineering,Private University,>6,1,2,5,4,3,4,2,2,3,2,2,1,3,2,3,4,2,2,2,2,No,No,33.8
+562,22,Female,Undergraduate,Law,Private University,2–4,3,2,1,3,2,4,3,1,3,2,3,2,2,2,2,4,2,2,2,2,No,No,31.2
+563,18,Female,Undergraduate,Business,College,4–6,2,1,2,5,1,4,3,1,2,1,1,1,3,1,1,1,2,2,1,1,Yes,No,12.5
+564,22,Female,Undergraduate,Business,Public University,<2,1,3,4,4,3,3,2,4,3,3,2,1,2,2,3,3,3,4,3,3,No,Yes,42.5
+565,26,Male,Postgraduate,Arts & Humanities,Private University,<2,3,3,2,1,2,2,2,4,3,2,3,2,2,4,3,3,3,4,2,3,No,Yes,48.8
+566,25,Female,Undergraduate,Medicine/Health,Private University,4–6,5,5,5,1,5,1,5,5,5,5,5,5,5,5,5,5,5,5,5,5,Yes,Yes,100.0
+567,27,Male,Undergraduate,Medicine/Health,Private University,4–6,5,4,4,1,4,1,4,4,4,4,5,5,4,5,4,5,4,5,5,5,No,Yes,87.5
+568,30,Female,Undergraduate,Engineering,Public University,<2,5,5,4,1,5,3,4,5,4,5,3,5,4,4,5,5,4,4,5,5,Yes,Yes,86.2
+569,22,Female,Undergraduate,Engineering,Private University,2–4,5,5,5,1,5,2,4,4,5,4,3,5,4,5,5,5,5,4,5,4,Yes,No,88.8
+570,27,Male,Undergraduate,Computer Science,Public University,4–6,3,1,1,4,2,5,2,2,2,4,2,2,1,2,2,1,2,2,2,1,No,No,21.3
+571,30,Female,Undergraduate,Science,Private University,4–6,4,4,2,3,3,2,2,3,3,4,3,4,3,5,4,3,4,3,3,3,No,No,58.8
+572,30,Female,Undergraduate,Business,College,2–4,4,4,4,2,4,2,5,5,4,4,3,3,4,5,4,3,4,5,4,4,No,Yes,76.2
+573,25,Male,Undergraduate,Law,Private University,4–6,5,5,5,1,5,1,5,5,5,5,5,5,4,5,5,5,5,5,5,5,Yes,Yes,98.8
+574,27,Female,Graduate,Medicine/Health,Public University,4–6,5,4,5,1,5,2,5,5,5,4,5,5,4,4,5,4,5,5,5,5,Yes,Yes,92.5
+575,25,Female,Undergraduate,Medicine/Health,Public University,>6,1,1,1,5,2,5,1,2,2,1,2,2,2,1,2,2,1,2,1,1,No,No,11.2
+576,24,Male,Undergraduate,Science,Private University,2–4,4,4,5,2,5,2,3,4,3,4,4,4,4,4,5,4,4,3,3,3,Yes,Yes,72.5
+577,30,Male,Undergraduate,Arts & Humanities,Private University,4–6,2,2,4,4,2,3,2,3,2,4,3,2,2,2,3,4,4,3,3,3,No,Yes,43.8
+578,21,Male,Undergraduate,Arts & Humanities,Public University,4–6,4,5,3,2,3,3,4,3,5,4,3,2,3,4,5,4,4,5,4,4,Yes,Yes,70.0
+579,26,Male,Graduate,Engineering,Public University,2–4,1,2,1,4,2,4,2,1,2,2,2,1,3,3,2,1,1,1,2,2,Yes,No,18.8
+580,18,Male,Undergraduate,Science,Public University,4–6,3,2,3,2,4,2,3,3,4,4,4,5,2,4,2,5,4,3,2,3,No,Yes,60.0
+581,29,Female,Graduate,Science,Private University,2–4,1,3,3,4,4,4,2,2,3,2,3,3,2,2,2,2,2,2,2,2,No,Yes,32.5
+582,19,Male,Undergraduate,Engineering,Public University,<2,5,4,5,1,5,1,5,5,4,5,5,5,5,5,5,3,5,4,5,4,Yes,Yes,92.5
+583,24,Male,Postgraduate,Medicine/Health,Private University,2–4,5,5,4,1,4,2,3,4,4,4,4,5,4,5,5,5,5,5,4,4,No,Yes,85.0
+584,27,Male,Graduate,Engineering,Private University,<2,4,4,3,4,3,3,3,4,3,2,4,2,2,3,2,3,3,3,2,3,No,Yes,47.5
+585,20,Female,Undergraduate,Engineering,Public University,4–6,1,2,4,5,3,4,4,3,1,4,3,1,2,2,2,3,3,2,3,3,No,Yes,36.3
+586,23,Female,Undergraduate,Arts & Humanities,College,2–4,1,2,2,5,1,5,1,2,1,2,3,2,3,2,2,2,2,3,1,2,Yes,No,20.0
+587,22,Female,Undergraduate,Engineering,Private University,2–4,5,5,5,1,5,1,5,5,5,5,5,5,5,4,5,5,4,5,5,5,No,Yes,97.5
+588,18,Male,Undergraduate,Business,Public University,2–4,2,1,2,4,2,4,2,2,2,3,1,2,2,2,2,3,3,3,1,3,No,Yes,27.5
+589,23,Male,Undergraduate,Medicine/Health,Public University,4–6,5,5,5,1,5,1,5,5,5,5,5,5,5,5,5,5,5,5,5,5,No,Yes,100.0
+590,25,Female,Undergraduate,Business,Public University,2–4,2,4,2,4,4,3,2,3,2,4,4,2,4,3,2,4,3,2,2,3,Yes,Yes,46.2
+591,28,Male,Undergraduate,Science,Private University,4–6,1,2,2,5,2,5,2,2,2,1,1,2,3,3,2,2,2,3,1,1,No,No,20.0
+592,29,Female,Graduate,Computer Science,Public University,2–4,4,5,5,2,5,1,5,5,4,5,5,4,4,5,4,4,5,5,5,4,No,Yes,90.0
+593,28,Female,Undergraduate,Social Science,Public University,<2,1,1,1,5,1,5,1,1,1,1,1,1,1,1,1,1,1,1,1,1,No,No,0.0
+594,25,Male,Graduate,Law,Public University,2–4,2,1,3,4,4,3,2,3,3,2,2,2,2,3,3,4,3,3,3,3,No,No,41.2
+595,22,Male,Undergraduate,Engineering,College,2–4,5,5,5,1,5,1,5,5,5,5,5,5,5,5,5,5,5,5,5,5,No,Yes,100.0
+596,29,Female,Undergraduate,Computer Science,Public University,4–6,5,5,5,1,5,1,5,5,5,5,5,5,5,5,5,5,5,5,5,5,Yes,Yes,100.0
+597,28,Male,Undergraduate,Business,Public University,4–6,5,5,4,3,4,1,5,5,5,5,5,4,4,5,5,5,4,5,5,5,No,Yes,91.3
+598,18,Male,Undergraduate,Business,Private University,2–4,4,4,3,1,4,1,5,4,3,4,5,5,5,4,4,3,5,5,5,5,No,Yes,83.7
+599,24,Male,Undergraduate,Computer Science,Private University,4–6,5,5,5,1,5,1,5,5,5,5,5,5,4,5,5,5,5,5,5,5,No,Yes,98.8
+600,18,Female,Undergraduate,Engineering,Public University,<2,1,2,1,3,1,4,2,2,1,1,2,1,2,2,3,2,2,1,2,1,No,Yes,17.5
+601,24,Male,Undergraduate,Social Science,Private University,<2,4,4,3,2,3,2,4,4,4,3,4,4,5,3,3,5,5,4,4,4,Yes,Yes,72.5
+602,20,Male,Undergraduate,Business,Private University,2–4,2,4,2,3,2,2,4,4,3,3,4,3,4,3,4,4,3,4,3,4,No,Yes,58.8
+603,30,Female,Postgraduate,Engineering,Public University,2–4,5,5,5,2,5,2,5,4,4,5,5,3,5,5,5,5,5,5,5,5,Yes,No,92.5
+604,27,Female,Undergraduate,Computer Science,Private University,2–4,5,5,4,1,5,1,5,5,4,5,4,5,5,5,5,4,5,5,5,5,No,Yes,95.0
+605,24,Male,Undergraduate,Computer Science,Private University,<2,2,1,3,3,2,4,2,1,2,3,2,3,2,2,2,4,2,2,3,2,No,Yes,31.2
+606,22,Female,Undergraduate,Science,Private University,4–6,1,1,2,5,1,5,1,2,2,1,1,1,1,1,2,1,1,1,1,1,No,No,5.0
+607,26,Female,Undergraduate,Arts & Humanities,Public University,2–4,3,3,3,3,2,4,2,2,1,3,2,3,3,3,3,2,3,2,2,3,Yes,No,37.5
+608,19,Male,Undergraduate,Business,Private University,2–4,5,5,5,2,5,2,3,5,5,5,5,4,4,5,5,5,4,4,5,5,Yes,Yes,90.0
+609,22,Female,Undergraduate,Social Science,Private University,2–4,1,1,1,5,1,5,1,1,1,1,1,1,1,1,2,1,1,1,1,2,No,No,2.5
+610,22,Female,Undergraduate,Medicine/Health,Public University,4–6,3,3,2,3,4,2,4,4,3,3,4,3,3,2,4,4,3,4,3,3,Yes,Yes,57.5
+611,22,Female,Undergraduate,Business,Private University,4–6,1,1,1,5,1,5,1,1,1,1,1,1,1,2,1,1,1,1,1,1,No,No,1.3
+612,25,Male,Undergraduate,Law,Public University,<2,1,1,2,5,1,4,2,1,1,2,1,2,2,1,1,1,1,2,1,2,No,No,10.0
+613,23,Male,Undergraduate,Social Science,Private University,<2,3,4,4,2,4,4,4,4,2,4,4,3,4,2,3,4,4,4,4,4,No,No,63.7
+614,19,Male,Graduate,Engineering,Private University,<2,4,4,3,2,4,2,3,4,3,5,4,4,1,4,4,5,4,4,4,2,No,Yes,67.5
+615,27,Male,Undergraduate,Law,Public University,<2,2,3,1,5,1,4,2,1,2,1,2,2,2,2,1,1,1,2,1,1,No,No,13.8
+616,28,Male,Undergraduate,Social Science,Private University,4–6,4,5,5,1,5,1,5,5,5,5,4,5,5,5,5,5,5,5,5,5,No,Yes,97.5
+617,20,Male,Undergraduate,Engineering,Public University,2–4,3,2,1,4,1,2,3,4,2,3,2,3,2,2,2,1,2,2,3,3,No,Yes,33.8
+618,24,Female,Undergraduate,Engineering,Private University,2–4,1,1,1,5,1,5,1,2,1,2,1,1,1,1,1,1,1,1,1,1,No,No,2.5
+619,27,Female,Undergraduate,Medicine/Health,Private University,2–4,5,5,5,1,5,1,5,5,5,5,5,5,5,5,5,5,5,5,5,5,Yes,Yes,100.0
+620,27,Female,Graduate,Engineering,Private University,4–6,5,5,5,1,5,1,5,5,5,5,5,5,5,5,5,5,5,5,5,5,Yes,Yes,100.0
+621,26,Female,Undergraduate,Social Science,Private University,4–6,3,2,4,2,4,2,2,3,4,5,3,4,5,3,4,5,4,2,4,4,No,Yes,66.2
+622,28,Female,Graduate,Business,Private University,4–6,2,1,1,4,3,5,1,3,2,2,2,3,1,1,2,2,1,1,2,2,No,No,18.8
+623,23,Male,Undergraduate,Social Science,Private University,2–4,2,2,2,4,2,5,1,1,1,1,1,3,2,1,2,1,1,2,1,2,No,No,13.8
+624,17,Female,Undergraduate,Computer Science,Public University,2–4,3,2,4,2,2,3,3,3,3,2,4,4,3,3,4,2,4,3,3,3,Yes,Yes,52.5
+625,26,Other,Undergraduate,Law,Private University,2–4,2,4,3,4,4,5,3,3,2,4,1,3,3,3,2,3,3,2,2,4,Yes,Yes,42.5
+626,19,Male,Undergraduate,Business,Private University,2–4,1,1,1,5,2,4,1,1,1,1,1,1,1,1,1,1,1,1,1,1,No,No,2.5
+627,28,Male,Undergraduate,Social Science,Private University,>6,2,3,2,3,2,3,3,3,3,2,3,2,2,1,2,2,3,3,3,2,Yes,Yes,36.3
+628,20,Female,Graduate,Science,Private University,<2,4,3,4,4,4,2,2,3,3,3,4,3,5,4,4,3,3,4,4,3,No,Yes,61.3
+629,21,Female,Undergraduate,Medicine/Health,Private University,2–4,1,2,1,4,2,3,1,1,1,1,1,1,1,1,2,2,1,1,2,1,No,No,10.0
+630,26,Other,Undergraduate,Business,Public University,4–6,5,5,5,1,4,1,4,5,5,4,5,5,4,4,5,3,5,5,5,4,Yes,Yes,90.0
+631,17,Female,Graduate,Computer Science,Public University,>6,3,4,3,2,4,4,3,3,3,2,4,2,4,5,4,3,3,3,3,3,No,Yes,56.2
+632,28,Female,Undergraduate,Business,Private University,2–4,5,3,5,1,5,2,5,4,5,4,4,4,4,4,4,4,4,4,5,4,No,Yes,82.5
+633,17,Female,Graduate,Social Science,Public University,>6,2,3,4,2,2,3,3,3,2,3,3,3,4,2,3,2,4,1,3,4,Yes,No,47.5
+634,23,Female,Undergraduate,Medicine/Health,Public University,4–6,4,5,5,2,5,1,5,5,4,4,5,5,5,4,5,4,4,4,5,5,Yes,Yes,90.0
+635,18,Female,Undergraduate,Medicine/Health,Public University,2–4,4,4,4,4,4,2,4,3,5,3,3,4,4,2,5,4,5,4,4,4,Yes,Yes,70.0
+636,19,Male,Undergraduate,Social Science,Public University,2–4,5,5,5,1,5,1,5,5,5,5,5,5,5,5,5,4,5,5,5,5,Yes,Yes,98.8
+637,26,Female,Undergraduate,Engineering,Private University,4–6,3,4,3,2,3,4,3,3,1,3,2,3,3,2,3,3,2,3,3,3,Yes,Yes,45.0
+638,17,Female,Undergraduate,Engineering,Private University,2–4,5,5,5,1,5,1,5,5,5,5,5,5,5,5,5,5,5,5,5,5,No,Yes,100.0
+639,30,Male,Undergraduate,Business,Public University,2–4,5,4,5,2,4,2,5,5,5,4,5,5,4,4,5,5,5,5,5,4,No,Yes,90.0
+640,23,Male,Undergraduate,Engineering,Private University,<2,2,3,3,4,1,4,2,2,3,1,2,2,2,2,2,2,3,2,2,3,No,No,28.7
+641,25,Female,Undergraduate,Business,Public University,2–4,3,1,3,4,2,4,2,2,2,1,2,1,1,2,1,2,2,2,2,2,No,No,21.3
+642,19,Female,Graduate,Arts & Humanities,Public University,2–4,2,2,3,3,4,4,3,3,3,4,2,3,2,3,4,3,3,2,3,3,No,Yes,46.2
+643,20,Female,Undergraduate,Social Science,Private University,>6,5,5,5,1,4,1,5,5,5,5,5,5,5,5,4,5,4,5,4,5,No,Yes,95.0
+644,26,Male,Graduate,Business,Public University,<2,1,1,2,5,1,3,1,1,1,1,1,1,2,1,1,1,1,1,2,1,No,No,6.2
+645,25,Male,Postgraduate,Engineering,Private University,4–6,1,2,1,5,3,3,1,2,1,2,1,2,2,1,1,1,1,2,1,2,No,No,13.8
+646,20,Male,Undergraduate,Business,Public University,<2,1,1,1,5,1,5,1,1,1,1,1,1,1,1,1,1,1,1,1,1,No,No,0.0
+647,20,Female,Undergraduate,Social Science,Private University,2–4,5,5,5,1,5,1,5,4,5,4,5,5,5,4,5,4,5,5,5,5,Yes,Yes,95.0
+648,19,Female,Undergraduate,Computer Science,Private University,2–4,3,3,3,4,4,3,4,3,3,2,3,3,2,2,3,3,3,2,4,3,Yes,No,47.5
+649,20,Female,Undergraduate,Medicine/Health,Public University,>6,1,2,1,5,2,4,3,2,1,1,2,2,2,2,1,2,1,1,2,1,No,No,15.0
+650,17,Male,Graduate,Medicine/Health,Private University,4–6,4,4,2,2,3,4,2,4,4,3,4,3,2,4,3,3,4,4,4,3,Yes,No,57.5
+651,26,Male,Undergraduate,Business,Public University,2–4,4,5,2,3,4,2,4,5,5,5,3,3,3,5,5,5,4,3,4,3,No,Yes,73.8
+652,19,Male,Undergraduate,Business,Public University,2–4,4,4,3,2,3,3,2,4,3,2,4,5,2,4,2,3,1,4,2,3,No,Yes,52.5
+653,22,Female,Undergraduate,Engineering,Public University,4–6,5,5,5,1,5,1,4,5,5,5,5,5,5,5,5,5,5,5,5,5,No,Yes,98.8
+654,28,Female,Graduate,Science,Public University,2–4,2,2,2,3,3,4,3,4,1,3,3,2,3,2,2,4,2,4,3,2,No,No,40.0
+655,23,Female,Undergraduate,Science,Private University,>6,3,3,4,3,3,3,2,3,2,3,3,4,1,1,4,2,3,3,3,2,No,Yes,43.8
+656,27,Female,Graduate,Law,Private University,<2,2,4,3,4,2,2,4,4,3,4,3,3,4,4,3,3,4,3,3,3,Yes,Yes,56.2
+657,29,Male,Undergraduate,Social Science,Private University,2–4,5,5,5,1,5,1,4,5,5,5,5,4,5,5,5,5,5,5,5,5,No,Yes,97.5
+658,27,Male,Undergraduate,Business,College,<2,4,3,4,3,3,3,3,4,2,3,4,3,4,4,4,4,4,3,3,4,Yes,Yes,61.3
+659,17,Male,Undergraduate,Engineering,Private University,4–6,4,3,3,3,3,2,3,4,3,4,4,3,4,4,2,3,2,4,3,4,Yes,Yes,58.8
+660,22,Male,Graduate,Science,Public University,<2,1,1,1,5,1,5,2,1,1,1,1,1,1,1,1,2,1,1,1,1,Yes,Yes,2.5
+661,18,Female,Undergraduate,Business,Private University,2–4,2,3,2,2,3,4,2,2,2,3,1,2,3,3,1,2,1,3,2,4,Yes,Yes,33.8
+662,30,Male,Undergraduate,Business,Private University,4–6,1,3,2,4,1,3,1,2,1,1,1,2,1,2,1,2,1,1,2,3,No,No,16.2
+663,20,Male,Undergraduate,Science,Private University,<2,3,2,4,3,5,3,3,3,3,4,2,4,3,3,3,4,4,3,2,3,No,No,55.0
+664,28,Male,Graduate,Engineering,Public University,<2,5,4,5,2,4,2,3,3,4,3,4,4,4,3,5,3,4,3,4,5,Yes,Yes,72.5
+665,21,Male,Undergraduate,Computer Science,Private University,<2,2,2,1,5,1,5,2,3,1,3,1,1,2,1,1,2,1,1,1,1,No,No,11.2
+666,23,Male,Postgraduate,Business,Public University,<2,1,2,2,4,2,4,1,2,3,1,2,1,1,2,1,2,1,2,2,2,Yes,No,17.5
+667,28,Female,Graduate,Engineering,Private University,4–6,5,5,4,1,4,1,5,5,5,5,4,5,5,5,5,5,5,5,4,5,Yes,Yes,95.0
+668,25,Female,Undergraduate,Business,Public University,2–4,4,2,4,4,2,2,2,1,2,4,2,1,2,3,3,2,3,2,2,2,Yes,Yes,36.3
+669,25,Male,Undergraduate,Computer Science,Public University,2–4,4,3,4,3,3,2,3,3,4,4,4,3,2,4,3,4,4,4,3,3,Yes,Yes,61.3
+670,26,Male,Postgraduate,Medicine/Health,Private University,<2,2,1,2,3,3,4,2,2,2,3,4,2,2,2,3,1,3,2,2,2,Yes,Yes,31.2
+671,18,Female,Undergraduate,Business,Private University,4–6,2,2,2,3,2,4,3,4,1,2,3,2,2,1,3,2,2,2,3,2,No,No,31.2
+672,18,Male,Undergraduate,Social Science,Public University,<2,1,2,4,4,1,3,4,2,1,2,3,3,1,3,2,1,2,3,2,2,No,Yes,30.0
+673,24,Female,Undergraduate,Medicine/Health,Private University,>6,3,2,3,3,2,5,2,1,3,1,2,3,2,2,1,2,1,3,3,3,Yes,No,28.7
+674,21,Female,Undergraduate,Social Science,Private University,>6,2,4,4,3,4,3,4,4,3,2,2,2,4,2,3,3,3,2,3,3,Yes,No,50.0
+675,22,Male,Undergraduate,Computer Science,Public University,<2,3,3,5,3,4,2,3,5,4,4,4,3,5,5,4,4,4,4,4,5,Yes,Yes,75.0
+676,23,Male,Undergraduate,Business,Private University,<2,3,2,2,3,1,3,2,2,1,2,2,2,3,2,2,1,1,2,1,3,No,No,25.0
+677,18,Male,Undergraduate,Arts & Humanities,Private University,2–4,4,4,5,1,5,2,4,4,4,5,5,5,5,5,5,5,3,4,4,5,Yes,Yes,87.5
+678,25,Male,Undergraduate,Computer Science,Private University,2–4,3,4,4,2,5,2,5,5,4,4,4,5,5,5,5,4,3,4,5,5,Yes,Yes,83.7
+679,24,Male,Graduate,Medicine/Health,Public University,4–6,5,5,5,2,5,1,5,4,5,4,5,5,4,5,3,5,4,4,5,5,No,Yes,90.0
+680,28,Female,Undergraduate,Law,Private University,4–6,3,5,4,3,5,3,5,3,4,4,4,5,3,4,5,4,3,4,4,4,No,Yes,73.8
+681,30,Male,Undergraduate,Science,Private University,<2,3,2,2,4,2,3,1,2,1,2,1,1,2,1,3,2,2,2,2,1,No,Yes,21.3
+682,30,Male,Graduate,Computer Science,Private University,2–4,1,1,1,5,1,5,3,1,1,1,1,1,2,1,1,2,1,1,2,2,Yes,No,7.5
+683,22,Female,Undergraduate,Science,Public University,4–6,3,1,1,4,2,5,2,2,3,1,1,1,2,2,1,2,1,1,1,1,No,No,13.8
+684,29,Male,Undergraduate,Medicine/Health,College,2–4,2,3,3,3,4,2,4,3,3,3,2,4,3,2,4,3,4,3,3,4,Yes,Yes,55.0
+685,28,Male,Undergraduate,Arts & Humanities,College,<2,5,5,5,1,5,1,5,5,5,5,5,5,4,5,5,5,5,5,5,5,Yes,Yes,98.8
+686,29,Male,Undergraduate,Engineering,Private University,2–4,4,5,4,2,5,3,3,4,4,3,4,3,4,4,4,5,4,4,4,4,No,Yes,73.8
+687,27,Male,Undergraduate,Engineering,Public University,<2,5,4,4,1,5,1,5,4,5,5,5,5,5,4,4,5,4,5,5,5,Yes,Yes,92.5
+688,24,Male,Undergraduate,Social Science,Private University,4–6,3,5,2,2,4,4,2,3,2,4,4,3,3,2,4,2,4,2,3,2,No,Yes,50.0
+689,22,Female,Undergraduate,Computer Science,Private University,4–6,3,5,3,3,2,3,3,2,2,2,3,1,3,3,3,4,3,3,3,2,No,Yes,45.0
+690,19,Female,Undergraduate,Law,College,4–6,4,4,5,2,4,2,4,4,5,3,5,3,4,5,3,4,4,3,4,4,No,Yes,75.0
+691,18,Female,Undergraduate,Social Science,Public University,4–6,3,2,1,4,3,2,2,2,3,2,3,2,2,4,1,3,2,2,3,2,No,Yes,35.0
+692,18,Female,Undergraduate,Social Science,Public University,4–6,2,3,2,4,2,5,2,4,3,3,2,2,2,3,2,2,1,3,2,3,No,No,32.5
+693,21,Female,Undergraduate,Business,Private University,4–6,3,4,3,3,3,3,5,3,5,4,2,3,3,5,4,4,3,3,3,3,Yes,Yes,61.3
+694,30,Male,Undergraduate,Medicine/Health,Private University,>6,2,2,3,3,2,4,2,2,3,3,2,1,4,2,3,2,4,2,2,2,No,No,35.0
+695,18,Female,Undergraduate,Medicine/Health,Public University,4–6,4,4,5,1,4,1,4,3,4,4,4,3,4,4,4,5,5,5,5,4,No,Yes,81.2
+696,24,Male,Undergraduate,Law,Public University,2–4,2,2,2,2,3,4,2,2,3,2,1,2,3,3,4,3,3,1,2,3,Yes,No,36.3
+697,24,Female,Undergraduate,Social Science,College,4–6,2,1,1,5,1,5,1,2,1,1,1,1,1,1,2,1,1,1,1,1,No,Yes,3.7
+698,27,Male,Undergraduate,Social Science,Public University,<2,2,4,3,3,2,3,3,2,4,3,2,2,4,1,3,3,2,3,2,2,No,Yes,41.2
+699,23,Male,Postgraduate,Engineering,Private University,<2,5,4,4,2,4,2,4,5,4,4,3,4,4,5,4,4,3,5,4,5,Yes,Yes,78.8
+700,24,Male,Undergraduate,Science,Public University,2–4,1,2,2,5,2,4,1,2,1,1,2,1,1,2,1,1,1,1,1,1,No,No,8.8
+701,22,Male,Undergraduate,Social Science,Private University,2–4,5,5,5,1,5,1,5,5,5,5,5,5,5,5,5,5,5,5,5,5,Yes,Yes,100.0
+702,19,Female,Graduate,Business,Private University,2–4,2,2,1,5,1,5,1,2,1,1,2,2,1,2,1,1,1,1,1,1,No,No,7.5
+703,25,Female,Undergraduate,Arts & Humanities,Private University,4–6,3,2,1,4,2,5,1,2,2,1,2,1,1,2,1,2,2,1,2,2,No,Yes,16.2
+704,22,Female,Graduate,Engineering,Private University,>6,4,5,4,1,5,1,4,5,5,4,5,4,5,5,4,5,5,5,5,5,No,Yes,92.5
+705,26,Female,Graduate,Business,Public University,2–4,2,3,1,3,4,5,2,2,1,3,3,3,3,1,2,4,2,3,3,2,No,Yes,35.0
+706,27,Male,Undergraduate,Social Science,Private University,4–6,1,2,2,5,1,5,2,2,1,2,1,2,2,3,1,1,1,1,1,3,No,No,13.8
+707,25,Male,Undergraduate,Engineering,Private University,2–4,4,5,3,1,4,2,4,5,5,4,4,5,5,5,4,5,3,5,5,3,Yes,Yes,83.7
+708,20,Male,Graduate,Engineering,Private University,2–4,2,2,3,5,2,5,2,2,1,2,2,1,2,1,2,2,2,1,2,1,No,Yes,17.5
+709,28,Male,Undergraduate,Social Science,Private University,2–4,5,2,3,3,5,3,4,5,3,3,4,4,5,5,4,4,5,4,4,4,Yes,Yes,73.8
+710,26,Male,Undergraduate,Engineering,Public University,2–4,5,5,5,2,5,2,5,5,5,5,5,5,4,5,5,4,5,5,5,5,Yes,No,95.0
+711,19,Female,Undergraduate,Computer Science,Private University,2–4,5,4,4,3,4,2,4,4,4,4,5,4,4,4,3,5,5,4,4,4,No,Yes,77.5
+712,20,Female,Undergraduate,Business,Private University,2–4,4,3,3,3,3,2,3,4,3,4,4,3,4,4,5,3,2,2,4,2,No,Yes,58.8
+713,20,Female,Undergraduate,Science,Private University,2–4,2,1,2,3,2,4,3,2,2,2,1,2,2,1,1,2,2,2,1,1,No,No,20.0
+714,21,Female,Undergraduate,Social Science,Public University,4–6,1,1,1,5,2,4,2,1,2,1,1,2,2,2,1,2,2,1,2,3,No,Yes,15.0
+715,21,Female,Postgraduate,Engineering,Private University,<2,5,5,4,1,4,1,4,4,4,4,4,5,4,4,5,4,5,4,4,4,No,Yes,83.7
+716,22,Male,Undergraduate,Computer Science,Private University,4–6,5,4,5,4,4,3,5,5,5,5,5,5,5,5,4,5,5,5,5,4,No,Yes,88.8
+717,20,Female,Undergraduate,Computer Science,Public University,2–4,1,1,1,5,2,4,1,2,3,1,3,2,3,2,3,1,2,3,2,1,No,No,21.3
+718,20,Female,Undergraduate,Engineering,Public University,2–4,4,3,3,3,3,2,3,4,4,3,3,4,4,3,4,4,4,2,2,3,Yes,No,58.8
+719,30,Female,Undergraduate,Law,College,4–6,5,5,5,1,5,1,5,5,5,5,5,5,5,5,5,5,5,5,5,5,No,Yes,100.0
+720,26,Male,Undergraduate,Business,College,2–4,2,2,2,3,1,4,3,2,2,2,1,2,3,1,1,2,3,3,2,2,No,Yes,26.2
+721,24,Male,Graduate,Arts & Humanities,Private University,2–4,4,4,3,2,3,2,4,2,3,4,3,4,4,2,4,4,3,2,3,4,No,No,60.0
+722,22,Female,Graduate,Science,Private University,2–4,3,4,3,2,4,3,5,2,4,4,3,3,3,2,2,3,3,4,3,3,No,Yes,56.2
+723,28,Female,Undergraduate,Engineering,College,2–4,5,4,3,2,3,2,4,5,3,4,5,4,5,2,4,3,4,5,4,3,No,No,72.5
+724,19,Female,Graduate,Social Science,Private University,4–6,5,5,5,1,5,1,5,5,5,5,4,5,5,5,5,5,5,5,5,5,Yes,Yes,98.8
+725,27,Male,Undergraduate,Social Science,Public University,2–4,4,5,5,1,3,3,4,4,4,3,3,4,5,5,4,4,4,5,5,5,Yes,Yes,80.0
+726,26,Male,Postgraduate,Medicine/Health,Private University,2–4,3,1,3,4,3,3,3,4,1,3,2,3,2,1,3,2,1,2,2,2,No,Yes,32.5
+727,30,Male,Graduate,Social Science,Private University,<2,5,3,2,3,3,2,3,4,4,3,4,3,5,3,4,3,3,3,3,4,No,Yes,61.3
+728,23,Female,Graduate,Science,Private University,<2,1,1,1,5,1,5,1,1,1,1,1,1,1,1,1,1,1,1,1,1,No,Yes,0.0
+729,27,Female,Undergraduate,Law,Public University,<2,2,2,2,4,3,3,4,3,4,2,1,2,2,4,2,2,2,2,2,2,No,Yes,35.0
+730,30,Male,Undergraduate,Social Science,Public University,2–4,1,1,1,5,1,5,1,1,1,1,1,1,1,1,1,1,1,1,1,1,No,No,0.0
+731,27,Female,Undergraduate,Computer Science,Private University,2–4,1,1,3,4,1,4,1,1,1,1,1,1,2,1,1,1,1,2,1,1,No,No,7.5
+732,30,Male,Postgraduate,Business,Private University,2–4,4,3,2,1,4,3,3,4,2,3,3,3,3,4,3,4,4,3,2,4,Yes,No,57.5
+733,21,Male,Postgraduate,Business,Public University,2–4,5,5,5,1,5,1,5,5,5,5,5,5,5,5,5,5,5,5,5,5,Yes,Yes,100.0
+734,21,Female,Undergraduate,Business,Public University,2–4,2,3,3,1,3,3,5,2,4,3,2,5,3,3,3,5,2,5,2,3,Yes,Yes,57.5
+735,17,Male,Undergraduate,Arts & Humanities,Public University,2–4,5,5,5,1,5,1,5,5,4,4,5,4,4,5,5,4,5,5,4,5,No,Yes,92.5
+736,27,Male,Undergraduate,Engineering,Public University,4–6,2,1,1,5,1,5,1,1,1,1,1,1,1,1,1,1,1,1,1,1,No,No,1.3
+737,20,Female,Undergraduate,Engineering,Private University,2–4,2,1,2,4,1,4,1,1,2,1,2,1,1,1,1,2,1,2,2,1,No,No,11.2
+738,28,Female,Undergraduate,Engineering,Public University,2–4,2,2,2,5,1,5,3,1,1,3,2,4,1,2,2,1,1,2,2,2,No,Yes,20.0
+739,29,Male,Undergraduate,Law,College,4–6,4,2,3,5,2,3,1,2,3,3,1,2,2,2,3,2,1,3,1,2,No,No,28.7
+740,21,Female,Graduate,Engineering,Public University,4–6,5,4,5,2,5,1,5,5,4,4,5,4,5,5,5,5,4,4,5,5,Yes,Yes,91.3
+741,27,Male,Undergraduate,Science,Private University,<2,2,1,2,5,1,5,1,2,2,1,1,1,1,1,1,2,1,1,1,1,No,No,6.2
+742,29,Male,Undergraduate,Science,Private University,4–6,2,1,2,4,2,5,1,2,1,3,1,2,2,1,1,1,2,1,1,2,No,No,13.8
+743,29,Female,Undergraduate,Business,Public University,4–6,1,1,1,4,3,3,2,2,1,4,3,4,2,2,2,3,3,2,2,2,No,No,31.2
+744,29,Female,Undergraduate,Engineering,Public University,>6,1,1,1,5,1,5,1,1,1,2,1,1,1,1,1,1,1,1,1,1,No,Yes,1.3
+745,21,Male,Undergraduate,Science,Public University,4–6,2,1,2,3,2,2,3,1,2,2,3,1,1,3,2,2,3,4,2,2,Yes,Yes,31.2
+746,25,Male,Undergraduate,Business,Public University,>6,3,4,4,3,5,3,4,4,4,3,4,3,4,4,3,4,4,5,4,4,No,Yes,70.0
+747,24,Male,Undergraduate,Medicine/Health,Private University,4–6,3,4,3,2,3,2,3,5,3,1,3,3,4,3,4,4,3,2,3,4,No,Yes,57.5
+748,24,Male,Postgraduate,Social Science,Private University,<2,3,3,2,3,2,3,4,2,3,2,4,3,3,3,4,2,3,2,3,3,No,No,46.2
+749,20,Female,Undergraduate,Social Science,Private University,4–6,3,4,4,3,4,2,3,3,3,4,2,4,5,3,4,4,4,2,4,3,Yes,No,62.5
+750,25,Female,Undergraduate,Arts & Humanities,Public University,2–4,2,1,1,5,1,5,3,2,1,1,1,1,1,1,2,2,2,1,2,1,No,No,10.0
+751,28,Female,Undergraduate,Medicine/Health,Public University,4–6,3,3,4,3,4,3,2,3,4,4,2,4,2,2,3,2,3,4,3,3,Yes,Yes,51.2
+752,20,Male,Undergraduate,Medicine/Health,Public University,2–4,3,4,3,4,3,4,4,3,2,3,1,3,4,3,1,2,2,3,3,3,No,No,42.5
+753,25,Male,Undergraduate,Science,Private University,4–6,3,2,3,2,5,2,4,3,2,4,5,3,3,4,5,4,3,4,4,3,No,Yes,65.0
+754,30,Male,Postgraduate,Social Science,Private University,<2,2,2,2,4,3,4,3,2,1,1,2,1,1,2,2,4,2,2,2,2,No,Yes,25.0
+755,17,Female,Graduate,Business,Private University,4–6,1,1,2,5,1,5,4,1,1,1,1,1,2,2,2,2,1,2,1,1,No,Yes,11.2
+756,27,Male,Undergraduate,Business,Private University,2–4,3,3,2,1,4,2,2,2,4,4,3,3,3,4,2,4,3,3,4,3,Yes,Yes,56.2
+757,21,Female,Undergraduate,Arts & Humanities,Private University,2–4,1,1,1,5,1,5,1,1,1,1,1,1,1,1,1,1,1,1,1,1,Yes,No,0.0
+758,24,Female,Undergraduate,Computer Science,Public University,2–4,1,1,2,5,1,5,1,2,2,2,3,4,2,1,2,1,1,2,1,1,No,Yes,15.0
+759,28,Male,Undergraduate,Science,Private University,2–4,3,2,3,3,2,3,3,1,3,3,3,2,2,1,2,2,2,1,2,2,No,No,31.2
+760,18,Female,Undergraduate,Arts & Humanities,Public University,<2,1,1,1,5,1,5,1,1,1,1,1,1,1,2,1,1,2,1,1,1,No,No,2.5
+761,24,Male,Graduate,Science,College,4–6,2,2,4,4,1,5,1,2,2,1,2,2,1,2,4,2,3,2,2,1,No,No,23.8
+762,18,Male,Undergraduate,Social Science,Public University,2–4,3,3,4,2,4,2,3,3,3,4,5,3,3,4,4,3,4,3,4,4,Yes,Yes,65.0
+763,18,Male,Undergraduate,Engineering,Private University,4–6,5,5,5,1,5,1,5,5,5,5,5,5,5,5,5,5,5,5,5,5,Yes,Yes,100.0
+764,17,Female,Undergraduate,Arts & Humanities,Private University,2–4,1,1,1,5,2,5,1,1,1,1,1,1,1,1,1,1,1,1,1,1,No,Yes,1.3
+765,17,Female,Graduate,Social Science,Public University,4–6,1,3,2,3,4,4,1,2,3,3,3,3,3,2,1,2,2,3,2,2,No,Yes,33.8
+766,19,Female,Graduate,Arts & Humanities,Public University,4–6,2,4,2,3,4,3,4,3,3,3,2,3,4,3,3,3,4,3,3,2,No,Yes,51.2
+767,17,Male,Undergraduate,Business,Private University,4–6,2,4,5,2,4,2,4,4,3,3,2,4,5,3,2,4,4,3,3,3,No,Yes,62.5
+768,21,Male,Undergraduate,Arts & Humanities,Private University,2–4,1,1,1,5,1,5,1,1,1,1,1,1,1,1,1,1,1,1,1,1,No,No,0.0
+769,17,Female,Undergraduate,Business,Private University,>6,4,4,3,3,5,2,4,4,4,3,4,5,5,5,2,2,4,4,5,4,Yes,No,72.5
+770,17,Male,Postgraduate,Business,Public University,2–4,2,1,3,4,3,3,2,3,3,2,2,2,3,1,2,3,2,1,3,3,No,No,32.5
+771,27,Female,Undergraduate,Engineering,Private University,2–4,3,4,4,1,5,1,3,4,4,4,2,4,4,4,4,4,5,4,5,4,No,Yes,76.2
+772,22,Male,Postgraduate,Engineering,Private University,2–4,2,2,2,5,3,5,2,1,2,1,2,1,1,1,1,2,1,1,1,2,No,No,12.5
+773,22,Female,Undergraduate,Engineering,Private University,>6,4,4,2,2,4,3,4,3,4,5,5,5,5,4,5,4,4,5,4,3,No,Yes,76.2
+774,18,Male,Undergraduate,Medicine/Health,Public University,2–4,2,1,1,4,1,5,1,2,2,1,1,2,1,1,1,2,3,2,2,2,No,No,13.8
+775,26,Female,Graduate,Social Science,Public University,4–6,4,3,4,2,3,2,3,5,4,4,5,3,2,4,4,3,4,4,4,4,Yes,Yes,68.8
+776,22,Female,Undergraduate,Business,Public University,4–6,5,5,5,1,5,1,5,5,5,5,5,5,4,5,5,5,5,5,5,5,Yes,Yes,98.8
+777,18,Female,Undergraduate,Science,Private University,<2,4,3,4,3,4,3,5,4,3,3,4,3,4,3,4,5,3,4,4,5,Yes,Yes,68.8
+778,22,Male,Undergraduate,Engineering,Public University,2–4,1,2,2,4,2,4,2,3,1,2,3,2,2,2,2,4,3,2,2,2,No,No,28.7
+779,24,Male,Graduate,Engineering,Private University,4–6,4,4,4,3,5,1,4,4,4,4,4,4,4,5,2,3,5,4,5,4,No,Yes,76.2
+780,21,Male,Undergraduate,Science,Public University,4–6,3,3,4,4,3,2,3,4,4,3,3,3,2,4,3,3,2,4,4,4,No,Yes,56.2
+781,21,Male,Undergraduate,Social Science,Private University,>6,1,2,2,4,2,5,2,1,2,2,1,1,1,2,2,2,2,1,2,2,No,Yes,16.2
+782,17,Female,Graduate,Business,Public University,2–4,5,5,5,1,5,1,5,5,5,5,5,5,5,5,5,5,5,5,5,5,Yes,Yes,100.0
+783,18,Female,Undergraduate,Science,Private University,<2,2,4,5,1,4,1,3,3,4,5,4,3,4,3,4,3,3,4,3,4,No,Yes,68.8
+784,24,Female,Undergraduate,Engineering,Public University,4–6,5,4,5,2,5,1,5,5,4,4,5,5,5,5,5,5,5,4,5,4,No,Yes,92.5
+785,29,Male,Graduate,Engineering,Public University,4–6,1,2,1,4,3,4,2,2,2,1,2,3,3,3,2,3,2,2,2,2,No,Yes,27.5
+786,19,Male,Undergraduate,Business,Public University,2–4,1,1,1,5,1,5,1,1,1,1,1,1,1,1,2,1,1,1,1,1,No,No,1.3
+787,20,Male,Undergraduate,Law,Public University,2–4,2,2,3,5,1,4,1,2,2,1,3,1,3,3,2,1,3,1,1,2,No,Yes,21.3
+788,21,Male,Undergraduate,Social Science,Public University,2–4,3,2,1,5,4,4,4,4,3,3,2,2,2,3,4,4,3,3,4,4,Yes,Yes,47.5
+789,19,Female,Undergraduate,Arts & Humanities,Public University,2–4,3,2,3,4,2,5,2,3,1,3,2,3,4,2,2,2,2,3,2,2,Yes,No,32.5
+790,22,Female,Undergraduate,Medicine/Health,Private University,>6,1,4,1,2,3,4,2,2,3,3,2,1,2,3,3,2,3,2,2,3,No,No,35.0
+791,18,Male,Graduate,Social Science,Private University,4–6,5,4,5,2,5,2,5,5,3,5,4,4,4,5,4,4,4,5,5,3,No,Yes,83.7
+792,29,Male,Undergraduate,Computer Science,Public University,2–4,2,1,2,4,1,4,1,2,2,3,2,1,2,3,1,3,2,2,2,2,No,Yes,22.5
+793,19,Male,Undergraduate,Computer Science,Public University,4–6,5,5,5,1,5,1,5,5,5,5,5,5,5,5,5,5,5,5,5,5,No,Yes,100.0
+794,25,Male,Postgraduate,Engineering,Public University,2–4,2,3,3,4,3,3,2,4,2,3,4,3,4,1,1,4,3,1,2,3,Yes,No,41.2
+795,17,Female,Undergraduate,Engineering,Public University,2–4,3,1,2,4,3,2,2,3,2,2,2,1,1,2,2,1,2,3,3,3,Yes,Yes,30.0
+796,26,Male,Graduate,Social Science,Private University,>6,3,3,4,3,5,2,3,4,3,4,4,4,4,3,3,4,2,4,3,5,No,Yes,65.0
+797,30,Female,Postgraduate,Engineering,College,4–6,4,5,4,4,5,4,2,4,4,3,3,3,3,3,3,4,4,4,2,3,No,Yes,58.8
+798,18,Female,Undergraduate,Computer Science,Public University,<2,4,4,2,3,3,3,4,4,4,3,3,4,4,4,4,3,4,4,3,5,Yes,Yes,65.0
+799,20,Female,Undergraduate,Social Science,Public University,4–6,1,1,3,3,1,5,2,1,1,1,3,3,1,2,2,1,1,2,1,1,No,No,15.0
+800,21,Male,Undergraduate,Medicine/Health,Private University,>6,5,5,5,1,5,1,4,5,5,5,5,5,5,5,5,5,5,5,5,5,Yes,Yes,98.8
+801,21,Female,Undergraduate,Engineering,Private University,4–6,4,5,4,1,5,1,5,4,5,5,4,3,5,4,5,5,5,5,5,5,No,Yes,91.3
+802,17,Male,Undergraduate,Law,Public University,2–4,4,4,4,2,4,1,4,4,4,5,5,3,5,5,4,4,4,5,4,5,Yes,Yes,82.5
+803,19,Female,Undergraduate,Medicine/Health,Public University,2–4,1,1,2,5,1,5,2,1,3,1,1,1,1,2,1,1,1,1,1,2,No,Yes,7.5
+804,29,Male,Undergraduate,Computer Science,Public University,4–6,4,5,1,2,4,2,4,4,5,4,5,4,5,4,4,5,4,4,3,5,No,Yes,77.5
+805,18,Male,Undergraduate,Business,Public University,>6,5,3,5,2,4,1,5,4,4,5,5,5,5,5,4,5,3,5,5,5,No,Yes,88.8
+806,25,Male,Undergraduate,Social Science,College,2–4,5,5,4,1,4,2,4,5,5,5,4,5,5,4,5,4,5,5,5,5,No,Yes,91.3
+807,23,Male,Undergraduate,Science,College,2–4,1,1,1,5,1,5,1,1,1,1,1,1,1,1,1,1,1,1,1,1,No,No,0.0
+808,29,Male,Undergraduate,Business,Private University,2–4,1,2,1,4,1,5,1,1,1,1,2,3,1,1,1,1,3,1,2,1,No,No,10.0
+809,29,Male,Graduate,Science,Public University,4–6,1,2,2,4,2,3,2,3,2,3,2,3,3,2,2,4,4,1,2,3,Yes,No,35.0
+810,26,Female,Graduate,Social Science,Private University,2–4,2,4,3,2,5,4,3,2,4,4,4,4,3,2,3,4,3,3,4,4,Yes,No,58.8
+811,28,Female,Undergraduate,Engineering,Private University,2–4,2,2,1,4,1,4,2,2,2,1,1,2,1,1,1,2,1,1,1,2,No,No,12.5
+812,26,Male,Graduate,Arts & Humanities,Public University,2–4,3,4,5,2,4,3,5,4,5,5,4,3,4,4,5,5,4,5,3,5,Yes,Yes,80.0
+813,18,Male,Undergraduate,Computer Science,Public University,2–4,2,2,1,4,1,5,1,1,2,1,2,2,1,1,1,1,2,1,1,1,No,No,8.8
+814,25,Female,Undergraduate,Arts & Humanities,Public University,4–6,1,1,1,5,1,5,1,1,1,1,1,1,1,1,1,1,1,1,1,1,No,No,0.0
+815,24,Female,Undergraduate,Business,Private University,2–4,4,3,3,4,4,3,3,3,4,4,3,3,4,2,2,3,3,5,4,2,No,No,55.0
+816,21,Male,Undergraduate,Medicine/Health,Public University,2–4,3,2,1,3,2,3,2,2,4,3,3,1,2,3,2,4,3,2,2,3,Yes,Yes,37.5
+817,20,Female,Undergraduate,Business,College,4–6,3,3,1,3,3,3,3,3,1,4,2,1,3,4,4,5,4,4,3,3,No,No,50.0
+818,30,Female,Undergraduate,Medicine/Health,Public University,2–4,3,2,3,3,3,2,3,2,3,3,2,2,3,1,4,2,4,2,3,2,No,Yes,42.5
+819,19,Male,Undergraduate,Science,Public University,2–4,5,3,5,1,4,1,5,4,4,3,5,4,5,5,5,5,5,4,5,5,No,Yes,88.8
+820,20,Male,Undergraduate,Medicine/Health,Private University,2–4,4,4,5,2,5,2,5,5,4,4,4,5,5,4,4,4,4,5,4,5,No,Yes,85.0
+821,23,Female,Graduate,Science,Public University,4–6,2,3,3,4,3,2,2,3,3,3,4,3,3,3,3,2,2,2,2,2,No,No,42.5
+822,17,Male,Undergraduate,Business,Private University,4–6,1,1,1,5,2,5,1,1,2,2,1,2,2,2,1,1,2,1,2,1,No,No,10.0
+823,30,Male,Undergraduate,Social Science,Private University,2–4,2,2,1,4,2,5,4,2,2,1,2,1,2,2,2,1,2,2,2,2,No,No,21.3
+824,30,Male,Undergraduate,Science,Public University,>6,3,3,3,5,3,3,3,2,3,2,3,2,2,2,2,3,4,2,4,3,No,No,41.2
+825,27,Other,Undergraduate,Law,Private University,2–4,1,1,1,5,1,5,1,1,1,2,2,1,1,1,1,1,3,1,1,1,No,No,5.0
+826,19,Male,Undergraduate,Social Science,Private University,2–4,5,4,4,2,3,1,4,3,4,4,4,4,4,4,5,4,5,4,4,4,Yes,Yes,77.5
+827,27,Male,Undergraduate,Law,Public University,<2,1,1,1,5,1,5,1,2,2,1,1,1,1,1,1,1,1,1,1,1,No,No,2.5
+828,24,Male,Undergraduate,Computer Science,Public University,4–6,2,1,1,4,1,5,1,1,2,2,1,1,1,2,1,1,1,3,1,1,No,Yes,8.8
+829,26,Male,Undergraduate,Computer Science,Private University,2–4,2,1,2,4,2,5,1,1,2,2,3,2,1,1,2,2,1,3,3,3,No,Yes,21.3
+830,24,Female,Undergraduate,Engineering,Private University,4–6,1,1,2,5,2,3,2,1,2,2,1,3,3,3,3,3,2,2,1,1,No,No,23.8
+831,29,Male,Graduate,Social Science,Public University,4–6,3,1,4,2,2,3,2,2,2,2,2,3,3,2,3,1,2,3,2,2,Yes,Yes,35.0
+832,29,Female,Undergraduate,Science,Private University,2–4,1,1,1,5,1,5,1,1,2,1,1,1,2,1,1,1,1,1,1,1,No,No,2.5
+833,28,Female,Undergraduate,Law,Private University,2–4,2,1,2,4,1,4,2,1,2,3,1,2,1,1,2,3,3,3,1,2,Yes,No,21.3
+834,19,Male,Undergraduate,Science,Private University,<2,2,3,3,5,1,4,3,2,3,2,1,4,2,2,2,2,3,2,2,2,No,No,30.0
+835,24,Female,Undergraduate,Science,Private University,4–6,4,4,4,2,5,3,4,4,5,4,4,4,4,4,5,4,4,4,4,4,No,Yes,77.5
+836,21,Male,Undergraduate,Computer Science,Private University,4–6,5,4,4,2,4,3,4,3,4,5,4,4,2,4,3,4,5,4,4,4,Yes,Yes,72.5
+837,25,Male,Undergraduate,Medicine/Health,Private University,2–4,4,3,5,3,3,4,4,2,3,4,4,4,4,3,3,3,2,2,2,3,No,No,53.8
+838,30,Female,Graduate,Arts & Humanities,College,2–4,3,3,4,3,4,4,4,5,2,5,3,4,3,3,4,2,3,3,3,3,No,Yes,57.5
+839,17,Female,Undergraduate,Law,Public University,2–4,3,2,3,1,2,3,4,4,2,2,1,3,1,1,1,2,2,2,2,3,No,Yes,35.0
+840,18,Male,Undergraduate,Law,Private University,>6,5,5,5,1,5,1,5,5,5,5,5,5,5,5,5,5,5,5,5,5,Yes,Yes,100.0
+841,22,Male,Graduate,Medicine/Health,Private University,2–4,3,3,2,3,2,4,2,3,2,2,2,2,4,2,3,2,2,3,2,3,No,Yes,36.3
+842,30,Female,Graduate,Social Science,Private University,4–6,2,1,2,3,3,4,2,3,2,2,3,2,2,1,2,1,2,2,2,2,Yes,Yes,26.2
+843,28,Female,Undergraduate,Arts & Humanities,Private University,2–4,2,3,1,4,4,3,3,1,2,3,3,2,3,3,3,2,4,4,3,3,No,No,42.5
+844,27,Female,Graduate,Science,Public University,2–4,2,1,1,5,1,5,2,1,3,2,2,2,2,2,1,2,2,1,1,2,No,No,15.0
+845,29,Male,Undergraduate,Law,Private University,>6,5,5,5,1,5,1,5,5,5,5,5,5,5,4,5,5,5,5,5,5,No,Yes,98.8
+846,29,Male,Undergraduate,Law,Public University,>6,5,4,4,1,4,2,4,5,4,5,5,4,5,5,4,5,4,4,4,4,No,Yes,85.0
+847,30,Female,Undergraduate,Engineering,Public University,2–4,3,5,5,2,4,1,4,3,5,5,4,4,3,4,5,2,4,5,5,4,No,Yes,78.8
+848,22,Male,Graduate,Arts & Humanities,Private University,4–6,5,3,4,2,3,1,4,3,5,3,2,4,5,4,4,5,5,3,4,4,No,Yes,73.8
+849,27,Male,Undergraduate,Science,Private University,2–4,4,4,4,1,3,2,4,4,5,4,3,5,3,3,5,3,5,4,4,5,No,Yes,76.2
+850,17,Male,Graduate,Business,Private University,4–6,2,2,2,4,3,3,1,2,1,1,2,3,3,2,2,3,2,2,1,2,Yes,No,26.2
+851,28,Male,Undergraduate,Business,Public University,2–4,3,4,2,2,5,3,3,4,4,4,5,4,3,3,3,2,3,3,3,3,No,Yes,60.0
+852,27,Male,Undergraduate,Business,Private University,>6,1,1,2,3,2,5,4,3,3,2,1,3,1,1,1,2,2,2,2,2,No,No,23.8
+853,20,Female,Undergraduate,Engineering,Private University,4–6,2,2,1,5,3,4,4,2,1,4,2,2,2,2,2,3,2,3,2,3,No,No,31.2
+854,17,Female,Undergraduate,Computer Science,Private University,2–4,5,4,4,3,3,2,3,4,5,4,4,3,3,4,3,3,5,4,4,3,No,Yes,68.8
+855,29,Female,Undergraduate,Business,Private University,2–4,3,4,2,4,3,3,3,3,4,2,3,3,3,4,3,3,2,2,2,3,Yes,Yes,46.2
+856,19,Female,Graduate,Engineering,College,<2,3,3,2,3,3,3,3,3,4,3,4,5,3,2,4,4,5,4,3,3,No,No,58.8
+857,29,Male,Postgraduate,Law,Private University,2–4,1,2,2,3,2,4,3,2,3,2,2,2,2,3,2,1,1,4,2,2,Yes,Yes,28.7
+858,28,Male,Undergraduate,Law,Private University,4–6,2,3,3,3,2,5,2,1,2,3,2,1,3,3,2,2,2,2,2,1,No,No,27.5
+859,17,Male,Undergraduate,Social Science,Private University,>6,3,3,2,3,2,3,3,3,3,5,4,3,3,3,3,3,2,4,4,4,Yes,No,53.8
+860,22,Other,Undergraduate,Social Science,Public University,4–6,2,2,4,3,4,4,2,3,3,4,2,4,3,4,3,3,2,3,3,3,No,No,48.8
+861,29,Male,Undergraduate,Medicine/Health,Public University,4–6,4,2,3,2,2,4,3,4,4,3,3,4,4,4,3,3,3,2,4,3,Yes,No,55.0
+862,18,Female,Undergraduate,Engineering,Public University,2–4,4,4,4,1,5,2,4,4,4,5,3,4,4,5,4,4,5,4,5,4,No,Yes,81.2
+863,21,Male,Undergraduate,Science,Private University,4–6,3,2,4,2,2,3,4,3,3,4,2,2,2,1,2,2,3,3,2,3,No,No,42.5
+864,17,Male,Graduate,Science,Private University,2–4,1,1,1,5,1,5,1,1,1,1,1,2,1,1,1,1,1,1,1,1,No,No,1.3
+865,25,Male,Undergraduate,Science,Public University,4–6,3,3,3,1,4,2,4,3,4,4,4,4,4,3,4,4,3,4,4,4,No,Yes,68.8
+866,29,Male,Postgraduate,Law,Private University,4–6,5,5,5,1,5,1,4,5,5,5,5,5,5,5,5,5,5,5,5,5,No,Yes,98.8
+867,21,Male,Undergraduate,Law,Private University,<2,4,3,4,2,5,2,3,4,3,4,3,4,4,5,4,2,2,4,4,4,Yes,Yes,67.5
+868,30,Male,Undergraduate,Social Science,Private University,2–4,5,4,4,1,3,1,5,5,4,3,3,5,5,5,4,4,4,5,5,5,No,Yes,85.0
+869,26,Female,Graduate,Engineering,Private University,<2,1,4,1,3,1,4,3,2,2,2,2,2,1,1,2,3,2,2,2,2,No,Yes,25.0
+870,30,Male,Undergraduate,Arts & Humanities,Private University,4–6,4,4,3,1,5,4,4,4,3,3,4,4,3,4,5,4,4,4,4,4,Yes,Yes,71.2
+871,28,Female,Undergraduate,Social Science,Private University,2–4,4,5,5,1,3,4,3,3,4,4,3,4,4,4,3,5,4,3,5,4,Yes,Yes,71.2
+872,25,Female,Undergraduate,Engineering,Public University,4–6,4,2,3,2,3,2,4,4,2,2,3,3,3,3,4,2,4,4,3,3,No,No,55.0
+873,21,Female,Undergraduate,Social Science,Public University,4–6,3,1,2,5,1,4,2,1,1,2,1,1,1,2,1,1,2,1,1,1,No,No,10.0
+874,19,Other,Undergraduate,Business,Public University,2–4,3,4,5,4,2,3,3,3,3,2,2,4,4,2,4,3,2,3,3,3,Yes,No,50.0
+875,20,Female,Undergraduate,Medicine/Health,Private University,4–6,5,5,5,1,4,1,5,5,5,5,5,5,5,5,5,5,5,5,5,5,No,Yes,98.8
+876,25,Male,Undergraduate,Business,Public University,2–4,2,2,2,5,2,4,1,1,2,2,3,3,1,2,2,1,1,2,2,2,Yes,Yes,20.0
+877,22,Male,Graduate,Social Science,Public University,4–6,5,5,5,1,5,1,5,5,5,5,5,5,5,5,5,5,5,5,5,5,Yes,Yes,100.0
+878,20,Female,Undergraduate,Law,Public University,4–6,2,3,3,4,3,5,2,3,2,3,2,3,2,3,2,3,4,4,2,4,No,Yes,41.2
+879,17,Female,Undergraduate,Engineering,Public University,<2,3,3,2,3,3,3,2,4,3,5,3,4,4,3,3,4,4,3,3,3,No,Yes,56.2
+880,24,Male,Undergraduate,Engineering,Public University,4–6,1,2,2,4,2,5,2,1,2,3,1,2,2,3,2,2,2,1,2,1,No,Yes,20.0
+881,20,Male,Undergraduate,Science,Private University,2–4,1,1,1,5,1,5,1,1,1,1,1,1,1,1,1,1,1,1,1,1,No,No,0.0
+882,27,Male,Undergraduate,Social Science,Private University,>6,5,4,5,1,4,1,5,5,5,5,5,4,5,3,5,5,5,5,5,5,Yes,Yes,93.8
+883,18,Female,Undergraduate,Computer Science,Private University,4–6,5,5,4,1,4,2,5,4,4,5,5,5,5,3,5,5,4,5,5,4,No,Yes,88.8
+884,17,Female,Undergraduate,Business,Private University,4–6,1,1,1,5,1,5,1,1,1,1,1,1,1,1,1,1,1,1,1,1,No,No,0.0
+885,21,Female,Undergraduate,Computer Science,Private University,2–4,2,4,3,4,3,3,2,3,4,4,2,4,4,3,3,2,3,2,3,3,No,Yes,48.8
+886,19,Male,Undergraduate,Science,Public University,>6,2,2,4,2,2,3,4,3,2,4,2,3,4,2,2,2,2,3,3,2,No,Yes,43.8
+887,26,Male,Undergraduate,Social Science,Private University,4–6,5,5,5,2,5,2,5,4,5,5,4,5,5,5,5,5,4,4,4,5,Yes,Yes,91.3
+888,26,Female,Undergraduate,Science,Public University,2–4,3,4,4,2,4,1,4,4,5,3,3,3,3,4,4,4,4,4,4,5,Yes,Yes,72.5
+889,17,Male,Undergraduate,Medicine/Health,Private University,<2,1,1,3,5,2,5,1,1,2,3,2,2,2,1,2,1,1,3,3,2,Yes,No,18.8
+890,25,Male,Undergraduate,Computer Science,Public University,>6,5,5,5,1,5,1,5,4,5,5,5,5,5,5,5,5,5,4,5,4,No,Yes,96.2
+891,29,Female,Undergraduate,Business,Private University,4–6,4,3,3,4,2,2,2,4,4,4,3,3,3,2,4,4,4,1,4,2,No,Yes,52.5
+892,29,Female,Undergraduate,Medicine/Health,Public University,4–6,3,4,4,2,3,3,2,4,5,5,4,5,5,5,3,5,3,3,4,4,Yes,Yes,72.5
+893,23,Male,Undergraduate,Social Science,Public University,2–4,1,2,3,4,4,3,3,3,3,4,3,4,4,4,3,3,4,4,3,4,Yes,Yes,55.0
+894,30,Male,Undergraduate,Medicine/Health,Public University,2–4,3,4,5,1,5,1,4,5,5,5,4,5,5,5,5,4,4,2,4,5,Yes,Yes,86.2
+895,23,Female,Graduate,Engineering,Public University,4–6,1,1,2,5,1,5,1,1,1,1,1,1,1,1,1,1,2,1,1,1,No,No,2.5
+896,29,Male,Graduate,Business,Private University,>6,4,3,2,3,4,3,1,1,3,3,3,2,2,2,1,2,1,2,2,2,No,Yes,32.5
+897,19,Female,Undergraduate,Arts & Humanities,Public University,2–4,1,1,1,5,1,5,1,1,1,1,1,1,1,1,1,1,1,1,1,1,No,No,0.0
+898,22,Male,Graduate,Business,Public University,2–4,2,4,5,3,4,2,4,3,3,4,3,3,5,4,4,3,2,3,2,3,No,Yes,60.0
+899,24,Male,Undergraduate,Engineering,Private University,<2,5,5,5,1,5,1,5,5,5,5,5,5,5,5,5,5,5,5,5,5,Yes,Yes,100.0
+900,29,Female,Undergraduate,Business,Public University,>6,1,1,3,5,2,5,1,2,2,3,2,2,2,2,1,1,2,3,1,1,No,No,17.5
+901,23,Male,Undergraduate,Science,Private University,>6,2,2,2,4,2,4,3,2,2,2,3,2,3,3,2,1,2,1,2,3,Yes,Yes,28.7
+902,27,Male,Undergraduate,Social Science,Private University,4–6,4,4,4,1,5,3,5,5,4,5,5,5,2,3,3,4,4,4,4,5,No,Yes,78.8
+903,26,Male,Undergraduate,Law,Public University,2–4,3,3,4,3,5,2,5,5,5,3,4,4,5,3,5,4,5,2,4,4,No,No,75.0
+904,28,Male,Undergraduate,Business,Public University,2–4,3,3,1,1,4,2,5,5,5,4,3,2,4,3,3,4,5,4,4,4,No,Yes,68.8
+905,21,Male,Undergraduate,Social Science,Private University,4–6,5,4,4,1,5,2,5,4,3,3,3,5,5,3,4,3,3,3,4,4,Yes,Yes,73.8
+906,21,Female,Undergraduate,Business,Private University,2–4,1,1,1,5,1,5,1,1,1,1,1,1,1,1,1,1,1,1,1,1,No,Yes,0.0
+907,26,Male,Undergraduate,Medicine/Health,Private University,2–4,4,2,3,3,2,4,3,3,3,3,2,2,4,2,3,3,1,3,3,3,No,Yes,42.5
+908,17,Female,Undergraduate,Engineering,Private University,2–4,3,3,3,3,3,2,2,3,3,3,3,5,2,3,2,2,3,4,2,3,No,Yes,48.8
+909,20,Male,Undergraduate,Medicine/Health,Private University,4–6,5,5,5,1,5,1,5,5,5,5,5,5,5,5,5,5,5,5,5,5,Yes,Yes,100.0
+910,25,Male,Undergraduate,Business,Public University,2–4,2,2,2,4,2,4,2,3,1,3,3,3,2,2,3,2,2,3,2,2,Yes,No,31.2
+911,30,Female,Undergraduate,Business,Private University,2–4,4,1,3,2,2,4,2,5,3,3,2,2,2,3,3,2,2,3,2,2,No,Yes,40.0
+912,30,Female,Undergraduate,Medicine/Health,Private University,2–4,2,3,3,1,4,2,2,2,4,4,4,2,5,4,3,3,3,3,3,4,Yes,Yes,58.8
+913,28,Female,Undergraduate,Social Science,Private University,2–4,1,1,1,5,1,5,1,1,3,1,2,2,1,2,2,2,2,1,1,1,No,No,10.0
+914,28,Male,Undergraduate,Social Science,Private University,<2,5,5,5,1,5,1,5,5,5,5,5,5,5,5,5,5,5,5,5,5,Yes,Yes,100.0
+915,29,Male,Undergraduate,Computer Science,Public University,>6,2,3,3,4,2,3,2,2,3,2,2,2,2,3,3,2,3,3,2,4,No,Yes,37.5
+916,20,Male,Undergraduate,Business,Public University,>6,1,1,2,4,4,5,1,1,3,1,2,1,2,2,2,2,2,1,2,2,Yes,Yes,18.8
+917,28,Female,Undergraduate,Engineering,Private University,4–6,5,5,3,3,4,1,3,4,5,4,4,4,3,4,3,4,3,4,5,4,No,Yes,73.8
+918,24,Male,Undergraduate,Computer Science,Public University,2–4,2,2,1,4,1,5,2,3,2,3,2,2,2,2,2,2,1,1,2,2,Yes,No,21.3
+919,24,Male,Undergraduate,Computer Science,Private University,4–6,3,4,5,1,3,1,4,4,4,4,5,4,5,4,5,5,4,4,4,5,Yes,Yes,82.5
+920,30,Male,Undergraduate,Medicine/Health,Private University,4–6,5,5,5,1,5,1,5,5,5,5,5,5,5,5,5,5,5,5,5,5,No,Yes,100.0
+921,17,Female,Undergraduate,Computer Science,Public University,2–4,1,1,2,4,1,5,1,1,2,1,1,2,1,1,2,1,2,1,2,1,No,No,8.8
+922,29,Male,Undergraduate,Social Science,Private University,4–6,3,3,3,3,2,3,1,3,4,2,3,4,3,1,5,2,1,4,2,2,No,Yes,42.5
+923,24,Male,Undergraduate,Computer Science,Public University,2–4,1,2,1,4,1,5,2,2,3,2,2,1,3,2,2,3,2,3,2,2,No,Yes,23.8
+924,26,Male,Undergraduate,Arts & Humanities,Public University,<2,3,3,3,2,2,1,4,2,3,2,4,3,3,4,2,1,2,3,2,2,No,No,46.2
+925,22,Male,Undergraduate,Medicine/Health,Public University,2–4,4,5,5,1,4,2,5,4,4,5,4,5,5,5,4,5,4,4,5,5,No,Yes,88.8
+926,25,Male,Undergraduate,Social Science,Public University,4–6,1,1,2,5,1,5,2,3,2,3,1,2,1,1,1,1,2,1,2,2,No,Yes,13.8
+927,28,Male,Graduate,Social Science,College,4–6,4,2,3,3,3,3,3,3,4,3,3,2,3,2,3,2,2,3,3,4,Yes,Yes,47.5
+928,28,Male,Undergraduate,Social Science,College,2–4,2,2,1,5,2,4,1,2,2,2,2,1,2,1,2,1,2,2,2,3,No,Yes,18.8
+929,18,Female,Undergraduate,Science,Public University,4–6,5,4,4,3,4,2,4,4,2,4,3,4,3,5,3,2,3,3,4,3,No,Yes,63.7
+930,23,Female,Postgraduate,Law,Public University,4–6,1,1,2,5,2,4,1,1,2,2,1,1,1,2,1,2,2,2,2,1,No,No,12.5
+931,19,Male,Undergraduate,Science,Private University,2–4,3,3,4,3,2,3,2,2,3,3,2,2,3,4,3,1,3,2,4,3,No,No,43.8
+932,24,Male,Graduate,Computer Science,Public University,<2,5,3,4,1,3,2,4,3,5,5,4,4,4,5,3,2,5,5,4,4,Yes,No,76.2
+933,29,Male,Undergraduate,Science,Public University,2–4,2,3,1,4,3,4,2,2,4,1,3,2,3,2,2,2,2,2,4,3,Yes,No,33.8
+934,17,Female,Undergraduate,Social Science,Public University,2–4,5,4,5,2,4,2,5,4,3,2,4,5,4,4,4,3,4,2,3,4,No,Yes,71.2
+935,29,Female,Undergraduate,Computer Science,Private University,4–6,4,3,4,3,3,4,4,4,4,2,4,2,4,3,3,4,3,3,4,4,No,Yes,58.8
+936,27,Male,Graduate,Engineering,Private University,2–4,4,4,4,2,3,1,3,5,5,5,4,5,5,3,4,5,4,5,5,4,No,Yes,82.5
+937,26,Male,Undergraduate,Medicine/Health,College,2–4,1,1,1,5,1,5,2,2,2,1,1,1,1,1,1,2,1,2,1,1,No,Yes,6.2
+938,23,Female,Undergraduate,Science,Private University,2–4,1,1,1,5,2,5,1,1,2,1,1,2,1,3,1,1,1,2,1,2,No,Yes,8.8
+939,21,Male,Postgraduate,Arts & Humanities,College,4–6,5,5,5,1,4,1,5,5,5,5,5,4,5,4,5,5,5,5,5,5,Yes,Yes,96.2
+940,27,Female,Undergraduate,Law,Private University,2–4,4,3,1,2,4,4,3,2,3,2,4,2,4,3,2,2,2,2,3,2,Yes,No,42.5
+941,17,Male,Undergraduate,Engineering,Public University,2–4,5,5,5,1,5,1,5,5,5,5,5,5,5,5,5,5,5,5,5,5,Yes,Yes,100.0
+942,29,Female,Undergraduate,Law,College,2–4,4,3,5,1,3,2,5,4,5,5,5,5,4,4,5,4,5,5,5,5,Yes,Yes,87.5
+943,19,Male,Undergraduate,Social Science,Public University,2–4,2,4,3,3,3,4,4,3,3,4,2,2,3,3,3,3,3,3,3,3,Yes,Yes,48.8
+944,18,Male,Undergraduate,Arts & Humanities,Public University,2–4,1,1,1,5,1,4,1,1,2,2,1,1,1,1,1,1,1,1,1,1,No,No,3.7
+945,29,Male,Undergraduate,Engineering,Public University,2–4,5,4,4,2,4,1,5,4,5,4,3,4,5,3,4,4,3,5,4,4,No,Yes,78.8
+946,23,Female,Undergraduate,Computer Science,College,<2,3,3,4,5,2,3,2,1,2,3,2,2,1,2,1,2,1,2,3,1,Yes,Yes,26.2
+947,20,Female,Postgraduate,Computer Science,Public University,4–6,3,2,3,3,2,4,1,2,3,2,3,2,3,2,2,4,2,1,3,3,No,Yes,35.0
+948,24,Female,Undergraduate,Law,Public University,2–4,2,1,1,5,1,4,2,1,1,2,2,2,1,1,2,2,1,2,1,1,No,No,11.2
+949,22,Male,Undergraduate,Law,Private University,>6,5,5,3,1,3,3,5,3,4,4,4,3,4,4,3,3,4,2,4,3,Yes,Yes,67.5
+950,20,Male,Undergraduate,Medicine/Health,Private University,2–4,3,3,2,3,2,3,3,2,3,5,4,4,4,3,2,3,3,4,4,4,No,Yes,55.0
+951,30,Female,Undergraduate,Computer Science,Private University,4–6,4,3,4,4,2,4,2,4,3,1,2,3,3,2,1,3,2,2,1,4,Yes,Yes,37.5
+952,20,Female,Undergraduate,Engineering,Private University,2–4,1,1,1,5,1,5,2,2,1,1,1,1,1,1,2,1,1,1,1,1,No,Yes,3.7
+953,23,Male,Undergraduate,Engineering,Public University,>6,4,4,4,2,4,3,4,4,4,3,3,5,4,5,5,3,4,4,2,4,No,No,71.2
+954,23,Female,Undergraduate,Engineering,Public University,2–4,2,1,1,5,1,4,1,1,1,1,2,1,1,1,1,1,1,2,1,1,No,No,5.0
+955,27,Female,Postgraduate,Law,Public University,4–6,4,3,4,2,5,2,5,4,4,3,4,4,5,5,4,4,4,3,3,4,No,Yes,75.0
+956,17,Male,Postgraduate,Science,Private University,<2,2,3,1,4,2,4,1,1,2,2,2,2,3,1,1,2,2,1,2,2,Yes,Yes,20.0
+957,25,Male,Undergraduate,Engineering,Private University,2–4,1,1,1,5,1,5,1,1,1,1,1,1,1,1,1,1,1,1,1,1,No,No,0.0
+958,23,Male,Graduate,Arts & Humanities,Public University,4–6,1,2,1,5,1,4,1,1,1,2,2,2,1,1,1,1,1,1,1,1,No,No,6.2
+959,20,Male,Undergraduate,Business,Public University,2–4,3,2,3,2,2,3,3,2,3,4,3,2,3,3,3,4,3,3,3,3,No,Yes,48.8
+960,26,Male,Undergraduate,Medicine/Health,Public University,4–6,3,4,4,2,4,3,5,3,3,4,4,4,4,4,4,4,4,5,4,4,Yes,Yes,72.5
+961,17,Female,Undergraduate,Social Science,Private University,4–6,4,2,3,3,2,3,4,4,4,4,2,4,3,2,4,4,4,3,4,3,Yes,Yes,57.5
+962,19,Female,Undergraduate,Computer Science,Private University,<2,1,1,1,2,1,4,1,1,1,1,1,1,1,1,2,1,1,2,3,1,No,No,10.0
+963,28,Male,Graduate,Science,Private University,<2,4,4,4,1,5,1,5,4,5,5,4,3,4,4,5,5,4,5,4,4,Yes,No,85.0
+964,21,Female,Undergraduate,Science,Private University,<2,4,4,4,2,5,2,5,5,5,5,5,5,5,3,3,4,5,5,5,3,No,Yes,85.0
+965,22,Male,Undergraduate,Social Science,Private University,<2,5,5,3,3,4,2,4,5,4,4,2,4,5,5,4,3,5,4,5,3,No,No,76.2
+966,30,Male,Undergraduate,Science,Public University,2–4,3,3,4,2,5,1,4,4,3,5,4,4,3,4,4,3,4,3,4,5,No,Yes,72.5
+967,21,Female,Undergraduate,Engineering,Private University,4–6,4,4,5,2,4,2,4,4,5,4,4,4,3,3,4,5,3,4,4,5,No,Yes,76.2
+968,29,Male,Undergraduate,Engineering,Public University,2–4,2,4,4,1,3,3,3,3,4,4,4,4,4,4,4,5,3,4,4,4,No,Yes,68.8
+969,27,Male,Undergraduate,Arts & Humanities,Private University,<2,5,5,4,2,5,1,5,4,5,4,4,5,5,5,3,5,5,4,5,5,No,No,90.0
+970,25,Male,Undergraduate,Social Science,Private University,2–4,4,2,3,4,2,2,4,2,4,4,3,3,4,4,4,3,3,4,3,2,No,Yes,55.0
+971,26,Male,Undergraduate,Computer Science,Private University,>6,4,4,3,3,3,3,3,4,3,3,5,3,3,5,4,4,3,5,4,3,Yes,No,65.0
+972,18,Male,Undergraduate,Medicine/Health,Private University,<2,1,3,2,5,2,4,2,3,2,2,2,2,2,3,3,2,2,2,2,2,No,No,27.5
+973,21,Male,Undergraduate,Computer Science,Public University,2–4,2,1,2,5,1,5,1,1,1,1,2,1,2,2,2,1,2,1,1,1,No,No,8.8
+974,30,Male,Undergraduate,Computer Science,Public University,2–4,5,5,5,2,5,1,5,5,5,5,5,4,5,5,5,5,4,5,5,5,No,Yes,96.2
+975,30,Male,Undergraduate,Social Science,Public University,<2,2,4,4,3,3,3,3,4,4,4,3,3,3,3,4,4,4,2,2,3,Yes,Yes,56.2
+976,23,Female,Undergraduate,Medicine/Health,Public University,<2,5,5,5,2,5,1,5,5,5,5,5,5,5,5,5,5,5,5,5,5,Yes,Yes,98.8
+977,27,Male,Undergraduate,Social Science,Public University,2–4,4,5,4,1,4,4,2,4,4,5,3,4,3,3,4,3,3,3,4,4,No,No,66.2
+978,21,Other,Undergraduate,Computer Science,Public University,2–4,2,4,4,4,4,2,4,3,4,4,3,4,5,4,4,4,4,3,4,4,Yes,Yes,67.5
+979,25,Male,Graduate,Social Science,Private University,2–4,5,4,5,1,5,1,5,5,5,5,5,5,4,5,5,4,5,5,5,5,No,Yes,96.2
+980,27,Male,Undergraduate,Arts & Humanities,Public University,4–6,2,3,4,3,4,3,2,3,4,2,4,3,3,4,3,3,3,2,3,3,No,Yes,51.2
+981,28,Male,Graduate,Computer Science,Private University,2–4,4,3,3,4,3,4,2,1,3,2,5,3,1,3,3,3,2,3,3,3,No,Yes,42.5
+982,26,Male,Undergraduate,Business,Public University,2–4,2,1,2,4,1,5,2,1,1,1,1,1,1,2,1,2,1,1,1,1,Yes,Yes,7.5
+983,24,Female,Undergraduate,Medicine/Health,Public University,<2,1,3,2,5,1,4,2,2,2,1,1,1,1,2,1,1,1,2,1,1,No,Yes,11.2
+984,30,Female,Undergraduate,Computer Science,Public University,<2,1,1,1,5,1,5,1,3,1,1,1,2,1,1,2,1,1,1,1,1,Yes,No,5.0
+985,20,Female,Undergraduate,Science,Private University,2–4,2,1,3,4,3,3,2,2,3,3,1,4,2,3,3,4,4,3,3,3,No,No,42.5
+986,17,Female,Undergraduate,Social Science,College,2–4,1,1,1,5,1,5,1,1,1,1,1,1,1,1,1,1,1,1,1,1,Yes,No,0.0
+987,19,Female,Undergraduate,Law,Private University,2–4,1,1,1,5,1,5,1,1,1,1,1,1,1,1,1,1,1,1,1,1,No,No,0.0
+988,28,Female,Graduate,Engineering,Public University,4–6,2,2,1,5,2,5,2,1,1,1,1,1,1,1,1,1,1,2,1,1,No,No,6.2
+989,17,Male,Undergraduate,Engineering,Public University,2–4,2,2,2,4,3,5,1,2,3,2,3,1,1,2,1,2,1,2,1,2,No,No,20.0
+990,27,Male,Graduate,Computer Science,Private University,4–6,2,4,2,2,3,2,3,3,2,3,4,3,4,3,4,2,2,1,3,3,Yes,Yes,48.8
+991,20,Female,Undergraduate,Computer Science,Private University,2–4,1,1,1,5,1,5,1,1,1,1,1,1,1,1,1,1,1,1,1,1,No,Yes,0.0
+992,24,Male,Undergraduate,Engineering,Private University,2–4,1,1,2,4,1,5,1,2,3,2,2,2,1,3,1,2,2,3,2,3,No,No,21.3
+993,18,Male,Undergraduate,Arts & Humanities,Private University,2–4,5,5,5,1,5,2,5,5,5,5,5,5,4,5,4,5,4,5,5,5,Yes,Yes,95.0
+994,17,Female,Undergraduate,Social Science,Public University,2–4,5,5,5,2,4,2,5,4,5,5,5,5,5,5,4,5,4,5,4,5,Yes,Yes,91.3
+995,30,Female,Undergraduate,Medicine/Health,College,2–4,3,3,4,2,4,1,4,3,3,3,2,3,3,4,4,3,3,3,4,3,Yes,Yes,60.0
+996,23,Male,Undergraduate,Social Science,Private University,2–4,2,2,2,4,2,3,3,3,2,2,2,1,2,2,3,2,2,2,2,3,No,Yes,30.0
+997,30,Male,Postgraduate,Social Science,Private University,2–4,2,2,2,4,2,5,4,1,2,2,1,1,1,1,2,1,2,2,2,2,No,No,18.8
+998,19,Male,Undergraduate,Computer Science,Private University,2–4,4,3,3,3,3,3,3,3,2,1,4,3,2,3,3,3,3,3,3,4,Yes,No,48.8
+999,23,Male,Undergraduate,Medicine/Health,Private University,2–4,3,4,4,4,3,2,3,4,4,3,4,3,3,5,3,4,3,3,4,3,No,Yes,61.3
+1000,19,Female,Graduate,Social Science,Private University,4–6,4,5,5,2,5,2,4,3,4,4,4,4,3,4,4,5,5,4,4,5,Yes,No,80.0

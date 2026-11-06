@@ -1,10 +1,10 @@
-Model evaluation (scikit-learn 1.8.0, pandas 3.0.2)
+Model evaluation (scikit-learn 1.9.1, pandas 3.1.1)
 Data: 1000 rows. Inputs (12): Age, Gender, Field_of_Study, Avg_Daily_Study_Hours, B1_Pressure_High_Grades, B2_Workload_Overwhelming, B3_Balance_Difficult, C1_Anxious_Academics, C2_Concentration_Hard, C4_Mentally_Exhausted, C5_Worry_Future, D1_Headaches_Pain
 Level counts in the data: Normal 272, Mild 228, Moderate 236, High Risk 264
 
 === 80/20 hold-out split: 800 training rows / 200 test rows ===
-Training: MAE 1.65  RMSE 2.14  R2 0.995  level accuracy 0.949
-Test    : MAE 4.04  RMSE 5.32  R2 0.971  level accuracy 0.860
+Training: MAE 1.65  RMSE 2.15  R2 0.995  level accuracy 0.951
+Test    : MAE 4.04  RMSE 5.30  R2 0.971  level accuracy 0.860
 Test set, per level:
   Normal     precision 0.88  recall 0.92  F1 0.90  (n=53)
   Mild       precision 0.82  recall 0.73  F1 0.77  (n=51)
@@ -20,21 +20,21 @@ Moderate        0     4        40          4
 High Risk       0     0         2         46
 
 === 2/3 training, 1/3 test split: 666 training rows / 334 test rows ===
-Training: MAE 1.70  RMSE 2.20  R2 0.995  level accuracy 0.949
-Test    : MAE 3.96  RMSE 5.22  R2 0.972  level accuracy 0.874
+Training: MAE 1.69  RMSE 2.20  R2 0.995  level accuracy 0.953
+Test    : MAE 3.96  RMSE 5.20  R2 0.972  level accuracy 0.880
 Test set, per level:
   Normal     precision 0.90  recall 0.95  F1 0.93  (n=88)
-  Mild       precision 0.85  recall 0.72  F1 0.78  (n=81)
-  Moderate   precision 0.78  recall 0.87  F1 0.83  (n=79)
+  Mild       precision 0.87  recall 0.73  F1 0.79  (n=81)
+  Moderate   precision 0.80  recall 0.89  F1 0.84  (n=79)
   High Risk  precision 0.95  recall 0.94  F1 0.95  (n=86)
-  macro    average: precision 0.873  recall 0.871  F1 0.870
-  weighted average: precision 0.876  recall 0.874  F1 0.873
+  macro    average: precision 0.880  recall 0.878  F1 0.876
+  weighted average: precision 0.882  recall 0.880  F1 0.879
 Confusion matrix (rows = actual level, columns = predicted level):
            Normal  Mild  Moderate  High Risk
 Normal         84     4         0          0
-Mild            9    58        14          0
-Moderate        0     6        69          4
+Mild            9    59        13          0
+Moderate        0     5        70          4
 High Risk       0     0         5         81
 
 === 5-fold cross-validation (mean +/- standard deviation over the 5 test folds) ===
-MAE 4.42 +/- 0.24   R2 0.967 +/- 0.003   level accuracy 0.866 +/- 0.011
+MAE 4.41 +/- 0.25   R2 0.967 +/- 0.003   level accuracy 0.868 +/- 0.009

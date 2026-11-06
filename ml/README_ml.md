@@ -13,6 +13,8 @@ model, and the scripts the website uses. The website itself is in the `core/` fo
 | `teammate_training/train_student_stress_reduced.py` | The same training code as a script. |
 | `teammate_training/student_stress_random_forest.joblib` | The trained model exactly as the team produced it (14 inputs, scikit-learn 1.8.0). |
 | `train_model.py` | Trains the model the website uses (12 inputs). Writes `student_stress_model.joblib`. |
+| `Stress_Model_Training_and_Evaluation.ipynb` | The same training and evaluation as a notebook, with the results saved in it. Runs in Google Colab. |
+| `models/student_stress_model_website_12_inputs_sklearn-1.8.0.joblib` | A reference copy of the website's model (12 inputs), saved with scikit-learn 1.8.0. The website does not load this file. |
 | `evaluate_model.py` | Re-runs the evaluation and writes `evaluation_report.txt`. |
 | `evaluation_report.txt` | Results of the evaluation (see below). |
 
@@ -33,16 +35,16 @@ model, and the scripts the website uses. The website itself is in the `core/` fo
 
 ## Results (`evaluation_report.txt`)
 
-Evaluated for the website's 12 inputs. Created with scikit-learn 1.8.0. Re-run `evaluate_model.py` to reproduce it.
+Evaluated for the website's 12 inputs. Re-run `evaluate_model.py` to reproduce it.
 
 | Method | Test average error | Test R2 | Test level accuracy |
 |---|---|---|---|
 | 80/20 hold-out (800 / 200 rows) | 4.04 | 0.971 | 86.0% |
-| 2/3 training, 1/3 test (666 / 334 rows) | 3.96 | 0.972 | 87.4% |
-| 5-fold cross-validation | 4.42 +/- 0.24 | 0.967 +/- 0.003 | 86.6% +/- 1.1% |
+| 2/3 training, 1/3 test (666 / 334 rows) | 3.96 | 0.972 | 88.0% |
+| 5-fold cross-validation | 4.41 +/- 0.25 | 0.967 +/- 0.003 | 86.8% +/- 0.9% |
 
 Precision, recall and F1 for each level are in the report. Training accuracy is higher than test accuracy
-(94.9% against 86.0% on the 80/20 split), which is normal for a Random Forest.
+(95.1% against 86.0% on the 80/20 split), which is normal for a Random Forest.
 
 ## Running it
 
@@ -51,6 +53,9 @@ pip install scikit-learn pandas joblib
 python ml/train_model.py        # creates ml/student_stress_model.joblib for the website
 python ml/evaluate_model.py     # creates ml/evaluation_report.txt
 ```
+
+The notebook can be opened in Google Colab: upload it with `students_stress_dataset_reduced_15.csv` and choose Run all.
+If it is run from inside this `ml/` folder, it finds the data in `data/` by itself.
 
 Run `train_model.py` once on every machine that runs the website (your laptop, PythonAnywhere).
 `teammate_training/student_stress_random_forest.joblib` was saved with scikit-learn 1.8.0, which needs
@@ -65,4 +70,4 @@ To run the team's script, put `students_stress_dataset_reduced_15.csv` in the sa
 - Breiman, L. (2001). Random forests. *Machine Learning, 45*(1), 5-32.
 - Pedregosa, F., et al. (2011). Scikit-learn: Machine learning in Python. *Journal of Machine Learning Research, 12*, 2825-2830.
 
-Dataset source: 
+Dataset source: to be added by the team.
