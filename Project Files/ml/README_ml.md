@@ -35,16 +35,16 @@ model, and the scripts the website uses. The website itself is in the `core/` fo
 
 ## Results (`evaluation_report.txt`)
 
-Evaluated for the website's 12 inputs. Created with scikit-learn 1.8.0. Re-run `evaluate_model.py` to reproduce it.
+Evaluated for the website's 12 inputs. Re-run `evaluate_model.py` to reproduce it.
 
 | Method | Test average error | Test R2 | Test level accuracy |
 |---|---|---|---|
 | 80/20 hold-out (800 / 200 rows) | 4.04 | 0.971 | 86.0% |
-| 2/3 training, 1/3 test (666 / 334 rows) | 3.96 | 0.972 | 87.4% |
-| 5-fold cross-validation | 4.42 +/- 0.24 | 0.967 +/- 0.003 | 86.6% +/- 1.1% |
+| 2/3 training, 1/3 test (666 / 334 rows) | 3.96 | 0.972 | 88.0% |
+| 5-fold cross-validation | 4.41 +/- 0.25 | 0.967 +/- 0.003 | 86.8% +/- 0.9% |
 
 Precision, recall and F1 for each level are in the report. Training accuracy is higher than test accuracy
-(94.9% against 86.0% on the 80/20 split), which is normal for a Random Forest.
+(95.1% against 86.0% on the 80/20 split), which is normal for a Random Forest.
 
 ## Running it
 
