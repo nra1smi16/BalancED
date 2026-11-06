@@ -14,7 +14,6 @@ BalancED is a Django-based web application designed to help university students 
 * [Database Schema](#database-schema)
 * [Installation & Setup](#installation--setup)
 * [Limitations & Technical Considerations](#limitations--technical-considerations)
-* [References](#references)
 
 ## Features & System Overview
 
@@ -225,9 +224,3 @@ Visit `http://127.0.0.1:8000/` in your browser.
 4. **AI Dependencies:** AI-generated notes rely on a third-party service (Groq API); responses may vary, fail, or be affected by service latency/rate limits (free tier cap of \~30 requests/min).
 5. **Static Advice per Check-in:** AI advice cards are generated at the time of assessment submission and remain fixed until the subsequent check-in.
 6. **Auxiliary Metrics:** Height, weight, and chronic illness flags are stored for contextual advice adjustment (e.g., swapping active tasks for quiet routines) but do not manipulate the underlying ML stress score.
-
-## References
-
-* **Breiman, L.** (2001). Random forests. *Machine Learning*, 45(1), 5-32.
-* **Hastie, T., Tibshirani, R., & Friedman, J.** (2009). *The Elements of Statistical Learning* (2nd ed.). Springer.
-* **Pedregosa, F., et al.** (2011). Scikit-learn: Machine learning in Python. *Journal of Machine Learning Research*, 12, 2825-2830.
