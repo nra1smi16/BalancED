@@ -225,8 +225,4 @@ Visit `http://127.0.0.1:8000/` in your browser.
 5. **Static Advice per Check-in:** AI advice cards are generated at the time of assessment submission and remain fixed until the subsequent check-in.
 6. **Auxiliary Metrics:** Height, weight, and chronic illness flags are stored for contextual advice adjustment (e.g., swapping active tasks for quiet routines) but do not manipulate the underlying ML stress score.
 7. **Testing:** The project relies on manual testing on PythonAnywhere rather than automated tests.
-<<<<<<< HEAD
 8. **No Email:** Skipping email collection protects student identity, eliminates data leak risks involving personal emails, and speeds up account registration, though users cannot receive off-platform alerts or automated password recovery links if login details are lost.
-=======
-8. **No Email:** Skipping email collection protects student identity, eliminates data leak risks involving personal emails, and speeds up account registration, though users cannot receive off-platform alerts or automated password recovery links if login details are lost.
->>>>>>> c7fe0d5 (seperated the daily notes and ai note. Changed the order in history)
