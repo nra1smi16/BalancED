@@ -8,8 +8,19 @@
         <p class="greeting-sub" id="today-label"></p>
       </section>
 
+      {% if reminder %}
+        <div class="reminder" role="status">
+          <div>
+            <p>{{ reminder }}</p>
+            <p class="reminder-hint">You can turn this reminder off in your <a href="{% url 'profile' %}">profile</a>.</p>
+          </div>
+          <a href="{% url 'assessment' %}" class="btn">Start check-in</a>
+        </div>
+      {% endif %}
+
       <main class="grid">
 
+        <div class="grid-col">
         <!-- STRESS LEVEL -->
         <section class="card stress-card" aria-labelledby="stress-heading">
           <h2 class="font-display card-title" id="stress-heading">Your stress level</h2>
@@ -20,6 +31,7 @@
             <p class="stress-score">Score: {{ stress_score|floatformat:"-1" }} / 100</p>
             <p class="last-assessed">Last assessed {{ assessment.created_at|date:"M j, Y" }}</p>
             <a href="{% url 'assessment' %}" class="btn btn-secondary">Retake questionnaire</a>
+            <p class="stress-history-link"><a href="{% url 'history' %}">See your history</a></p>
           {% elif assessment %}
             <div class="empty-stress">
               <p class="empty-title">No prediction yet</p>
@@ -41,6 +53,15 @@
           <p class="disclaimer">This is a support tool, not a medical diagnosis.</p>
         </section>
 
+        <!-- ENCOURAGING MESSAGE -->
+        <section class="card note-card" aria-labelledby="note-heading">
+          <h2 class="font-display card-title" id="note-heading">A note for today</h2>
+          <p class="font-display note-message">{{ daily_note }}</p>
+        </section>
+
+        </div>
+
+        <div class="grid-col">
         <!-- CALENDAR -->
         <section class="card calendar-card" aria-labelledby="calendar-heading">
           <div class="calendar-head">
@@ -64,16 +85,16 @@
           {{ exam_days|json_script:"exam-days" }}
         </section>
 
-        <!-- ENCOURAGING MESSAGE -->
-        <section class="card note-card" aria-labelledby="note-heading">
-          <h2 class="font-display card-title" id="note-heading">A note for today</h2>
-          {% if ai_note %}
+        {% if ai_note %}
+          <!-- AI NOTE (only for students who turned it on): stays until their next check-in -->
+          <section class="card ai-card" aria-labelledby="ai-heading">
+            <h2 class="font-display card-title" id="ai-heading">From your last check-in <span class="ai-tag">AI-generated</span></h2>
             <p class="font-display note-message">{{ ai_note }}</p>
-            <p class="ai-meta"><span class="ai-tag">AI-generated</span> Written from your answers on {{ assessment.created_at|date:"M j, Y" }}. AI can be wrong, and this is not a medical diagnosis.</p>
-          {% else %}
-            <p class="font-display note-message">{{ daily_note }}</p>
-          {% endif %}
-        </section>
+            <p class="ai-meta">Written from your answers on {{ assessment.created_at|date:"M j, Y" }}. AI can be wrong, and this is not a medical diagnosis.</p>
+          </section>
+        {% endif %}
+
+        </div>
 
         <!-- COUNSELING SUPPORT -->
         <section class="card support-card{% if stress_level == 'Moderate' or stress_level == 'High Risk' %} support-card--emphasis{% endif %}" aria-labelledby="support-heading">

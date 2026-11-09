@@ -251,7 +251,7 @@ body {
 }
 
 /* =====================================================================
-   Added for log in / profile / questionnaire / results
+   log in / profile / questionnaire / results
    ===================================================================== */
 
 /* Top bar navigation */
@@ -635,3 +635,68 @@ adjust chart*/
 .legend-dot.band-moderate { background-color: var(--moderate); opacity: 1; }
 .legend-dot.band-mild { background-color: var(--mild); opacity: 1; }
 .legend-dot.band-normal { background-color: var(--normal); opacity: 1; }
+
+/* =====================================================================
+   Dashboard columns, weekly reminder banner, AI card, history list
+   ===================================================================== */
+/* Left column: stress + note. Right column: calendar + AI card. Each column flows on its own,
+   so a long note on the left never leaves a gap under the calendar. */
+.grid { grid-template-areas: none; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); }
+.grid-col { display: flex; flex-direction: column; gap: 1.25rem; min-width: 0; }
+.support-card { grid-area: auto; grid-column: 1 / -1; }
+@media (max-width: 860px) {
+  .grid { grid-template-columns: minmax(0, 1fr); }
+}
+
+.reminder {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin: 0 0 1.25rem;
+  padding: 0.9rem 1.1rem;
+  border: 1px solid #d8e6f2;
+  border-radius: 14px;
+  background: #eff6ff;
+}
+.reminder p { margin: 0; color: var(--ink); }
+.reminder .reminder-hint { margin-top: 0.15rem; font-size: 0.8rem; color: var(--muted); }
+.reminder a:not(.btn) { color: var(--primary-dark); }
+
+.stress-history-link { margin: 0.75rem 0 0; text-align: center; font-size: 0.85rem; }
+.stress-history-link a { color: var(--primary-dark); }
+
+.history-list { margin: 0; padding: 0; list-style: none; }
+.history-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.7rem 0;
+  border-top: 1px solid var(--line);
+}
+.history-row:first-child { border-top: 0; padding-top: 0; }
+.history-info { display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; }
+.history-row form { margin: 0; }
+.history-date { font-weight: 600; color: var(--ink); min-width: 6.5rem; }
+.history-score { color: var(--muted); }
+.level-badge { display: inline-block; padding: 0.1rem 0.6rem; border-radius: 999px; background: #f8fafc; border: 1px solid var(--line); font-size: 0.8rem; font-weight: 600; }
+.btn-small { padding: 0.35rem 0.8rem; font-size: 0.8rem; }
+
+
+/* =====================================================================
+   "Working on it" message while the questionnaire is sent
+   ===================================================================== */
+.submit-status { display: flex; align-items: center; gap: 0.6rem; margin: 0.75rem 0 0; color: var(--ink); }
+.submit-status[hidden] { display: none; }
+.spinner {
+  width: 1rem; height: 1rem; flex-shrink: 0;
+  border: 2px solid #cbd5e1;
+  border-top-color: var(--primary);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .spinner { animation: none; } }
+.btn:disabled { opacity: 0.7; cursor: wait; }

@@ -43,6 +43,13 @@
   </div>
   {% include 'core/_field.html' with field=form.chronic_illnesses %}
 
+  <h2 class="font-display card-title section-gap">Reminders</h2>
+  <label class="consent-check" for="{{ form.reminders_on.id_for_label }}">
+    {{ form.reminders_on }}
+    <span>{{ form.reminders_on.label }}</span>
+  </label>
+  <p class="hint">It is only a small note on your dashboard when it has been a week since your last check-in. No emails are sent.</p>
+
   <h2 class="font-display card-title section-gap" id="ai-note">AI-written notes <span class="optional">(optional)</span></h2>
   <div class="consent-box">
     <p>

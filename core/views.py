@@ -1,31 +1,31 @@
 import logging
 from datetime import date
 
+from django.conf import settings
 from django.contrib import messages
 from django.contrib.auth import login, logout, update_session_auth_hash
 from django.contrib.auth.decorators import login_required
 from django.forms.models import model_to_dict
 from django.http import JsonResponse
-from django.shortcuts import redirect, render
+from django.shortcuts import get_object_or_404, redirect, render
 from django.urls import reverse
 from django.utils import timezone
 from django.views.decorators.http import require_POST
+
+from .ai import allowed_for as ai_allowed_for, ask_ai, is_enabled as ai_is_enabled
 from .charts import build_chart
-from django.shortcuts import get_object_or_404, redirect, render
-from .models import Assessment, ExamDate, StudentProfile
-
-
 from .forms import (
     AssessmentForm, LoginForm, ProfileForm, SignUpForm,
     StyledPasswordChangeForm, UsernameChangeForm,
 )
-from .models import ExamDate, StudentProfile
-from .ai import allowed_for as ai_allowed_for, ask_ai, is_enabled as ai_is_enabled
+from .models import Assessment, ExamDate, StudentProfile
 from .notes import daily_note
 from .predictor import level_for_score, predict_stress
-from .support import COUNSELING
+from .support import COUNSELING, PROJECT_EMAIL, WELCOME_PHONE
 
 logger = logging.getLogger(__name__)
+
+CHECK_IN_EVERY_DAYS = 7       # the dashboard suggests a new check-in after this many days
 
 
 def _get_profile(user):
@@ -56,6 +56,8 @@ def _render_welcome(request, login_form=None, signup_form=None, active_tab='logi
         'login_form': login_form or LoginForm(request, prefix='login'),
         'signup_form': signup_form or SignUpForm(prefix='signup'),
         'active_tab': active_tab,
+        'project_email': PROJECT_EMAIL,
+        'welcome_phone': WELCOME_PHONE,
     }, status=status)
 
 
@@ -174,7 +176,19 @@ def dashboard(request):
         return _profile_required()
 
     latest = request.user.assessments.first()      # newest first (see Meta.ordering)
+
+    # Weekly check-in reminder: a banner only, no emails. Students can switch it off in their profile.
+    reminder = None
+    if student.reminders_on:
+        if latest is None:
+            reminder = 'Ready for your first check-in? It only takes a few minutes.'
+        else:
+            days = (timezone.now() - latest.created_at).days
+            if days >= CHECK_IN_EVERY_DAYS:
+                reminder = f"It has been {days} days since your last check-in. Ready for this week's?"
+
     return render(request, 'core/dashboard.html', {
+        'reminder': reminder,
         'profile': student,
         'assessment': latest,
         'stress_score': latest.stress_score if latest else None,
@@ -213,8 +227,8 @@ def history_view(request):
     if not student.is_complete:
         return _profile_required()
 
-    checkins = request.user.assessments.order_by('created_at')
-    chart = build_chart(checkins)
+    checkins = list(request.user.assessments.order_by('-created_at', '-pk'))   # newest first, for the list
+    chart = build_chart(list(reversed(checkins)))                              # the chart needs oldest first
     return render(request, 'core/history.html', {
         'profile': student,
         'checkins': checkins,
@@ -267,8 +281,11 @@ def assessment(request):
         if ai_is_enabled() and ai_allowed_for(student) and result.stress_level:
             try:
                 result.ai_advice = ask_ai(student, result)      # the AI writes the Note of the Day
-            except Exception:
+            except Exception as error:
                 logger.exception('The AI request failed')       # the hand-written note is shown instead
+                messages.info(request, 'We could not write your AI message this time. Your answers and result were saved, and your standard note is shown.')
+                if settings.DEBUG or request.user.is_superuser:  # the reason, for the team only (never for students)
+                    messages.info(request, f'AI debug: {type(error).__name__}: {str(error)[:300]}')
         result.save()
         return redirect('dashboard')
     return render(request, 'core/assessment.html', {'form': form, 'profile': student, 'ai_available': ai_is_enabled()})

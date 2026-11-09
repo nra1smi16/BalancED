@@ -75,7 +75,7 @@ class ProfileForm(forms.ModelForm):
         model = StudentProfile
         fields = ['name', 'date_of_birth', 'major', 'year_of_enrollment', 'gender',
                   'courses_taken', 'avg_daily_study_hours', 'height_cm', 'weight_kg', 'chronic_illnesses',
-                  'ai_opt_in']
+                  'ai_opt_in', 'reminders_on']
         labels = {
             'name': 'Name',
             'date_of_birth': 'Date of birth',
@@ -88,6 +88,7 @@ class ProfileForm(forms.ModelForm):
             'weight_kg': 'Weight (kg)',
             'chronic_illnesses': 'Chronic illnesses',
             'ai_opt_in': 'Use AI to write my Note of the Day',
+            'reminders_on': 'Remind me on my dashboard when it is time for a weekly check-in',
         }
         widgets = {
             'date_of_birth': forms.DateInput(attrs={'type': 'date'}, format='%Y-%m-%d'),
@@ -161,12 +162,12 @@ class StyledPasswordChangeForm(PasswordChangeForm):
 
 class AssessmentForm(forms.ModelForm):
     # Not a database column of the answers: it is the same setting as the profile's AI choice,
-    # shown again right before the answers are sent
+    # shown again right before the answers are sent (the view keeps the two in step).
     use_ai = forms.BooleanField(required=False, label='Use AI to write my Note of the Day')
 
     class Meta:
         model = Assessment
-        # the survey fields listed
+        # the survey fields must be listed here so ModelForm.save() stores them
         fields = SURVEY_FIELDS
 
     def __init__(self, *args, **kwargs):

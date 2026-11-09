@@ -10,7 +10,7 @@
   </p>
 </section>
 
-<form method="post" class="form-stack" novalidate>
+<form method="post" class="form-stack" id="checkin-form" data-ai-available="{% if ai_available %}1{% else %}0{% endif %}" novalidate>
   {% csrf_token %}
   {% if form.errors %}<p class="alert" role="alert">Please fix the highlighted fields below.</p>{% endif %}
 
@@ -51,8 +51,40 @@
   </section>
 
   <div class="form-actions">
-    <button type="submit" class="btn">Submit</button>
+    <button type="submit" class="btn" id="submit-button">Submit</button>
   </div>
+  <p class="submit-status" id="submit-status" role="status" aria-live="polite" hidden>
+    <span class="spinner" aria-hidden="true"></span>
+    <span id="submit-status-text"></span>
+  </p>
   <p class="disclaimer">This is a support tool, not a medical diagnosis.</p>
 </form>
+{% endblock %}
+
+{% block scripts %}
+<script>
+  /* While the answers are sent (and the AI message is written), tell the student that it is being processed */
+  const checkinForm = document.getElementById('checkin-form');
+  const submitButton = document.getElementById('submit-button');
+  const submitStatus = document.getElementById('submit-status');
+  const submitStatusText = document.getElementById('submit-status-text');
+
+  checkinForm.addEventListener('submit', () => {
+    const aiTicked = checkinForm.querySelector('[name=use_ai]');
+    const writingWithAi = aiTicked && aiTicked.checked && checkinForm.dataset.aiAvailable === '1';
+    submitButton.disabled = true;
+    submitButton.textContent = 'Submitting...';
+    submitStatusText.textContent = writingWithAi
+      ? 'Saving your answers and writing your personal message. This can take a few seconds. Nothing is wrong, please stay on this page.'
+      : 'Saving your answers. This only takes a moment.';
+    submitStatus.hidden = false;
+  });
+
+  /* If the student comes back with the browser's Back button, make the form usable again */
+  window.addEventListener('pageshow', () => {
+    submitButton.disabled = false;
+    submitButton.textContent = 'Submit';
+    submitStatus.hidden = true;
+  });
+</script>
 {% endblock %}

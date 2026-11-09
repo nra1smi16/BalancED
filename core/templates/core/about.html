@@ -17,6 +17,7 @@
     Students answer a short questionnaire about their workload and how they feel, and a machine learning model
     estimates their stress level as Normal, Mild, Moderate, or High Risk. The dashboard then offers a short note for
     the day with a small activity that suits that level, and shows how to reach the university's counseling service.
+    A history page shows how a student's check-ins change over time.
   </p>
   <p>BalancED supports early awareness. It is not a medical diagnosis and does not replace professional advice.</p>
 </section>
@@ -43,8 +44,9 @@
   <ol class="about-steps">
     <li><strong>Create an account and complete your profile.</strong> Name, date of birth, major, year of enrollment, gender, courses taken, and average daily study hours. Height, weight, and chronic illnesses are optional.</li>
     <li><strong>Answer the questionnaire.</strong> Short statements about workload, concentration, worry, and physical symptoms, each rated from 1 to 5. Every answer starts on the middle option.</li>
-    <li><strong>Get your stress level.</strong> A Random Forest model, built with scikit-learn and trained on a student survey dataset, estimates a score from 0 to 100, which is shown as one of four levels.</li>
-    <li><strong>Use your dashboard.</strong> See your level on the gauge, read a note of the day with a routine activity for your level, and find the counseling service's contact details.</li>
+    <li><strong>Get your stress level.</strong> A Random Forest model (Breiman, 2001), built with scikit-learn (Pedregosa et al., 2011) and trained on a student survey dataset, estimates a score from 0 to 100, which is shown as one of four levels.</li>
+    <li><strong>Use your dashboard.</strong> See your level on the gauge, read a note of the day with a routine activity for your level, and find the counseling service's contact details. Students who choose to can also get an optional AI-written message, shown in its own card.</li>
+    <li><strong>Check in weekly and look back.</strong> The dashboard suggests a new check-in once a week (this can be switched off), and the history page charts your scores over time. Any check-in can be deleted.</li>
   </ol>
 </section>
 
@@ -56,7 +58,7 @@
   </p>
   <p>
     Account details are stored in the application's database, and passwords are stored in scrambled (hashed) form, never as plain text.
-    AI-written notes are optional and off by default. A student can turn them on or off in their profile, and any note written by AI is labeled as AI-generated.
+    The AI-written message ("From your last check-in") is optional and off by default. A student can turn it on or off in their profile, and it is always labeled as AI-generated. No email address is collected.
   </p>
 </section>
 
@@ -74,12 +76,12 @@
 <section class="card about-card" aria-labelledby="refs-heading">
   <h2 class="font-display card-title" id="refs-heading">References</h2>
   <ul class="about-refs">
-    <li>UAE Government. (2024). <em>Mental health in the UAE</em>. <a href="https://u.ae/en/information-and-services/health-and-fitness/mental-health">https://u.ae/en/information-and-services/health-and-fitness/mental-health</a></li>
     <li>Breiman, L. (2001). Random forests. <em>Machine Learning, 45</em>(1), 5&ndash;32.</li>
-    <li>Pedregosa, F., et al. (2011). Scikit-learn: Machine learning in Python. <em>Journal of Machine Learning Research, 12</em>, 2825&ndash;2830.</li>
     <li>Calm. (n.d.). <em>Calm</em>. <a href="https://www.calm.com">https://www.calm.com</a></li>
     <li>Headspace. (n.d.). <em>Headspace</em>. <a href="https://www.headspace.com">https://www.headspace.com</a></li>
     <li>MindDoc. (n.d.). <em>MindDoc</em>. <a href="https://minddoc.com/us/en">https://minddoc.com/us/en</a></li>
+    <li>Pedregosa, F., et al. (2011). Scikit-learn: Machine learning in Python. <em>Journal of Machine Learning Research, 12</em>, 2825&ndash;2830.</li>
+    <li>UAE Government. (2024). <em>Mental health in the UAE</em>. <a href="https://u.ae/en/information-and-services/health-and-fitness/mental-health">https://u.ae/en/information-and-services/health-and-fitness/mental-health</a></li>
     <li>Woebot Health. (n.d.). <em>Woebot Health</em>. <a href="https://woebothealth.com">https://woebothealth.com</a></li>
   </ul>
 </section>

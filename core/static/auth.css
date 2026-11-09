@@ -59,3 +59,6 @@ html, body { overflow: auto; height: auto; }
   text-decoration: none;
 }
 .about-link:hover { color: #1d4eb8; text-decoration: underline; }
+
+/* Only one contact box (the counseling number) while the team's email is not set yet */
+.contact-card--single { grid-template-columns: minmax(0, 1fr); }

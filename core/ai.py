@@ -1,11 +1,11 @@
 """
-Asks an AI model (through the Groq API) to write the student's Note of the Day.
+Asks an AI model (through the Groq API, which has a free tier) to write the student's Note of the Day.
 
 What is sent: the 12 values the stress model uses, written as one short paragraph (age, gender, field of study,
-study hours and 8 questionnaire ratings), and the stress level the trained model gave. Never the name, username,
+study hours and 8 questionnaire ratings), plus the stress level the trained model gave. Never the name, username,
 height, weight or chronic illnesses.
 
-What comes back: the same three parts as the hand-written notes (as in notes.py):
+What comes back: the same three parts as the hand-written notes (see notes.py):
     opening   - a short sentence that fits the stress level
     activity  - one routine activity that suits the level and the student's highest-rated concerns
     support   - High Risk only: a reminder that talking to someone can help
@@ -13,7 +13,8 @@ What comes back: the same three parts as the hand-written notes (as in notes.py)
 The reply is checked before it is used. If the key is missing, the call fails, or the reply does not pass the
 checks, the dashboard simply shows the hand-written note instead.
 
-When the variable is not set, this feature is switched off.
+The API key is read from the GROQ_API_KEY environment variable. Never write the key in the code or push it
+to GitHub. When the variable is not set, this feature is switched off.
 """
 import json
 import logging
@@ -31,7 +32,7 @@ from .survey import STUDY_HOURS_CHOICES
 logger = logging.getLogger(__name__)
 
 API_URL = 'https://api.groq.com/openai/v1/chat/completions'
-DEFAULT_MODEL = 'openai/gpt-oss-20b'  #model used from groq
+DEFAULT_MODEL = 'openai/gpt-oss-20b'        # change with the GROQ_MODEL variable if Groq retires it
 TIMEOUT_SECONDS = 25
 
 # The 8 questionnaire answers the model uses, in plain words (E2 is left out, like in the trained model)
@@ -120,7 +121,7 @@ def ask_ai(profile, assessment):
     if requests is None:
         raise RuntimeError("The 'requests' package is not installed (pip install requests)")
 
-    # 1. Set API key 
+    # 1. Set your API key and endpoint
     api_key = os.getenv("GROQ_API_KEY")
     url = API_URL                                  # https://api.groq.com/openai/v1/chat/completions
 
@@ -133,7 +134,7 @@ def ask_ai(profile, assessment):
     # 3. Build the payload (the student's attributes, written as a paragraph, are the prompt)
     payload = {
         "model": os.getenv("GROQ_MODEL", DEFAULT_MODEL),
-        "max_completion_tokens": 500,
+        "max_completion_tokens": 2000,    # a reasoning model spends part of this on thinking before it writes the note
         "temperature": 0.7,
         "messages": [
             {"role": "system", "content": SYSTEM_PROMPT},
@@ -147,6 +148,13 @@ def ask_ai(profile, assessment):
     # 5. Parse the response
     if response.status_code == 200:
         result = response.json()
-        text = result["choices"][0]["message"].get("content") or ""
-        return _parse(text, assessment.stress_level)
+        choice = result["choices"][0]
+        text = choice["message"].get("content") or ""
+        if not text.strip():
+            raise RuntimeError(f"The AI returned no text (finish reason: {choice.get('finish_reason')}). "
+                               "If the reason is 'length', raise max_completion_tokens.")
+        try:
+            return _parse(text, assessment.stress_level)
+        except ValueError as error:      # also covers JSON that could not be read
+            raise ValueError(f"{error}. The reply began: {text[:200]!r}") from error
     raise RuntimeError(f"Error {response.status_code}: {response.text[:300]}")
